@@ -13,7 +13,7 @@
 " '---------------------------------------'            
 
 " -----------------------------------------------------------------------------
-"  < åˆ¤æ–­æ“ä½œç³»ç»Ÿæ˜¯å¦æ˜¯ Windows è¿˜æ˜¯ Linux >
+"  < ÅĞ¶Ï²Ù×÷ÏµÍ³ÊÇ·ñÊÇ Windows »¹ÊÇ Linux >
 " -----------------------------------------------------------------------------
 let g:iswindows = 0
 let g:islinux = 0
@@ -24,58 +24,82 @@ else
 endif
 
 
-" Uncomment the following to have Vim jump to the last position when
-" reopening a file
+
+
+" -----------------------------------------------------------------------------
+"  < ±àÂëÅäÖÃ >
+" -----------------------------------------------------------------------------
+set encoding=utf-8                                    "ÉèÖÃgvimÄÚ²¿±àÂë£¬Ä¬ÈÏ²»¸ü¸Ä
+" set fileencoding=utf-8                                "ÉèÖÃµ±Ç°ÎÄ¼ş±àÂë£¬¿ÉÒÔ¸ü¸Ä£¬Èç£ºgbk£¨Í¬cp936£©
+set fileencoding=cp936
+set fileencodings=ucs-bom,utf-8,gbk,cp936,latin-1     "ÉèÖÃÖ§³Ö´ò¿ªµÄÎÄ¼şµÄ±àÂë
+" ÎÄ¼ş¸ñÊ½£¬Ä¬ÈÏ ffs=dos,unix
+set fileformat=unix                                   "ÉèÖÃĞÂ£¨µ±Ç°£©ÎÄ¼şµÄ<EOL>¸ñÊ½£¬¿ÉÒÔ¸ü¸Ä£¬Èç£ºdos£¨windowsÏµÍ³³£ÓÃ£©
+set fileformats=unix,dos,mac                          "¸ø³öÎÄ¼şµÄ<EOL>¸ñÊ½ÀàĞÍ
+if version >= 603
+	set helplang=cn             " Ê¹ÓÃÖĞÎÄ°ïÖú
+endif
+
+" -----------------------------------------------------------------------------
+"  < ÆäËûÅäÖÃ >
+" -----------------------------------------------------------------------------
+set nocompatible                                      "½ûÓÃ Vi ¼æÈİÄ£Ê½
+filetype on                                           "ÆôÓÃÎÄ¼şÀàĞÍÕì²â
+filetype plugin on                                    "Õë¶Ô²»Í¬µÄÎÄ¼şÀàĞÍ¼ÓÔØ¶ÔÓ¦µÄ²å¼ş
+filetype plugin indent on                             "ÆôÓÃËõ½ø
+
+if has("syntax")
+	syntax on 											" enables syntax highlighting by default
+endif
+set t_Co=256                   							" ÔÚÖÕ¶ËÆôÓÃ256É«
+colorscheme molokai										" ÉèÖÃÅäÉ«·½°¸
+set guifont=Courier_new:h12:b:cDEFAULT					" ÉèÖÃ×ÖÌå
+
+
+set hlsearch                                            "¸ßÁÁËÑË÷
+set incsearch       									"ÔÚÊäÈëÒªËÑË÷µÄÎÄ×ÖÊ±£¬ÊµÊ±Æ¥Åä
+set ignorecase                                        "ËÑË÷Ä£Ê½ÀïºöÂÔ´óĞ¡Ğ´
+set smartcase                                         "Èç¹ûËÑË÷Ä£Ê½°üº¬´óĞ´×Ö·û£¬²»Ê¹ÓÃ 'ignorecase' Ñ¡Ïî
+set number                                            "ÏÔÊ¾ĞĞºÅ
+set laststatus=2                                      "ÆôÓÃ×´Ì¬À¸ĞÅÏ¢
+set cursorline                                        "Í»³öÏÔÊ¾µ±Ç°ĞĞ
+set cmdheight=2                                       "ÉèÖÃÃüÁîĞĞµÄ¸ß¶ÈÎª2£¬Ä¬ÈÏÎª1
+set nowrap                                            "ÉèÖÃ²»×Ô¶¯»»ĞĞ
+"set shortmess=atI                                    "È¥µô»¶Ó­½çÃæ
+set tabstop=4                                           "ÉèÖÃTab¼üµÄ¿í¶È£¬¿ÉÒÔ¸ü¸Ä£¬Èç£º¿í¶ÈÎª2
+"set mouse-=a                    					  "a ÔÚÈÎºÎÄ£Ê½ÏÂÆôÓÃÊó±ê -a:²»ÆôÓÃÊó±ê
+set backspace=2                 			          " backspace ¿ÉÓÃ
+set smarttab                                          "Ö¸¶¨°´Ò»´Îbackspace¾ÍÉ¾³ıshiftwidth¿í¶È
+set shiftwidth=4                                      "»»ĞĞÊ±×Ô¶¯Ëõ½ø¿í¶È£¬¿É¸ü¸Ä£¨¿í¶ÈÍ¬tabstop£©
+set expandtab                                         "½«Tab¼ü×ª»»Îª¿Õ¸ñ
+set smartindent                                       "ÆôÓÃÖÇÄÜ¶ÔÆë·½Ê½
+
+
+set writebackup                             "±£´æÎÄ¼şÇ°½¨Á¢±¸·İ£¬±£´æ³É¹¦ºóÉ¾³ı¸Ã±¸·İ
+
+"au BufWinEnter * let w:m2=matchadd('Underlined', '\%>' . 80 . 'v.\+', -1)" ÆôÓÃÃ¿ĞĞ³¬¹ı80ÁĞµÄ×Ö·ûÌáÊ¾£¨×ÖÌå±äÀ¶²¢¼ÓÏÂ»®Ïß£©
 if has("autocmd")
+	" ÖØĞÂ´ò¿ªÎÄ¼şÊ±»Øµ½ÉÏ´ÎÎ»ÖÃ 
 	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
-
-set nocompatible                                      "ç¦ç”¨ Vi å…¼å®¹æ¨¡å¼
-
-" -----------------------------------------------------------------------------
-"  < ç¼–ç é…ç½® >
-" -----------------------------------------------------------------------------
-set encoding=utf-8                                    "è®¾ç½®gvimå†…éƒ¨ç¼–ç ï¼Œé»˜è®¤ä¸æ›´æ”¹
-" set fileencoding=utf-8                                "è®¾ç½®å½“å‰æ–‡ä»¶ç¼–ç ï¼Œå¯ä»¥æ›´æ”¹ï¼Œå¦‚ï¼šgbkï¼ˆåŒcp936ï¼‰
-set fileencoding=cp936
-set fileencodings=ucs-bom,utf-8,gbk,cp936,latin-1     "è®¾ç½®æ”¯æŒæ‰“å¼€çš„æ–‡ä»¶çš„ç¼–ç 
-" æ–‡ä»¶æ ¼å¼ï¼Œé»˜è®¤ ffs=dos,unix
-set fileformat=unix                                   "è®¾ç½®æ–°ï¼ˆå½“å‰ï¼‰æ–‡ä»¶çš„<EOL>æ ¼å¼ï¼Œå¯ä»¥æ›´æ”¹ï¼Œå¦‚ï¼šdosï¼ˆwindowsç³»ç»Ÿå¸¸ç”¨ï¼‰
-set fileformats=unix,dos,mac                          "ç»™å‡ºæ–‡ä»¶çš„<EOL>æ ¼å¼ç±»å‹
-if version >= 603
-	set helplang=cn             " ä½¿ç”¨ä¸­æ–‡å¸®åŠ©
-endif
+" ×Ô¶¯ÇĞ»»Ä¿Â¼Îªµ±Ç°±à¼­ÎÄ¼şËùÔÚÄ¿Â¼
+au BufRead,BufNewFile,BufEnter * cd %:p:h
 
 " -----------------------------------------------------------------------------
-"  < å…¶ä»–é…ç½® >
+"  < ¿ì½İ¼üÓ³Éä >
 " -----------------------------------------------------------------------------
-if has("syntax")
-	syntax on		" enables syntax highlighting by default
-endif
-set t_Co=256                   " åœ¨ç»ˆç«¯å¯ç”¨256è‰²
-colorscheme molokai				" è®¾ç½®é…è‰²æ–¹æ¡ˆ
-set guifont=Courier_new:h12:b:cDEFAULT	" è®¾ç½®å­—ä½“
+noremap <c-k> <c-w>k
+noremap <c-j> <c-w>j
+noremap <c-h> <c-w>h
+noremap <c-l> <c-w>l
 
-
-set hlsearch        		"é«˜äº®æœç´¢
-set incsearch       		"åœ¨è¾“å…¥è¦æœç´¢çš„æ–‡å­—æ—¶ï¼Œå®æ—¶åŒ¹é…
-set ignorecase                                        "æœç´¢æ¨¡å¼é‡Œå¿½ç•¥å¤§å°å†™
-set smartcase                                         "å¦‚æœæœç´¢æ¨¡å¼åŒ…å«å¤§å†™å­—ç¬¦ï¼Œä¸ä½¿ç”¨ 'ignorecase' é€‰é¡¹
-
-set number                                            "æ˜¾ç¤ºè¡Œå·
-set laststatus=2                                      "å¯ç”¨çŠ¶æ€æ ä¿¡æ¯
-set cursorline                                        "çªå‡ºæ˜¾ç¤ºå½“å‰è¡Œ
-set cmdheight=2                                       "è®¾ç½®å‘½ä»¤è¡Œçš„é«˜åº¦ä¸º2ï¼Œé»˜è®¤ä¸º1
-set nowrap                                            "è®¾ç½®ä¸è‡ªåŠ¨æ¢è¡Œ
-"set shortmess=atI                                     "å»æ‰æ¬¢è¿ç•Œé¢
-set tabstop=4                                         "è®¾ç½®Tabé”®çš„å®½åº¦ï¼Œå¯ä»¥æ›´æ”¹ï¼Œå¦‚ï¼šå®½åº¦ä¸º2
-"set mouse-=a                    "a åœ¨ä»»ä½•æ¨¡å¼ä¸‹å¯ç”¨é¼ æ ‡ -a:ä¸å¯ç”¨é¼ æ ‡
-"set backspace=2                 " backspace å¯ç”¨
-
-"au BufWinEnter * let w:m2=matchadd('Underlined', '\%>' . 80 . 'v.\+', -1)" å¯ç”¨æ¯è¡Œè¶…è¿‡80åˆ—çš„å­—ç¬¦æç¤ºï¼ˆå­—ä½“å˜è“å¹¶åŠ ä¸‹åˆ’çº¿ï¼‰
+" ×¢£ºÉÏÃæÅäÖÃÖĞµÄ"<Leader>"ÔÚ±¾Èí¼şÖĞÉèÖÃÎª"\"¼ü£¨ÒıºÅÀïµÄ·´Ğ±¸Ü£©£¬Èç<Leader>t
+" Ö¸ÔÚ³£¹æÄ£Ê½ÏÂ°´"\"¼ü¼Ó"t"¼ü£¬ÕâÀï²»ÊÇÍ¬Ê±°´£¬¶øÊÇÏÈ°´"\"¼üºó°´"t"¼ü£¬¼ä¸ôÔÚÒ»
+" ÃëÄÚ£¬¶ø<Leader>csÊÇÏÈ°´"\"¼üÔÙ°´"c"ÓÖÔÙ°´"s"¼ü£»ÈçÒªĞŞ¸Ä"<leader>"¼ü£¬¿ÉÒÔ°Ñ
+let mapleader = ","
 
 " -----------------------------------------------------------------------------
-"  < Vundle æ’ä»¶ç®¡ç†å·¥å…·é…ç½® >
+"  < Vundle ²å¼ş¹ÜÀí¹¤¾ßÅäÖÃ >
 " -----------------------------------------------------------------------------
 if g:islinux
     set rtp+=~/.vim/bundle/vundle/
@@ -90,3 +114,41 @@ Bundle 'gmarik/vundle'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'bufexplorer.zip'
 Bundle 'scrooloose/nerdtree'
+Bundle 'qw8880000/vim_ascii_art'
+Bundle 'terryma/vim-multiple-cursors'
+Bundle 'easymotion/vim-easymotion'
+Bundle 'maksimr/vim-jsbeautify'
+" Bundle 'jlanzarotta/colorSchemeExplorer'
+
+" =======================> colorSchemeExplorer ²å¼şÅäÖÃ
+" ÓÃÀ´Ô¤ÀÀÅäÉ«Ö÷Ìâ
+
+" =======================> jsbeautify ²å¼şÅäÖÃ
+"javascript ´úÂë¸ñÊ½»¯
+
+" =======================> vim-easymotion ²å¼şÅäÖÃ
+" ¿ìËÙÒÆ¶¯²å¼ş
+
+" =======================> vim-multiple-cursors ²å¼şÅäÖÃ
+" ¶à¸öµØ·½Í¬Ê±½øĞĞ±à¼­µÄ²å¼ş
+
+" =======================> powerline ²å¼şÅäÖÃ
+" ×´Ì¬À¸²å¼ş£¬¸üºÃµÄ×´Ì¬À¸Ğ§¹û
+
+" =======================> nerdtree ²å¼şÅäÖÃ
+" ÓĞÄ¿Â¼´å½á¹¹µÄÎÄ¼şä¯ÀÀ²å¼ş
+"close vim if the only window left open is a NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+let NERDTreeDirArrows=0 			"let NERDTreeHighlightCursorline=1
+nmap <F2> :NERDTreeToggle<CR> 		" ³£¹æÄ£Ê½ÏÂÊäÈë F2 µ÷ÓÃ²å¼ş
+nmap <F3> :NERDTree .<CR>
+
+" =======================> BufExplorer ²å¼şÅäÖÃ
+" ¿ìËÙÇáËÉµÄÔÚ»º´æÖĞÇĞ»»£¨Ïàµ±ÓÚÁíÒ»ÖÖ¶à¸öÎÄ¼ş¼äµÄÇĞ»»·½Ê½£©
+" <Leader>be ÔÚµ±Ç°´°¿ÚÏÔÊ¾»º´æÁĞ±í²¢´ò¿ªÑ¡¶¨ÎÄ¼ş
+" <Leader>bs Ë®Æ½·Ö¸î´°¿ÚÏÔÊ¾»º´æÁĞ±í£¬²¢ÔÚ»º´æÁĞ±í´°¿ÚÖĞ´ò¿ªÑ¡¶¨ÎÄ¼ş
+" <Leader>bv ´¹Ö±·Ö¸î´°¿ÚÏÔÊ¾»º´æÁĞ±í£¬²¢ÔÚ»º´æÁĞ±í´°¿ÚÖĞ´ò¿ªÑ¡¶¨ÎÄ¼ş
+
+" =======================> vim_ascii_art²å¼şÅäÖÃ
+" ²åÈë ascii Í¼°¸µÄÒ»¸ö²å¼ş
+
