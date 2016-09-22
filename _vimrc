@@ -19,6 +19,7 @@ let g:iswindows = 0
 let g:islinux = 0
 if(has("win32") || has("win64") || has("win95") || has("win16"))
     let g:iswindows = 1
+    source $VIM/_gvimrc                             " 加载gvim特殊的配置
 else
     let g:islinux = 1
 endif
@@ -93,6 +94,7 @@ Bundle 'repeat.vim'
 Bundle 'easymotion/vim-easymotion'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'tpope/vim-fugitive'
+" Bundle 'tomasr/molokai'             " 配色插件
 
 " ========================
 " html / css /javascript

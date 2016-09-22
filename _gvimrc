@@ -1,0 +1,29 @@
+source $VIMRUNTIME/vimrc_example.vim
+source $VIMRUNTIME/mswin.vim
+behave mswin
+
+
+"解决菜单乱码
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
+
+"解决consle输出乱码
+language messages zh_CN.utf-8
+
+" 显示/隐藏菜单栏、工具栏、滚动条，可用 Ctrl + F11 切换
+set guioptions-=m
+set guioptions-=T
+set guioptions-=r
+set guioptions-=L
+nmap <silent> <c-F11> :if &guioptions =~# 'm' <Bar>
+            \set guioptions-=m <Bar>
+            \set guioptions-=T <Bar>
+            \set guioptions-=r <Bar>
+            \set guioptions-=L <Bar>
+            \else <Bar>
+            \set guioptions+=m <Bar>
+            \set guioptions+=T <Bar>
+            \set guioptions+=r <Bar>
+            \set guioptions+=L <Bar>
+            \endif<CR>
+
