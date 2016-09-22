@@ -91,6 +91,7 @@ Bundle 'repeat.vim'
 
 Bundle 'easymotion/vim-easymotion'
 Bundle 'terryma/vim-multiple-cursors'
+Bundle 'tpope/vim-fugitive'
 
 " ========================
 " html / css /javascript
@@ -131,6 +132,11 @@ Bundle 'qw8880000/vim_ascii_art'
 
 " ensure ftdetect et al work by including this after the Vundle stuff
 filetype plugin indent on
+
+
+" ----------------------------------------------
+" tpope/vim-fugitive
+" ----------------------------------------------
 
 " ----------------------------------------------
 " vim-easy-align
