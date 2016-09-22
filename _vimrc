@@ -43,16 +43,27 @@ endif
 
 
 Bundle 'gmarik/vundle'
+
+" ========================
+" 对齐插件
+" ========================
+Bundle 'junegunn/vim-easy-align'
 Bundle 'Align'
 Bundle 'godlygeek/tabular'
 
-" ---------<补全>---------
+" ========================
+" 补全插件
+" ========================
 " Bundle 'Valloric/YouCompleteMe'
 " Bundle 'vim-javacompleteex'
 Bundle 'Shougo/neocomplcache.vim'
 Bundle 'msanders/snipmate.vim'
 Bundle 'OmniCppComplete'
 
+
+" ========================
+" IDE
+" ========================
 Bundle 'bufexplorer.zip'
 Bundle 'scrooloose/nerdtree'
 Bundle 'wesleyche/SrcExpl'
@@ -63,28 +74,7 @@ Bundle 'qw8880000/ccvext'
 Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'Lokaltog/vim-powerline'
 "Bundle 'Yggdroot/indentLine'
-
 Bundle 'scrooloose/syntastic'
-" Bundle 'hallettj/jslint.vim'
-" Bundle 'joestelmach/lint.vim'
-Bundle 'mattn/emmet-vim'
-
-" Bundle 'cSyntaxAfter'
-Bundle 'justinmk/vim-syntax-extra'
-" Bundle 'octol/vim-cpp-enhanced-highlight'
-" Bundle 'std_c.zip'
-Bundle 'qw8880000/cvim'
-Bundle 'cpp.vim'
-
-Bundle 'TxtBrowser'
-Bundle 'plasticboy/vim-markdown'
-Bundle 'qw8880000/DoxygenToolkit'
-" Bundle 'xolox/vim-notes'
-" Bundle 'xolox/vim-misc'
-" Bundle 'vimwiki/vimwiki'
-"
-Bundle 'sketch.vim'
-Bundle 'DrawIt'
 
 Bundle 'EasyGrep'
 if g:islinux
@@ -92,22 +82,60 @@ if g:islinux
     " Bundle 'rking/ag.vim'
     Bundle 'dyng/ctrlsf.vim'
 endif
-
 "Bundle 'jiangmiao/auto-pairs'
 Bundle 'tpope/vim-surround'
 Bundle 'Mark--Karkat'
+Bundle 'kshenoy/vim-signature'
 Bundle 'repeat.vim'
 " Bundle 'jlanzarotta/colorSchemeExplorer'
-Bundle 'maksimr/vim-jsbeautify'
+
 Bundle 'easymotion/vim-easymotion'
 Bundle 'terryma/vim-multiple-cursors'
-Bundle 'qw8880000/vim_ascii_art'
-Bundle 'kshenoy/vim-signature'
+
+" ========================
+" html / css /javascript
+" ========================
+Bundle 'mattn/emmet-vim'
+" Bundle 'hallettj/jslint.vim'
+" Bundle 'joestelmach/lint.vim'
+Bundle 'maksimr/vim-jsbeautify'
+
+" ========================
+" c / c++
+" ========================
+Bundle 'qw8880000/DoxygenToolkit'
+" Bundle 'cSyntaxAfter'
+Bundle 'justinmk/vim-syntax-extra'
+" Bundle 'octol/vim-cpp-enhanced-highlight'
+" Bundle 'std_c.zip'
+Bundle 'qw8880000/cvim'
+Bundle 'cpp.vim'
 Bundle 'scrooloose/nerdcommenter'
+
+" ========================
+" txt / markdown / wiki
+" ========================
+Bundle 'TxtBrowser'
+Bundle 'plasticboy/vim-markdown'
+" Bundle 'xolox/vim-notes'
+" Bundle 'xolox/vim-misc'
+" Bundle 'vimwiki/vimwiki'
+"
+" ========================
+" draw ascii map
+" ========================
+Bundle 'sketch.vim'
+Bundle 'DrawIt'
+Bundle 'qw8880000/vim_ascii_art'
+
 
 " ensure ftdetect et al work by including this after the Vundle stuff
 filetype plugin indent on
 
+" ----------------------------------------------
+" vim-easy-align
+" ----------------------------------------------
+" 快速对齐插件
 
 " ----------------------------------------------
 " Align
@@ -543,6 +571,7 @@ inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
 " ----------------------------------------------
 " kshenoy/vim-signature
 " ----------------------------------------------
+" vim-signature is a plugin to place, toggle and display marks.
 
 " ----------------------------------------------
 " scrooloose/nerdcommenter
