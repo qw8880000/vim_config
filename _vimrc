@@ -476,12 +476,14 @@ let g:DoxygenToolkit_versionString="v1.0"
 " sketch.vim
 " ----------------------------------------------
 " Êó±ê»­²ÝÍ¼²å¼þ
-nmap <F4> :call ToggleSketch()<CR>
+nmap <Leader>st :call ToggleSketch()<CR>
 
 " ----------------------------------------------
 " DrawIt
 " ----------------------------------------------
 "·½Ïò¼ü»­Í¼
+" <Leader>di    " start
+" <Leader>ds    " stop
 
 " ----------------------------------------------
 " EasyGrep
