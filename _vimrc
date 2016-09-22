@@ -96,7 +96,7 @@ Bundle 'terryma/vim-multiple-cursors'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tomasr/molokai' 
 Bundle 'romainl/vim-qf'
-Bundle 'spolu/dwm.vim'
+" Bundle 'spolu/dwm.vim'
 
 " ========================
 " html / css /javascript
