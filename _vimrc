@@ -140,6 +140,8 @@ filetype plugin indent on
 " ----------------------------------------------
 " tpope/vim-fugitive
 " ----------------------------------------------
+" git ²å¼ş 
+" :h fugitive.txt ²é¿´°ïÖú
 set laststatus=2 " Always display the status line
 set statusline+=%{fugitive#statusline()} "  Git Hotness
 
