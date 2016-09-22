@@ -59,7 +59,6 @@ Bundle 'wesleyche/SrcExpl'
 Bundle 'taglist.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'ZoomWin'
-"Bundle 'ccvext.vim'
 Bundle 'qw8880000/ccvext'
 Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'Lokaltog/vim-powerline'
@@ -109,9 +108,6 @@ Bundle 'scrooloose/nerdcommenter'
 " ensure ftdetect et al work by including this after the Vundle stuff
 filetype plugin indent on
 
-" ----------------------------------------------
-" gmarik/vundle
-" ----------------------------------------------
 
 " ----------------------------------------------
 " Align
@@ -120,7 +116,6 @@ filetype plugin indent on
 " ----------------------------------------------
 " godlygeek/tabular
 " ----------------------------------------------
-
 
 " ----------------------------------------------
 " Valloric/YouCompleteMe
@@ -146,10 +141,23 @@ filetype plugin indent on
 " ----------------------------------------------
 " bufexplorer.zip
 " ----------------------------------------------
+"""" 快速轻松的在缓存中切换（相当于另一种多个文件间的切换方式）
+" <Leader>be 在当前窗口显示缓存列表并打开选定文件
+" <Leader>bs 水平分割窗口显示缓存列表，并在缓存列表窗口中打开选定文件
+" <Leader>bv 垂直分割窗口显示缓存列表，并在缓存列表窗口中打开选定文件
+
+
 
 " ----------------------------------------------
 " scrooloose/nerdtree
 " ----------------------------------------------
+" 有目录村结构的文件浏览插件
+"close vim if the only window left open is a NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+let NERDTreeDirArrows=0 			"let NERDTreeHighlightCursorline=1
+nmap <F2> :NERDTreeToggle<CR> 		" 常规模式下输入 F2 调用插件
+nmap <F3> :NERDTree .<CR>
+
 
 " ----------------------------------------------
 " wesleyche/SrcExpl
@@ -168,12 +176,15 @@ filetype plugin indent on
 " ----------------------------------------------
 
 " ----------------------------------------------
-" ccvext.vim
-" ----------------------------------------------
-
-" ----------------------------------------------
 " qw8880000/ccvext
 " ----------------------------------------------
+" 用于对指定文件自动生成tags与cscope文件并连接
+" 如果是Windows系统, 则生成的文件在源文件所在盘符根目录的.symbs目录下(如: X:\.symbs\)
+" 如果是Linux系统, 则生成的文件在~/.symbs/目录下
+" 具体用法可参考www.vim.org中此插件的说明
+" <Leader>sy 自动生成tags与cscope文件并连接
+" <Leader>sc 连接已存在的tags与cscope文件
+
 
 " ----------------------------------------------
 " ctrlpvim/ctrlp.vim
@@ -182,6 +193,7 @@ filetype plugin indent on
 " ----------------------------------------------
 " Lokaltog/vim-powerline
 " ----------------------------------------------
+" 状态栏插件，更好的状态栏效果
 
 " ----------------------------------------------
 " Yggdroot/indentLine
@@ -307,14 +319,17 @@ filetype plugin indent on
 " ----------------------------------------------
 " easymotion/vim-easymotion
 " ----------------------------------------------
+" 快速移动插件
 
 " ----------------------------------------------
 " terryma/vim-multiple-cursors
 " ----------------------------------------------
+" 多个地方同时进行编辑的插件
 
 " ----------------------------------------------
 " qw8880000/vim_ascii_art
 " ----------------------------------------------
+" 插入 ascii 图案的一个插件
 
 " ----------------------------------------------
 " kshenoy/vim-signature
@@ -325,48 +340,7 @@ filetype plugin indent on
 " ----------------------------------------------
 
 
-" -----------------------------------------------------------------------------
-"  ccvext.vim
-" -----------------------------------------------------------------------------
-" 用于对指定文件自动生成tags与cscope文件并连接
-" 如果是Windows系统, 则生成的文件在源文件所在盘符根目录的.symbs目录下(如: X:\.symbs\)
-" 如果是Linux系统, 则生成的文件在~/.symbs/目录下
-" 具体用法可参考www.vim.org中此插件的说明
-" <Leader>sy 自动生成tags与cscope文件并连接
-" <Leader>sc 连接已存在的tags与cscope文件
 
-
-" =======================> colorSchemeExplorer 插件配置
-" 用来预览配色主题
-
-" =======================> jsbeautify 插件配置
-"javascript 代码格式化
-
-" =======================> vim-easymotion 插件配置
-" 快速移动插件
-
-" =======================> vim-multiple-cursors 插件配置
-" 多个地方同时进行编辑的插件
-
-" =======================> powerline 插件配置
-" 状态栏插件，更好的状态栏效果
-
-" =======================> nerdtree 插件配置
-" 有目录村结构的文件浏览插件
-"close vim if the only window left open is a NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-let NERDTreeDirArrows=0 			"let NERDTreeHighlightCursorline=1
-nmap <F2> :NERDTreeToggle<CR> 		" 常规模式下输入 F2 调用插件
-nmap <F3> :NERDTree .<CR>
-
-" =======================> BufExplorer 插件配置
-" 快速轻松的在缓存中切换（相当于另一种多个文件间的切换方式）
-" <Leader>be 在当前窗口显示缓存列表并打开选定文件
-" <Leader>bs 水平分割窗口显示缓存列表，并在缓存列表窗口中打开选定文件
-" <Leader>bv 垂直分割窗口显示缓存列表，并在缓存列表窗口中打开选定文件
-
-" =======================> vim_ascii_art插件配置
-" 插入 ascii 图案的一个插件
 
 " -----------------------------------------------------------------------------
 "  < 编码配置 >
