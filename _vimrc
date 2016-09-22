@@ -77,9 +77,9 @@ Bundle 'Lokaltog/vim-powerline'
 "Bundle 'Yggdroot/indentLine'
 Bundle 'scrooloose/syntastic'
 
-" Bundle 'EasyGrep'
-Bundle 'mhinz/vim-grepper'
 if g:islinux
+    " Bundle 'EasyGrep'
+    Bundle 'mhinz/vim-grepper'
     Bundle 'mileszs/ack.vim'
     Bundle 'rking/ag.vim'
     Bundle 'dyng/ctrlsf.vim'
@@ -514,6 +514,22 @@ nmap <Leader>st :call ToggleSketch()<CR>
 "<Leader>vr  - Perform a global search on the word under the cursor and prompt for a pattern with which to replace it.
 "<Leader>vR  - Like vr, but match whole word.
 "<Leader>vo  - Open an options explorer to select the files to search in and set grep options.
+"
+" ----------------------------------------------
+" mhinz/vim-grepper
+" ----------------------------------------------
+"  :h grepper
+"  :h grepper-mappings
+"  :h grepper-options
+nmap gs  <plug>(GrepperOperator)
+xmap gs  <plug>(GrepperOperator)
+" gs, gsW, gsiw, gsi
+
+let g:grepper           = {}
+let g:grepper.tools     = ['git', 'ag', 'grep']
+
+nnoremap <leader>agc :Grepper -tool ag -grepprg ag --vimgrep $* $.<cr>
+nnoremap <leader>agw :Grepper -tool ag -cword -grepprg ag --vimgrep $* $.<cr>
 
 " ----------------------------------------------
 " mileszs/ack.vim
@@ -521,11 +537,11 @@ nmap <Leader>st :call ToggleSketch()<CR>
 " 代码搜索插件，号称比grep还快
 " usage:
 "   :Ack [options] {pattern} [{directories}]
-nmap <Leader>a :Ack <C-R><C-W>
-nmap <Leader>aa :AckAdd <C-R><C-W>
-nmap <Leader>afs :AckFromSearch <CR>
-nmap <Leader>la :LAck <C-R><C-W>
-nmap <Leader>laa :LAckAdd <C-R><C-W>
+" nmap <Leader>a :Ack <C-R><C-W>
+" nmap <Leader>aa :AckAdd <C-R><C-W>
+" nmap <Leader>afs :AckFromSearch <CR>
+" nmap <Leader>la :LAck <C-R><C-W>
+" nmap <Leader>laa :LAckAdd <C-R><C-W>
 
 " ----------------------------------------------
 " rking/ag.vim
@@ -537,18 +553,18 @@ nmap <Leader>laa :LAckAdd <C-R><C-W>
 " ----------------------------------------------
 " 基于ack.vim/ag.vim,和ack或者ag不同的是，不再是显示一行，而是显示整个上下文
 "
-let g:ctrlsf_populate_qflist = 1
-let g:ctrlsf_position = 'left'
-let g:ctrlsf_winsize = '40%'
+" let g:ctrlsf_populate_qflist = 1
+" let g:ctrlsf_position = 'left'
+" let g:ctrlsf_winsize = '40%'
 
-nmap     <C-F>f <Plug>CtrlSFPrompt
-vmap     <C-F>f <Plug>CtrlSFVwordPath
-vmap     <C-F>F <Plug>CtrlSFVwordExec
-nmap     <C-F>w <Plug>CtrlSFCwordPath
-nmap     <C-F>p <Plug>CtrlSFPwordPath
-nnoremap <C-F>o :CtrlSFOpen<CR>
-nnoremap <C-F>t :CtrlSFToggle<CR>
-inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
+" nmap     <C-F>f <Plug>CtrlSFPrompt
+" vmap     <C-F>f <Plug>CtrlSFVwordPath
+" vmap     <C-F>F <Plug>CtrlSFVwordExec
+" nmap     <C-F>w <Plug>CtrlSFCwordPath
+" nmap     <C-F>p <Plug>CtrlSFPwordPath
+" nnoremap <C-F>o :CtrlSFOpen<CR>
+" nnoremap <C-F>t :CtrlSFToggle<CR>
+" inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
 
 
 " ----------------------------------------------
