@@ -112,40 +112,104 @@ filetype plugin indent on
 " ----------------------------------------------
 " Align
 " ----------------------------------------------
+" 对齐插件
 
 " ----------------------------------------------
 " godlygeek/tabular
 " ----------------------------------------------
+" 文本对齐插件,功能不是很强大，但是vim-markdown插件会用到
 
 " ----------------------------------------------
 " Valloric/YouCompleteMe
 " ----------------------------------------------
-
+"set completeopt=longest,menu    "让Vim的补全菜单行为与一般IDE一致(参考VimTip1228)
+"autocmd InsertLeave * if pumvisible() == 0|pclose|endif "离开插入模式后自动关闭预览窗口
+"inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"    "回车即选中当前项
+""上下左右键的行为 会显示其他信息
+""inoremap <expr> <Down>     pumvisible() ? "\<C-n>" : "\<Down>"
+""inoremap <expr> <Up>       pumvisible() ? "\<C-p>" : "\<Up>"
+""inoremap <expr> <PageDown> pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<PageDown>"
+"" inoremap <expr> <PageUp>   pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<PageUp>"
+"
+"" 跳转到定义处
+"nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+"
+""force recomile with syntastic
+"nnoremap <F6> :YcmForceCompileAndDiagnostics<CR>  
+"nnoremap <leader>lo :lopen<CR>  "open locationlist
+"nnoremap <leader>lc :lclose<CR> "close locationlist
+"" inoremap <leader><leader> <C-x><C-o>
+"
+"let g:ycm_global_ycm_extra_conf = '~/gVimPortable/vimfiles/bundle/YouCompleteMe/third_party/ycmd/cpp/me/.ycm_extra_conf.py'
+"
+"" 不显示开启vim时检查ycm_extra_conf文件的信息  
+"" let g:ycm_confirm_extra_conf=0
+"" 开启基于tag的补全，可以在这之后添加需要的标签路径  
+"" let g:ycm_collect_identifiers_from_tags_files=1
+""注释和字符串中的文字也会被收入补全
+"" let g:ycm_collect_identifiers_from_comments_and_strings = 0
+"" 输入第2个字符开始补全
+"let g:ycm_min_num_of_chars_for_completion=2
+"" 禁止缓存匹配项,每次都重新生成匹配项
+"" let g:ycm_cache_omnifunc=0
+"" 开启语义补全
+"let g:ycm_seed_identifiers_with_syntax=1  
+""在注释输入中也能补全
+"let g:ycm_complete_in_comments = 1
+""在字符串输入中也能补全
+"let g:ycm_complete_in_strings = 1
+"" 设置在下面几种格式的文件上屏蔽ycm
+"let g:ycm_filetype_blacklist = {
+"            \ 'tagbar' : 1,
+"            \ 'nerdtree' : 1,
+"            \}
+""youcompleteme  默认tab  s-tab 和 ultisnips 冲突
+"" let g:ycm_key_list_select_completion = ['<Down>']
+"" let g:ycm_key_list_previous_completion = ['<Up>']
+"" 修改对C函数的补全快捷键，默认是CTRL + space，修改为ALT + ;
+"" let g:ycm_key_invoke_completion = '<M-;>'
+""
+"let g:ycm_error_symbol = '!!'
+"let g:ycm_warning_symbol = '>>'
+"
 " ----------------------------------------------
 " vim-javacompleteex
 " ----------------------------------------------
+" java 补全插件
 
 " ----------------------------------------------
 " Shougo/neocomplcache.vim
 " ----------------------------------------------
+" 关键字补全、文件路径补全、tag补全等等，各种，非常好用，速度超快。
+let g:neocomplcache_enable_at_startup = 1     "vim 启动时启用插件
+" let g:neocomplcache_disable_auto_complete = 1 "不自动弹出补全列表
+" 在弹出补全列表后用 <c-p> 或 <c-n> 进行上下选择效果比较好
 
 " ----------------------------------------------
 " msanders/snipmate.vim
 " ----------------------------------------------
+" 代码补全
 
 " ----------------------------------------------
 " OmniCppComplete
 " ----------------------------------------------
+" 用于C/C++代码补全，这种补全主要针对命名空间、类、结构、共同体等进行补全，详细
+" 说明可以参考帮助或网络教程等
+" 使用前先执行如下 ctags 命令（本配置中可以直接使用 ccvext 插件来执行以下命令）
+" ctags -R --c++-kinds=+p --fields=+iaS --extra=+q
+" 我使用上面的参数生成标签后，对函数使用跳转时会出现多个选择
+" 所以我就将--c++-kinds=+p参数给去掉了，如果大侠有什么其它解决方法希望不要保留呀
+" 主要用在c++
+" let OmniCpp_GlobalScopeSearch = 1
 
 
 " ----------------------------------------------
 " bufexplorer.zip
 " ----------------------------------------------
-"""" 快速轻松的在缓存中切换（相当于另一种多个文件间的切换方式）
+" 快速轻松的在缓存中切换（相当于另一种多个文件间的切换方式）
 " <Leader>be 在当前窗口显示缓存列表并打开选定文件
 " <Leader>bs 水平分割窗口显示缓存列表，并在缓存列表窗口中打开选定文件
 " <Leader>bv 垂直分割窗口显示缓存列表，并在缓存列表窗口中打开选定文件
-
 
 
 " ----------------------------------------------
@@ -155,25 +219,45 @@ filetype plugin indent on
 "close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 let NERDTreeDirArrows=0 			"let NERDTreeHighlightCursorline=1
-nmap <F2> :NERDTreeToggle<CR> 		" 常规模式下输入 F2 调用插件
+" 常规模式下输入 F2 调用插件
+nmap <F2> :NERDTreeToggle<CR> 		
 nmap <F3> :NERDTree .<CR>
 
 
 " ----------------------------------------------
 " wesleyche/SrcExpl
 " ----------------------------------------------
+" 增强源代码浏览，其功能就像Windows中的"Source Insight"
+" nmap <F7> :SrcExplToggle<CR>                "打开/闭浏览窗口
 
 " ----------------------------------------------
 " taglist.vim
 " ----------------------------------------------
+" 列出当前文件中的所有宏,全局变量, 函数名等
+" 常规模式下输入 tl 调用插件，如果有打开 Tagbar 窗口则先将其关闭
+nmap tl :TagbarClose<CR>:Tlist<CR>
+let Tlist_Show_One_File=1                   "只显示当前文件的tags
+" let Tlist_Enable_Fold_Column=0              "使taglist插件不显示左边的折叠行
+let Tlist_Exit_OnlyWindow=1                 "如果Taglist窗口是最后一个窗口则退出Vim
+let Tlist_File_Fold_Auto_Close=1            "自动折叠
+let Tlist_WinWidth=30                       "设置窗口宽度
+let Tlist_Use_Right_Window=1                "在右侧窗口中显示
+
 
 " ----------------------------------------------
 " majutsushi/tagbar
 " ----------------------------------------------
+" 列出当前文件中的所有宏,全局变量, 函数名等
+" 常规模式下输入 tb 调用插件，如果有打开 TagList 窗口则先将其关闭
+nmap tb :TlistClose<CR>:TagbarToggle<CR>
+let g:tagbar_width=30                       "设置窗口宽度
+" let g:tagbar_left=1                         "在左侧窗口中显示
 
 " ----------------------------------------------
 " ZoomWin
 " ----------------------------------------------
+" 用于分割窗口的最大化与还原
+" 常规模式下按快捷键 <c-w>o 在最大化与还原间切换
 
 " ----------------------------------------------
 " qw8880000/ccvext
@@ -189,6 +273,14 @@ nmap <F3> :NERDTree .<CR>
 " ----------------------------------------------
 " ctrlpvim/ctrlp.vim
 " ----------------------------------------------
+" 一个全路径模糊文件，缓冲区，最近最多使用，... 检索插件；详细帮助见 :h ctrlp
+" 常规模式下输入：Ctrl + p 调用插件
+nmap cpd :CtrlPDir<CR>  
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_working_path_mode = 'ra'
+"你可以使用'@cd path/'来改变CtrlP的工作目录为path/。使用'@cd %:h'来改变为当前文件的目录。
+" 如果你想CtrlP扫描隐藏文件和目录，设置该选项为1: 
+let g:ctrlp_show_hidden = 0
 
 " ----------------------------------------------
 " Lokaltog/vim-powerline
@@ -198,44 +290,79 @@ nmap <F3> :NERDTree .<CR>
 " ----------------------------------------------
 " Yggdroot/indentLine
 " ----------------------------------------------
+" 用于显示对齐线
+" 在终端上会有屏幕刷新的问题，这个问题能解决有更好了
+" 开启/关闭对齐线
+"nmap <leader>il :IndentLinesToggle<CR>
+"
+"" 设置Gvim的对齐线样式
+" let g:indentLine_char = "┊"
+" let g:indentLine_first_char = "┊"
+"
+"" 设置终端对齐线颜色，如果不喜欢可以将其注释掉采用默认颜色
+"let g:indentLine_color_term = 239
 
+" 设置 GUI 对齐线颜色，如果不喜欢可以将其注释掉采用默认颜色
+" let g:indentLine_color_gui = '#A4E57E'
 
 " ----------------------------------------------
 " scrooloose/syntastic
 " ----------------------------------------------
+" 用于保存文件时查检语法
 
 " ----------------------------------------------
 " hallettj/jslint.vim
 " ----------------------------------------------
+" javascript 语法检查
 
 " ----------------------------------------------
 " joestelmach/lint.vim
 " ----------------------------------------------
+"javascript 语法检查
 
 " ----------------------------------------------
 " mattn/emmet-vim
 " ----------------------------------------------
+" HTML/CSS代码快速编写神器，详细帮助见 :h emmet.txt
+" Enable just for html/css
+" let g:user_emmet_install_global = 0
+" autocmd FileType html set foldenable                                        "启用折叠
 
 
 " ----------------------------------------------
 " cSyntaxAfter
 " ----------------------------------------------
+" 高亮括号与运算符等
+" au! BufRead,BufNewFile,BufEnter *.{c,cpp,h,java,javascript} call CSyntaxAfter()
 
 " ----------------------------------------------
 " justinmk/vim-syntax-extra
 " ----------------------------------------------
+" C 语言颜色与高亮
 
 " ----------------------------------------------
 " octol/vim-cpp-enhanced-highlight
 " ----------------------------------------------
+" C++ 语言颜色与高亮
 
 " ----------------------------------------------
 " std_c.zip
 " ----------------------------------------------
+" 用于增强C语法高亮,但是不支持#if 0识别
+
+" 启用 // 注视风格
+" let c_cpp_comments = 0
 
 " ----------------------------------------------
 " qw8880000/cvim
 " ----------------------------------------------
+"快速插入C代码
+let g:C_MapLeader  = ';'
+
+" let g:C_FormatDate            = '%D'
+let g:C_FormatDate            = '%4Y/%m/%d'
+let g:C_FormatTime            = '%H:%M'
+let g:C_FormatYear            = 'year %Y'
 
 " ----------------------------------------------
 " cpp.vim
@@ -245,18 +372,56 @@ nmap <F3> :NERDTree .<CR>
 " ----------------------------------------------
 " TxtBrowser
 " ----------------------------------------------
+" 纯文本浏览器
+"1) 为文本文件生成标题标签: 用Vim打开纯文本文件, 执行":Tlist"命令即可生成纯文本文件的目录树
+"2) 语法高亮:   ":colorscheme  colorname"
+"3) 浏览功能
+"<Leader>s: 用搜索引擎(可定制, 默认为google)搜索光标下的单词或选中的文本.
+"<Leader>f: 用网络字典(可定制, 默认为google.cn)对光标下的单词或选中的文本查字典.
+"<Leader>g: 打开光标下或选中的URL.
+"<Leader>h: 高亮单词
+au BufRead,BufNewFile *.txt setlocal ft=txt
+"设置单词查找使用的词典
+let TxtBrowser_Dict_Url='http://fanyi.baidu.com/translate?aldtype=16047&query=text&keyfrom=baidu&smartresult=dict&lang=auto2zh#en/zh/text'
+"设置搜索引擎
+let Txtbrowser_Search_Engine='https://www.baidu.com/s?wd=text&rsv_spt=1&rsv_iqid=0xd7804a3f00048e72&issp=1&f=8&rsv_bp=0&rsv_idx=2&ie=utf-8&tn=baiduhome_pg&rsv_enter=1&rsv_sug3=5&rsv_sug1=1&rsv_sug2=0&inputT=1102&rsv_sug4=1465'
+
 
 " ----------------------------------------------
 " plasticboy/vim-markdown
 " ----------------------------------------------
+" gx: open the link under the cursor 
+autocmd BufNewFile,BufRead *.md set filetype=markdown
+let g:vim_markdown_folding_disabled=1       "折叠
+let g:vim_markdown_frontmatter=1
+" 打开文本目录
+nmap <Leader>to :Toc <CR>
+" 格式化表格
+nmap <Leader>tf :TableFormat <CR>
 
 " ----------------------------------------------
 " qw8880000/DoxygenToolkit
 " ----------------------------------------------
+" 快速注释插件
+" 插入许可
+nmap <leader>dl :DoxLic<CR>
+" 插入作者
+nmap <leader>da :DoxAuthor<CR>
+" 插入函数/类注释
+nmap <leader>dx :Dox<CR>
+let g:DoxygenToolkit_briefTag_pre="@Brief  " 
+let g:DoxygenToolkit_paramTag_pre="@Param " 
+let g:DoxygenToolkit_returnTag="@Returns   " 
+let g:DoxygenToolkit_blockHeader="--------------------------------------------------------------------------" 
+let g:DoxygenToolkit_blockFooter="----------------------------------------------------------------------------" 
+let g:DoxygenToolkit_authorName="wangjl" 
+let g:DoxygenToolkit_versionString="v1.0"
+
 
 " ----------------------------------------------
 " xolox/vim-notes
 " ----------------------------------------------
+"写日志用
 
 " ----------------------------------------------
 " xolox/vim-misc
@@ -265,56 +430,100 @@ nmap <F3> :NERDTree .<CR>
 " ----------------------------------------------
 " vimwiki/vimwiki
 " ----------------------------------------------
+"方便的写文档，类似markdown的语法，后面可以转成wiki文档
 
-"
 " ----------------------------------------------
 " sketch.vim
 " ----------------------------------------------
+" 鼠标画草图插件
+nmap <F4> :call ToggleSketch()<CR>
 
 " ----------------------------------------------
 " DrawIt
 " ----------------------------------------------
-
+"方向键画图
 
 " ----------------------------------------------
 " EasyGrep
 " ----------------------------------------------
+"<Leader>vv  - Grep for the word under the cursor, match all occurences,like 'g*'.  See ":help gstar".
+"<Leader>vV  - Grep for the word under the cursor, match whole word, like'*'.  See ":help star".
+"<Leader>va  - Like vv, but add to existing list.
+"<Leader>vA  - Like vV, but add to existing list.
+"<Leader>vr  - Perform a global search on the word under the cursor and prompt for a pattern with which to replace it.
+"<Leader>vR  - Like vr, but match whole word.
+"<Leader>vo  - Open an options explorer to select the files to search in and set grep options.
 
 " ----------------------------------------------
 " mileszs/ack.vim
 " ----------------------------------------------
+" 代码搜索插件，号称比grep还快
+" usage:
+"   :Ack [options] {pattern} [{directories}]
+nmap <Leader>a :Ack <C-R><C-W>
+nmap <Leader>aa :AckAdd <C-R><C-W>
+nmap <Leader>afs :AckFromSearch <CR>
+nmap <Leader>la :LAck <C-R><C-W>
+nmap <Leader>laa :LAckAdd <C-R><C-W>
 
 " ----------------------------------------------
 " rking/ag.vim
 " ----------------------------------------------
+" 代码搜索
 
 " ----------------------------------------------
 " dyng/ctrlsf.vim
 " ----------------------------------------------
+" 基于ack.vim/ag.vim,和ack或者ag不同的是，不再是显示一行，而是显示整个上下文
+"
+let g:ctrlsf_populate_qflist = 1
+let g:ctrlsf_position = 'left'
+let g:ctrlsf_winsize = '40%'
+
+nmap     <C-F>f <Plug>CtrlSFPrompt
+vmap     <C-F>f <Plug>CtrlSFVwordPath
+vmap     <C-F>F <Plug>CtrlSFVwordExec
+nmap     <C-F>w <Plug>CtrlSFCwordPath
+nmap     <C-F>p <Plug>CtrlSFPwordPath
+nnoremap <C-F>o :CtrlSFOpen<CR>
+nnoremap <C-F>t :CtrlSFToggle<CR>
+inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
+
 
 " ----------------------------------------------
 " jiangmiao/auto-pairs
 " ----------------------------------------------
+"  括号与引号自动补全
 
 " ----------------------------------------------
 " tpope/vim-surround
 " ----------------------------------------------
+" 快速给单词/句子两边增加符号（包括html标签），缺点是不能用"."来重复命令
+" 不过 repeat 插件可以解决这个问题，详细帮助见 :h surround.txt
 
 " ----------------------------------------------
 " Mark--Karkat
 " ----------------------------------------------
+" 给不同的单词高亮，表明不同的变量时很有用，详细帮助见 :h mark.txt
+"<Leader>m  Mark the word under the curso
+"<Leader>n  Clear the mark under the curso
+"<Leader>r  Manually input a regular expression to mar
+":MarkClear		Clear all marks
 
 " ----------------------------------------------
 " repeat.vim
 " ----------------------------------------------
+" 主要用"."命令来重复上次插件使用的命令
 
 " ----------------------------------------------
 " jlanzarotta/colorSchemeExplorer
 " ----------------------------------------------
+" 用来预览配色主题
 
 " ----------------------------------------------
 " maksimr/vim-jsbeautify
 " ----------------------------------------------
+"javascript 代码格式化
 
 " ----------------------------------------------
 " easymotion/vim-easymotion
@@ -338,8 +547,15 @@ nmap <F3> :NERDTree .<CR>
 " ----------------------------------------------
 " scrooloose/nerdcommenter
 " ----------------------------------------------
-
-
+" 我主要用于C/C++代码注释(其它的也行)
+" 以下为插件默认快捷键，其中的说明是以C/C++为例的，其它语言类似
+" <Leader>ci 以每行一个 /* */ 注释选中行(选中区域所在行)，再输入则取消注释
+" <Leader>cm 以一个 /* */ 注释选中行(选中区域所在行)，再输入则称重复注释
+" <Leader>cc 注释选中行或区域，再输入则称重复注释
+" <Leader>cu 取消选中区域(行)的注释，选中区域(行)内至少有一个 /* */
+" <Leader>ca 在/*...*/与//这两种注释方式中切换（其它语言可能不一样了）
+" <Leader>cA 行尾注释
+let NERDSpaceDelims = 1                     "在左注释符之后，右注释符之前留有空格
 
 
 " -----------------------------------------------------------------------------
