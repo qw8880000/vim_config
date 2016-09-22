@@ -96,6 +96,7 @@ Bundle 'terryma/vim-multiple-cursors'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tomasr/molokai' 
 Bundle 'romainl/vim-qf'
+Bundle 'spolu/dwm.vim'
 
 " ========================
 " html / css /javascript
@@ -312,6 +313,16 @@ let Tlist_File_Fold_Auto_Close=1            "自动折叠
 let Tlist_WinWidth=50                       "设置窗口宽度
 let Tlist_Use_Right_Window=1                "在右侧窗口中显示
 
+" ----------------------------------------------
+" dwm.vim
+" ----------------------------------------------
+" <C-N> Creates a new window and place it in the master pane [M] & stacks all previous windows in the stacked pane [S]
+" <C-C> Close the current window if no unsaved changes
+" <C-J> Jumps to next window (clockwise)
+" <C-K> Jumps to previous window (anti-clockwise)
+" <C-@> Focus the current window, that is, place it in the master pane [M] & stacks all other windows in the stacked pane [S]
+" <c-,> Rotate windows counter-clockwise
+" <c-.> Rotate windows clockwise
 
 " ----------------------------------------------
 " majutsushi/tagbar
