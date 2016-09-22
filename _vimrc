@@ -48,7 +48,7 @@ Bundle 'gmarik/vundle'
 " ¶ÔÆë²å¼ş
 " ========================
 Bundle 'junegunn/vim-easy-align'
-Bundle 'Align'
+" Bundle 'Align'
 Bundle 'godlygeek/tabular'
 
 " ========================
@@ -136,6 +136,18 @@ filetype plugin indent on
 " vim-easy-align
 " ----------------------------------------------
 " ¿ìËÙ¶ÔÆë²å¼ş
+""" command mode
+" :EasyAlign[!] [N-th] DELIMITER_KEY [OPTIONS]
+" :EasyAlign[!] [N-th] /REGEXP/ [OPTIONS]
+""" interactive mode
+" vipga
+" gaip
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+" <enter> ÓÃÀ´Ñ­»·ÇĞ»»×ó¡¢ÓÒ¡¢ÖĞ¶ÔÆë·½Ê½
+" Ê¹ÓÃ* ºÅµÄ»°£¬×ó¶ÔÆëÒ»´ÎÓÒ¶ÔÆëÒ»´Î£¬ÒÀ´ÎÀàÍÆ
 
 " ----------------------------------------------
 " Align
@@ -590,52 +602,50 @@ let NERDSpaceDelims = 1                     "ÔÚ×ó×¢ÊÍ·ûÖ®ºó£¬ÓÒ×¢ÊÍ·ûÖ®Ç°ÁôÓĞ¿Õ¸
 " -----------------------------------------------------------------------------
 "  < ±àÂëÅäÖÃ >
 " -----------------------------------------------------------------------------
-set encoding=utf-8                                    "ÉèÖÃgvimÄÚ²¿±àÂë£¬Ä¬ÈÏ²»¸ü¸Ä
-" set fileencoding=utf-8                                "ÉèÖÃµ±Ç°ÎÄ¼ş±àÂë£¬¿ÉÒÔ¸ü¸Ä£¬Èç£ºgbk£¨Í¬cp936£©
+set encoding=utf-8                                " ÉèÖÃgvimÄÚ²¿±àÂë£¬Ä¬ÈÏ²»¸ü¸Ä
+" set fileencoding=utf-8                          " ÉèÖÃµ±Ç°ÎÄ¼ş±àÂë£¬¿ÉÒÔ¸ü¸Ä£¬Èç£ºgbk£¨Í¬cp936£©
 set fileencoding=cp936
-set fileencodings=ucs-bom,utf-8,gbk,cp936,latin-1     "ÉèÖÃÖ§³Ö´ò¿ªµÄÎÄ¼şµÄ±àÂë
-" ÎÄ¼ş¸ñÊ½£¬Ä¬ÈÏ ffs=dos,unix
-set fileformat=unix                                   "ÉèÖÃĞÂ£¨µ±Ç°£©ÎÄ¼şµÄ<EOL>¸ñÊ½£¬¿ÉÒÔ¸ü¸Ä£¬Èç£ºdos£¨windowsÏµÍ³³£ÓÃ£©
-set fileformats=unix,dos,mac                          "¸ø³öÎÄ¼şµÄ<EOL>¸ñÊ½ÀàĞÍ
+set fileencodings=ucs-bom,utf-8,gbk,cp936,latin-1 " ÉèÖÃÖ§³Ö´ò¿ªµÄÎÄ¼şµÄ±àÂë
+                                                  " ÎÄ¼ş¸ñÊ½£¬Ä¬ÈÏ ffs=dos,unix
+set fileformat=unix                               " ÉèÖÃĞÂ£¨µ±Ç°£©ÎÄ¼şµÄ<EOL>¸ñÊ½£¬¿ÉÒÔ¸ü¸Ä£¬Èç£ºdos£¨windowsÏµÍ³³£ÓÃ£©
+set fileformats=unix,dos,mac                      " ¸ø³öÎÄ¼şµÄ<EOL>¸ñÊ½ÀàĞÍ
 if version >= 603
-	set helplang=cn             " Ê¹ÓÃÖĞÎÄ°ïÖú
+	set helplang=cn                               " Ê¹ÓÃÖĞÎÄ°ïÖú
 endif
 
 " -----------------------------------------------------------------------------
 "  < ÆäËûÅäÖÃ >
 " -----------------------------------------------------------------------------
-filetype on                                           "ÆôÓÃÎÄ¼şÀàĞÍÕì²â
-filetype plugin on                                    "Õë¶Ô²»Í¬µÄÎÄ¼şÀàĞÍ¼ÓÔØ¶ÔÓ¦µÄ²å¼ş
-filetype plugin indent on                             "ÆôÓÃËõ½ø
+filetype on                            " ÆôÓÃÎÄ¼şÀàĞÍÕì²â
+filetype plugin on                     " Õë¶Ô²»Í¬µÄÎÄ¼şÀàĞÍ¼ÓÔØ¶ÔÓ¦µÄ²å¼ş
+filetype plugin indent on              " ÆôÓÃËõ½ø
 
 if has("syntax")
-	syntax on 											" enables syntax highlighting by default
+	syntax on                          " enables syntax highlighting by default
 endif
-set t_Co=256                   							" ÔÚÖÕ¶ËÆôÓÃ256É«
-colorscheme molokai										" ÉèÖÃÅäÉ«·½°¸
-set guifont=Courier_new:h12:b:cDEFAULT					" ÉèÖÃ×ÖÌå
+set t_Co=256                           " ÔÚÖÕ¶ËÆôÓÃ256É«
+colorscheme molokai                    " ÉèÖÃÅäÉ«·½°¸
+set guifont=Courier_new:h12:b:cDEFAULT " ÉèÖÃ×ÖÌå
 
 
-set hlsearch                                            "¸ßÁÁËÑË÷
-set incsearch       									"ÔÚÊäÈëÒªËÑË÷µÄÎÄ×ÖÊ±£¬ÊµÊ±Æ¥Åä
-set ignorecase                                        "ËÑË÷Ä£Ê½ÀïºöÂÔ´óĞ¡Ğ´
-set smartcase                                         "Èç¹ûËÑË÷Ä£Ê½°üº¬´óĞ´×Ö·û£¬²»Ê¹ÓÃ 'ignorecase' Ñ¡Ïî
-set number                                            "ÏÔÊ¾ĞĞºÅ
-set laststatus=2                                      "ÆôÓÃ×´Ì¬À¸ĞÅÏ¢
-set cursorline                                        "Í»³öÏÔÊ¾µ±Ç°ĞĞ
-set cmdheight=2                                       "ÉèÖÃÃüÁîĞĞµÄ¸ß¶ÈÎª2£¬Ä¬ÈÏÎª1
-set nowrap                                            "ÉèÖÃ²»×Ô¶¯»»ĞĞ
-"set shortmess=atI                                    "È¥µô»¶Ó­½çÃæ
-set tabstop=4                                           "ÉèÖÃTab¼üµÄ¿í¶È£¬¿ÉÒÔ¸ü¸Ä£¬Èç£º¿í¶ÈÎª2
-"set mouse-=a                    					  "a ÔÚÈÎºÎÄ£Ê½ÏÂÆôÓÃÊó±ê -a:²»ÆôÓÃÊó±ê
-set backspace=2                 			          " backspace ¿ÉÓÃ
-set smarttab                                          "Ö¸¶¨°´Ò»´Îbackspace¾ÍÉ¾³ıshiftwidth¿í¶È
-set shiftwidth=4                                      "»»ĞĞÊ±×Ô¶¯Ëõ½ø¿í¶È£¬¿É¸ü¸Ä£¨¿í¶ÈÍ¬tabstop£©
-set expandtab                                         "½«Tab¼ü×ª»»Îª¿Õ¸ñ
-set smartindent                                       "ÆôÓÃÖÇÄÜ¶ÔÆë·½Ê½
-
-
-set writebackup                             "±£´æÎÄ¼şÇ°½¨Á¢±¸·İ£¬±£´æ³É¹¦ºóÉ¾³ı¸Ã±¸·İ
+set hlsearch                           " ¸ßÁÁËÑË÷
+set incsearch                          " ÔÚÊäÈëÒªËÑË÷µÄÎÄ×ÖÊ±£¬ÊµÊ±Æ¥Åä
+set ignorecase                         " ËÑË÷Ä£Ê½ÀïºöÂÔ´óĞ¡Ğ´
+set smartcase                          " Èç¹ûËÑË÷Ä£Ê½°üº¬´óĞ´×Ö·û£¬²»Ê¹ÓÃ 'ignorecase' Ñ¡Ïî
+set number                             " ÏÔÊ¾ĞĞºÅ
+set laststatus=2                       " ÆôÓÃ×´Ì¬À¸ĞÅÏ¢
+set cursorline                         " Í»³öÏÔÊ¾µ±Ç°ĞĞ
+set cmdheight=2                        " ÉèÖÃÃüÁîĞĞµÄ¸ß¶ÈÎª2£¬Ä¬ÈÏÎª1
+set nowrap                             " ÉèÖÃ²»×Ô¶¯»»ĞĞ
+"set shortmess=atI                     " È¥µô»¶Ó­½çÃæ
+set tabstop=4                          " ÉèÖÃTab¼üµÄ¿í¶È£¬¿ÉÒÔ¸ü¸Ä£¬Èç£º¿í¶ÈÎª2
+"set mouse-=a                          " a ÔÚÈÎºÎÄ£Ê½ÏÂÆôÓÃÊó±ê -a:²»ÆôÓÃÊó±ê
+set backspace=2                        " backspace ¿ÉÓÃ
+set smarttab                           " Ö¸¶¨°´Ò»´Îbackspace¾ÍÉ¾³ıshiftwidth¿í¶È
+set shiftwidth=4                       " »»ĞĞÊ±×Ô¶¯Ëõ½ø¿í¶È£¬¿É¸ü¸Ä£¨¿í¶ÈÍ¬tabstop£©
+set expandtab                          " ½«Tab¼ü×ª»»Îª¿Õ¸ñ
+set smartindent                        " ÆôÓÃÖÇÄÜ¶ÔÆë·½Ê½
+set writebackup                        " ±£´æÎÄ¼şÇ°½¨Á¢±¸·İ£¬±£´æ³É¹¦ºóÉ¾³ı¸Ã±¸·İ
 
 "au BufWinEnter * let w:m2=matchadd('Underlined', '\%>' . 80 . 'v.\+', -1)" ÆôÓÃÃ¿ĞĞ³¬¹ı80ÁĞµÄ×Ö·ûÌáÊ¾£¨×ÖÌå±äÀ¶²¢¼ÓÏÂ»®Ïß£©
 if has("autocmd")
