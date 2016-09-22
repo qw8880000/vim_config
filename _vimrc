@@ -76,10 +76,11 @@ Bundle 'Lokaltog/vim-powerline'
 "Bundle 'Yggdroot/indentLine'
 Bundle 'scrooloose/syntastic'
 
-Bundle 'EasyGrep'
+" Bundle 'EasyGrep'
+Bundle 'mhinz/vim-grepper'
 if g:islinux
     Bundle 'mileszs/ack.vim'
-    " Bundle 'rking/ag.vim'
+    Bundle 'rking/ag.vim'
     Bundle 'dyng/ctrlsf.vim'
 endif
 "Bundle 'jiangmiao/auto-pairs'
@@ -137,6 +138,8 @@ filetype plugin indent on
 " ----------------------------------------------
 " tpope/vim-fugitive
 " ----------------------------------------------
+set laststatus=2 " Always display the status line
+set statusline+=%{fugitive#statusline()} "  Git Hotness
 
 " ----------------------------------------------
 " vim-easy-align
