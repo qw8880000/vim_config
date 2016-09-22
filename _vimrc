@@ -144,6 +144,7 @@ filetype plugin indent on
 " :h fugitive.txt ²é¿´°ïÖú
 set laststatus=2 " Always display the status line
 set statusline+=%{fugitive#statusline()} "  Git Hotness
+nmap <Leader>gt :Gstatus<CR>
 
 " ----------------------------------------------
 " vim-easy-align
