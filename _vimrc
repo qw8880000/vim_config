@@ -540,6 +540,16 @@ inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
 " ----------------------------------------------
 " 快速给单词/句子两边增加符号（包括html标签），缺点是不能用"."来重复命令
 " 不过 repeat 插件可以解决这个问题，详细帮助见 :h surround.txt
+" cs    " change surrondings
+" ds    " delete surrondings
+"  Old text                  Command     New text ~
+"  "Hello *world!"           ds"         Hello world!
+"  [123+4*56]/2              cs])        (123+456)/2
+"  "Look ma, I'm *HTML!"     cs"<q>      <q>Look ma, I'm HTML!</q>
+"  if *x>3 {                 ysW(        if ( x>3 ) {
+"  my $str = *whee!;         vllllS'     my $str = 'whee!';
+
+
 
 " ----------------------------------------------
 " Mark--Karkat
