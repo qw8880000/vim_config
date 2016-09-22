@@ -544,6 +544,8 @@ inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
 " 不过 repeat 插件可以解决这个问题，详细帮助见 :h surround.txt
 " cs    " change surrondings
 " ds    " delete surrondings
+" ysiw  " add surrondings between the word
+
 "  Old text                  Command     New text ~
 "  "Hello *world!"           ds"         Hello world!
 "  [123+4*56]/2              cs])        (123+456)/2
@@ -581,6 +583,8 @@ inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
 " easymotion/vim-easymotion
 " ----------------------------------------------
 " 快速移动插件
+" <Leader><Leader>w     " move to word forward
+" <Leader><Leader>b     " move to word backward
 
 " ----------------------------------------------
 " terryma/vim-multiple-cursors
@@ -680,4 +684,49 @@ noremap <c-l> <c-w>l
 " 秒内，而<Leader>cs是先按"\"键再按"c"又再按"s"键；如要修改"<leader>"键，可以把
 let mapleader = ","
 
+" -----------------------------------------------------------------------------
+"  < cscope 工具配置 >
+" -----------------------------------------------------------------------------
+" 用Cscope自己的话说 - "你可以把它当做是超过频的ctags"
+if has("cscope")
+    "设定可以使用 quickfix 窗口来查看 cscope 结果
+    set cscopequickfix=s-,c-,d-,i-,t-,e-
+    "使支持用 Ctrl+]  和 Ctrl+t 快捷键在代码间跳转
+    set cscopetag
+    "如果你想反向搜索顺序设置为1
+    set csto=0
+    "在当前目录中添加任何数据库
+    if filereadable("cscope.out")
+        cs add cscope.out
+    "否则添加数据库环境中所指出的
+    elseif $CSCOPE_DB != ""
+        cs add $CSCOPE_DB
+    endif
+    set cscopeverbose
+    "快捷键设置
+    " 查找符号
+    nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+    " 查找定义
+    nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+    " 查找调用这个函数的函数（们）
+    nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+    " 查找这个字符串
+    nmap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+    " 查找这个egrep 匹配模式
+    nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+    " 查找这个文件 
+    nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+    " 查找#include 这个文件的文件 （们）
+    nmap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+    " 查找被这个函数调用的函数（们）
+    nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+
+    " 查看帮助 :cs help
+endif
+
+" -----------------------------------------------------------------------------
+"  < quickfix使用 >
+" -----------------------------------------------------------------------------
+" :ccl      " close quickfix window
+" :cw       " open quickfix window
 
