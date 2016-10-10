@@ -144,7 +144,8 @@ filetype plugin indent on
 " :h fugitive.txt 查看帮助
 set laststatus=2 " Always display the status line
 set statusline+=%{fugitive#statusline()} "  Git Hotness
-nmap <Leader>gt :Gstatus<CR>
+
+nnoremap gitt :Gstatus<CR>
 
 " ----------------------------------------------
 " vim-easy-align
@@ -294,7 +295,7 @@ let Tlist_Show_One_File=1                   "只显示当前文件的tags
 " let Tlist_Enable_Fold_Column=0              "使taglist插件不显示左边的折叠行
 let Tlist_Exit_OnlyWindow=1                 "如果Taglist窗口是最后一个窗口则退出Vim
 let Tlist_File_Fold_Auto_Close=1            "自动折叠
-let Tlist_WinWidth=30                       "设置窗口宽度
+let Tlist_WinWidth=50                       "设置窗口宽度
 let Tlist_Use_Right_Window=1                "在右侧窗口中显示
 
 
@@ -303,8 +304,8 @@ let Tlist_Use_Right_Window=1                "在右侧窗口中显示
 " ----------------------------------------------
 " 列出当前文件中的所有宏,全局变量, 函数名等
 " 常规模式下输入 tb 调用插件，如果有打开 TagList 窗口则先将其关闭
-nmap tb :TlistClose<CR>:TagbarToggle<CR>
-let g:tagbar_width=30                       "设置窗口宽度
+nmap <F4> :TlistClose<CR>:TagbarToggle<CR>
+let g:tagbar_width=45                       "设置窗口宽度
 " let g:tagbar_left=1                         "在左侧窗口中显示
 
 " ----------------------------------------------
