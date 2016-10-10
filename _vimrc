@@ -271,24 +271,27 @@ let g:neocomplcache_enable_at_startup = 1     "vim 启动时启用插件
 " scrooloose/nerdtree
 " ----------------------------------------------
 " 有目录村结构的文件浏览插件
+" :h NERD_tree.txt
 "close vim if the only window left open is a NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-let NERDTreeDirArrows=0 			"let NERDTreeHighlightCursorline=1
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" let NERDTreeHighlightCursorline=1
 " 常规模式下输入 F2 调用插件
 nmap <F2> :NERDTreeToggle<CR> 		
-nmap <F3> :NERDTree .<CR>
+nmap <F3> :NERDTreeCWD<CR>
 
 
 " ----------------------------------------------
 " wesleyche/SrcExpl
 " ----------------------------------------------
 " 增强源代码浏览，其功能就像Windows中的"Source Insight"
+" :h srcexpl.txt
 " nmap <F7> :SrcExplToggle<CR>                "打开/闭浏览窗口
 
 " ----------------------------------------------
 " taglist.vim
 " ----------------------------------------------
 " 列出当前文件中的所有宏,全局变量, 函数名等
+" :h taglist.txt
 " 常规模式下输入 tl 调用插件，如果有打开 Tagbar 窗口则先将其关闭
 nmap tl :TagbarClose<CR>:Tlist<CR>
 let Tlist_Show_One_File=1                   "只显示当前文件的tags
@@ -303,6 +306,7 @@ let Tlist_Use_Right_Window=1                "在右侧窗口中显示
 " majutsushi/tagbar
 " ----------------------------------------------
 " 列出当前文件中的所有宏,全局变量, 函数名等
+" :h tagbar.txt
 " 常规模式下输入 tb 调用插件，如果有打开 TagList 窗口则先将其关闭
 nmap <F4> :TlistClose<CR>:TagbarToggle<CR>
 let g:tagbar_width=45                       "设置窗口宽度
