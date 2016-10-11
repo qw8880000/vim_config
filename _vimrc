@@ -95,6 +95,7 @@ Bundle 'easymotion/vim-easymotion'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'tpope/vim-fugitive'
 " Bundle 'tomasr/molokai'             " ÅäÉ«²å¼þ
+Bundle 'romainl/vim-qf'
 
 " ========================
 " html / css /javascript
@@ -387,6 +388,13 @@ let g:ctrlp_show_hidden = 0
 " let g:user_emmet_install_global = 0
 " autocmd FileType html set foldenable                                        "ÆôÓÃÕÛµþ
 
+" ----------------------------------------------
+" romainl/vim-qf
+" ----------------------------------------------
+"  short for vim-quickfix¡ªis a small collection of settings, commands and
+"  mappings put together to make working with the location/quickfix
+"  list/window smoother
+"  :h qf.txt
 
 " ----------------------------------------------
 " cSyntaxAfter
