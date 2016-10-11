@@ -526,10 +526,15 @@ xmap gs  <plug>(GrepperOperator)
 " gs, gsW, gsiw, gsi
 
 let g:grepper           = {}
-let g:grepper.tools     = ['git', 'ag', 'grep']
+let g:grepper.tools     = ['grep', 'ag', 'git']
 
-nnoremap <leader>agc :Grepper -tool ag -grepprg ag --vimgrep $* $.<cr>
-nnoremap <leader>agw :Grepper -tool ag -cword -grepprg ag --vimgrep $* $.<cr>
+" 使用ag在当前文件搜索
+nnoremap agc :Grepper -tool ag -grepprg ag --vimgrep $* $.<cr>
+" 使用ag在当前文件搜索光标下的单词
+nnoremap agw :Grepper -tool ag -cword -grepprg ag --vimgrep $* $.<cr>
+
+" 使用grep在当前文件搜索光标下的单词
+nnoremap gw :Grepper -tool grep -cword -grepprg grep -Rn $* $.<cr>
 
 " ----------------------------------------------
 " mileszs/ack.vim
@@ -546,6 +551,7 @@ nnoremap <leader>agw :Grepper -tool ag -cword -grepprg ag --vimgrep $* $.<cr>
 " ----------------------------------------------
 " rking/ag.vim
 " ----------------------------------------------
+"  sudo apt-get install silversearcher-ag
 " 代码搜索
 
 " ----------------------------------------------
