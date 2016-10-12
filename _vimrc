@@ -94,7 +94,7 @@ Bundle 'repeat.vim'
 Bundle 'easymotion/vim-easymotion'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'tpope/vim-fugitive'
-" Bundle 'tomasr/molokai'             " ÅäÉ«²å¼þ
+Bundle 'tomasr/molokai' 
 Bundle 'romainl/vim-qf'
 
 " ========================
