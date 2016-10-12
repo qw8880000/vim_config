@@ -1,3 +1,7 @@
+# screenshot
+
+![screenshot for molokai](/screenshots/screenshot.jpg)
+
 # The vim configuration
 
 This vimrc is suitable for:
