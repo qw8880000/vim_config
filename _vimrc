@@ -150,7 +150,7 @@ let mapleader = ","
 set laststatus=2 " Always display the status line
 set statusline+=%{fugitive#statusline()} "  Git Hotness
 
-nnoremap gitt :Gstatus<CR>
+nnoremap <Leader>gt :Gstatus<CR>
 
 " ----------------------------------------------
 " vim-easy-align
