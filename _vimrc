@@ -137,6 +137,10 @@ Bundle 'qw8880000/vim_ascii_art'
 " ensure ftdetect et al work by including this after the Vundle stuff
 filetype plugin indent on
 
+" 注：上面配置中的"<Leader>"在本软件中设置为"\"键（引号里的反斜杠），如<Leader>t
+" 指在常规模式下按"\"键加"t"键，这里不是同时按，而是先按"\"键后按"t"键，间隔在一
+" 秒内，而<Leader>cs是先按"\"键再按"c"又再按"s"键；如要修改"<leader>"键，可以把
+let mapleader = ","
 
 " ----------------------------------------------
 " tpope/vim-fugitive
@@ -471,11 +475,17 @@ nmap <Leader>tf :TableFormat <CR>
 " ----------------------------------------------
 " 快速注释插件
 " 插入许可
-nmap <leader>dl :DoxLic<CR>
+
+nnoremap <Leader>dl :DoxLic<CR>
+
 " 插入作者
-nmap <leader>da :DoxAuthor<CR>
+
+nnoremap <Leader>da :DoxAuthor<CR>
+
 " 插入函数/类注释
-nmap <leader>dx :Dox<CR>
+
+nnoremap <Leader>dx :Dox<CR>
+
 let g:DoxygenToolkit_briefTag_pre="@Brief  " 
 let g:DoxygenToolkit_paramTag_pre="@Param " 
 let g:DoxygenToolkit_returnTag="@Returns   " 
@@ -731,10 +741,6 @@ noremap <c-j> <c-w>j
 noremap <c-h> <c-w>h
 noremap <c-l> <c-w>l
 
-" 注：上面配置中的"<Leader>"在本软件中设置为"\"键（引号里的反斜杠），如<Leader>t
-" 指在常规模式下按"\"键加"t"键，这里不是同时按，而是先按"\"键后按"t"键，间隔在一
-" 秒内，而<Leader>cs是先按"\"键再按"c"又再按"s"键；如要修改"<leader>"键，可以把
-let mapleader = ","
 
 " -----------------------------------------------------------------------------
 "  < cscope 工具配置 >
