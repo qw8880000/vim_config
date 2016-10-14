@@ -280,10 +280,16 @@ let g:neocomplcache_enable_at_startup = 1     "vim 启动时启用插件
 "close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " let NERDTreeHighlightCursorline=1
+" Closes the tree window after opening a file.
+let NERDTreeQuitOnOpen=1
+" display the bookmarks table on startup
+let NERDTreeShowBookmarks=1
+" display line numbers in the tree window.
+" let NERDTreeShowLineNumbers=1
 " 常规模式下输入 F2 调用插件
 nmap <F2> :NERDTreeToggle<CR> 		
 nmap <F3> :NERDTreeCWD<CR>
-
+nmap <Leader>nf :NERDTreeFind<CR>
 
 " ----------------------------------------------
 " wesleyche/SrcExpl
