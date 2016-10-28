@@ -282,7 +282,7 @@ let g:neocomplcache_enable_at_startup = 1     "vim 启动时启用插件
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " let NERDTreeHighlightCursorline=1
 " Closes the tree window after opening a file.
-let NERDTreeQuitOnOpen=1
+" let NERDTreeQuitOnOpen=1
 " display the bookmarks table on startup
 let NERDTreeShowBookmarks=1
 " display line numbers in the tree window.
