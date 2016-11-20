@@ -508,8 +508,9 @@ let g:DoxygenToolkit_paramTag_pre="@Param "
 let g:DoxygenToolkit_returnTag="@Returns   " 
 let g:DoxygenToolkit_blockHeader="--------------------------------------------------------------------------" 
 let g:DoxygenToolkit_blockFooter="----------------------------------------------------------------------------" 
-let g:DoxygenToolkit_authorName="wangjl" 
+let g:DoxygenToolkit_authorName="WangJL <qw8880000@126.com>" 
 let g:DoxygenToolkit_versionString="v1.0"
+
 
 
 " ----------------------------------------------
