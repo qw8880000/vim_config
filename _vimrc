@@ -105,7 +105,12 @@ Bundle 'mattn/emmet-vim'
 " Bundle 'hallettj/jslint.vim'
 " Bundle 'joestelmach/lint.vim'
 Bundle 'maksimr/vim-jsbeautify'
+
+" for wechat app develop
 Bundle 'chemzqm/wxapp.vim'
+Bundle 'Shougo/unite.vim'
+Bundle 'ternjs/tern_for_vim'
+Bundle 'othree/xml.vim'
 
 " ========================
 " c / c++
