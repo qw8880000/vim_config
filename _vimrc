@@ -99,12 +99,13 @@ Bundle 'romainl/vim-qf'
 " Bundle 'spolu/dwm.vim'
 
 " ========================
-" html / css /javascript
+" web develop
 " ========================
 Bundle 'mattn/emmet-vim'
 " Bundle 'hallettj/jslint.vim'
 " Bundle 'joestelmach/lint.vim'
 Bundle 'maksimr/vim-jsbeautify'
+Bundle 'chemzqm/wxapp.vim'
 
 " ========================
 " c / c++
