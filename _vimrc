@@ -823,4 +823,9 @@ endif
 " -----------------------------------------------------------------------------
 " Delete DOS returns ^M
 nmap <leader>dm :%s/\r//g<CR>
+" copy the word under the cursor to the register n
+nmap <leader><leader>y "nyaw
+" change the word under cursor by register n
+nmap <leader><leader>p daw"nP
+
 
