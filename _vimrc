@@ -99,12 +99,18 @@ Bundle 'romainl/vim-qf'
 " Bundle 'spolu/dwm.vim'
 
 " ========================
-" html / css /javascript
+" web develop
 " ========================
 Bundle 'mattn/emmet-vim'
 " Bundle 'hallettj/jslint.vim'
 " Bundle 'joestelmach/lint.vim'
 Bundle 'maksimr/vim-jsbeautify'
+
+" for wechat app develop
+Bundle 'chemzqm/wxapp.vim'
+Bundle 'Shougo/unite.vim'
+Bundle 'ternjs/tern_for_vim'
+Bundle 'othree/xml.vim'
 
 " ========================
 " c / c++
@@ -508,8 +514,9 @@ let g:DoxygenToolkit_paramTag_pre="@Param "
 let g:DoxygenToolkit_returnTag="@Returns   " 
 let g:DoxygenToolkit_blockHeader="--------------------------------------------------------------------------" 
 let g:DoxygenToolkit_blockFooter="----------------------------------------------------------------------------" 
-let g:DoxygenToolkit_authorName="wangjl" 
+let g:DoxygenToolkit_authorName="WangJL <qw8880000@126.com>" 
 let g:DoxygenToolkit_versionString="v1.0"
+
 
 
 " ----------------------------------------------
