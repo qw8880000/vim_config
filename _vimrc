@@ -836,3 +836,5 @@ nmap <leader>yt "nviwt
 " change the word under cursor by register n
 nmap <leader>pw viw"np
 
+" open vim help 
+nmap <leader>wh :help <C-R><C-W><CR>
