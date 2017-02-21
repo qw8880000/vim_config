@@ -132,6 +132,7 @@ Bundle 'plasticboy/vim-markdown'
 " Bundle 'xolox/vim-notes'
 " Bundle 'xolox/vim-misc'
 " Bundle 'vimwiki/vimwiki'
+Bundle 'suan/vim-instant-markdown'
 "
 " ========================
 " draw ascii map
@@ -492,6 +493,11 @@ let g:vim_markdown_frontmatter=1
 nmap <Leader>to :Toc <CR>
 " 格式化表格
 nmap <Leader>tf :TableFormat <CR>
+
+" ----------------------------------------------
+" suan/vim-instant-markdown
+" ----------------------------------------------
+let g:instant_markdown_slow = 1
 
 " ----------------------------------------------
 " qw8880000/DoxygenToolkit
