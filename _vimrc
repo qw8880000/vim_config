@@ -71,7 +71,7 @@ Bundle 'wesleyche/SrcExpl'
 Bundle 'taglist.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'ZoomWin'
-Bundle 'qw8880000/ccvext'
+Bundle 'qw8880000/ccvext.vim'
 Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'Lokaltog/vim-powerline'
 "Bundle 'Yggdroot/indentLine'
@@ -115,12 +115,12 @@ Bundle 'othree/xml.vim'
 " ========================
 " c / c++
 " ========================
-Bundle 'qw8880000/DoxygenToolkit'
+Bundle 'qw8880000/DoxygenToolkit.vim'
 " Bundle 'cSyntaxAfter'
 Bundle 'justinmk/vim-syntax-extra'
 " Bundle 'octol/vim-cpp-enhanced-highlight'
 " Bundle 'std_c.zip'
-Bundle 'qw8880000/cvim'
+Bundle 'qw8880000/c.vim'
 Bundle 'cpp.vim'
 Bundle 'scrooloose/nerdcommenter'
 
