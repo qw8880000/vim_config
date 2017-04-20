@@ -165,9 +165,9 @@ nnoremap <Leader>gt :Gstatus<CR>
 " vipga
 " gaip
 " Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
+xnoremap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
+nnoremap ga <Plug>(EasyAlign)
 " <enter> 用来循环切换左、右、中对齐方式
 " 使用* 号的话，左对齐一次右对齐一次，依次类推
 
@@ -289,16 +289,16 @@ let NERDTreeShowBookmarks=1
 " display line numbers in the tree window.
 " let NERDTreeShowLineNumbers=1
 " 常规模式下输入 F2 调用插件
-nmap <F2> :NERDTreeToggle<CR> 		
-nmap <F3> :NERDTreeCWD<CR>
-nmap <Leader>nf :NERDTreeFind<CR>
+nnoremap <F2> :NERDTreeToggle<CR> 		
+nnoremap <F3> :NERDTreeCWD<CR>
+nnoremap <Leader>nf :NERDTreeFind<CR>
 
 " ----------------------------------------------
 " wesleyche/SrcExpl
 " ----------------------------------------------
 " 增强源代码浏览，其功能就像Windows中的"Source Insight"
 " :h srcexpl.txt
-" nmap <F7> :SrcExplToggle<CR>                "打开/闭浏览窗口
+" nnoremap <F7> :SrcExplToggle<CR>                "打开/闭浏览窗口
 
 " ----------------------------------------------
 " taglist.vim
@@ -306,7 +306,7 @@ nmap <Leader>nf :NERDTreeFind<CR>
 " 列出当前文件中的所有宏,全局变量, 函数名等
 " :h taglist.txt
 " 常规模式下输入 tl 调用插件，如果有打开 Tagbar 窗口则先将其关闭
-nmap tl :TagbarClose<CR>:Tlist<CR>
+nnoremap tl :TagbarClose<CR>:Tlist<CR>
 let Tlist_Show_One_File=1                   "只显示当前文件的tags
 " let Tlist_Enable_Fold_Column=0              "使taglist插件不显示左边的折叠行
 let Tlist_Exit_OnlyWindow=1                 "如果Taglist窗口是最后一个窗口则退出Vim
@@ -331,7 +331,7 @@ let Tlist_Use_Right_Window=1                "在右侧窗口中显示
 " 列出当前文件中的所有宏,全局变量, 函数名等
 " :h tagbar.txt
 " 常规模式下输入 tb 调用插件，如果有打开 TagList 窗口则先将其关闭
-nmap <F4> :TlistClose<CR>:TagbarToggle<CR>
+nnoremap <F4> :TlistClose<CR>:TagbarToggle<CR>
 let g:tagbar_width=45                       "设置窗口宽度
 " let g:tagbar_left=1                         "在左侧窗口中显示
 
@@ -357,7 +357,7 @@ let g:tagbar_width=45                       "设置窗口宽度
 " ----------------------------------------------
 " 一个全路径模糊文件，缓冲区，最近最多使用，... 检索插件；详细帮助见 :h ctrlp
 " 常规模式下输入：Ctrl + p 调用插件
-nmap cpd :CtrlPDir<CR>  
+nnoremap cpd :CtrlPDir<CR>  
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_working_path_mode = 'ra'
 "你可以使用'@cd path/'来改变CtrlP的工作目录为path/。使用'@cd %:h'来改变为当前文件的目录。
@@ -375,7 +375,7 @@ let g:ctrlp_show_hidden = 0
 " 用于显示对齐线
 " 在终端上会有屏幕刷新的问题，这个问题能解决有更好了
 " 开启/关闭对齐线
-"nmap <leader>il :IndentLinesToggle<CR>
+"nnoremap <leader>il :IndentLinesToggle<CR>
 "
 "" 设置Gvim的对齐线样式
 " let g:indentLine_char = "┊"
@@ -484,9 +484,9 @@ autocmd BufNewFile,BufRead *.md set filetype=markdown
 let g:vim_markdown_folding_disabled=1       "折叠
 let g:vim_markdown_frontmatter=1
 " 打开文本目录
-nmap <Leader>to :Toc <CR>
+nnoremap <Leader>to :Toc <CR>
 " 格式化表格
-nmap <Leader>tf :TableFormat <CR>
+nnoremap <Leader>tf :TableFormat <CR>
 
 " ----------------------------------------------
 " qw8880000/DoxygenToolkit
@@ -532,7 +532,7 @@ let g:DoxygenToolkit_versionString="v1.0"
 " sketch.vim
 " ----------------------------------------------
 " 鼠标画草图插件
-nmap <Leader>st :call ToggleSketch()<CR>
+nnoremap <Leader>st :call ToggleSketch()<CR>
 
 " ----------------------------------------------
 " DrawIt
@@ -558,8 +558,8 @@ nmap <Leader>st :call ToggleSketch()<CR>
 "  :h grepper
 "  :h grepper-mappings
 "  :h grepper-options
-nmap gs  <plug>(GrepperOperator)
-xmap gs  <plug>(GrepperOperator)
+nnoremap gs  <plug>(GrepperOperator)
+xnoremap gs  <plug>(GrepperOperator)
 " gs, gsW, gsiw, gsi
 
 let g:grepper           = {}
@@ -579,11 +579,11 @@ nnoremap gw :Grepper -tool grep -cword -grepprg grep -Rn $* $.<cr>
 " 代码搜索插件，号称比grep还快
 " usage:
 "   :Ack [options] {pattern} [{directories}]
-" nmap <Leader>a :Ack <C-R><C-W>
-" nmap <Leader>aa :AckAdd <C-R><C-W>
-" nmap <Leader>afs :AckFromSearch <CR>
-" nmap <Leader>la :LAck <C-R><C-W>
-" nmap <Leader>laa :LAckAdd <C-R><C-W>
+" nnoremap <Leader>a :Ack <C-R><C-W>
+" nnoremap <Leader>aa :AckAdd <C-R><C-W>
+" nnoremap <Leader>afs :AckFromSearch <CR>
+" nnoremap <Leader>la :LAck <C-R><C-W>
+" nnoremap <Leader>laa :LAckAdd <C-R><C-W>
 
 " ----------------------------------------------
 " rking/ag.vim
@@ -600,11 +600,11 @@ nnoremap gw :Grepper -tool grep -cword -grepprg grep -Rn $* $.<cr>
 " let g:ctrlsf_position = 'left'
 " let g:ctrlsf_winsize = '40%'
 
-" nmap     <C-F>f <Plug>CtrlSFPrompt
-" vmap     <C-F>f <Plug>CtrlSFVwordPath
-" vmap     <C-F>F <Plug>CtrlSFVwordExec
-" nmap     <C-F>w <Plug>CtrlSFCwordPath
-" nmap     <C-F>p <Plug>CtrlSFPwordPath
+" nnoremap     <C-F>f <Plug>CtrlSFPrompt
+" vnoremap     <C-F>f <Plug>CtrlSFVwordPath
+" vnoremap     <C-F>F <Plug>CtrlSFVwordExec
+" nnoremap     <C-F>w <Plug>CtrlSFCwordPath
+" nnoremap     <C-F>p <Plug>CtrlSFPwordPath
 " nnoremap <C-F>o :CtrlSFOpen<CR>
 " nnoremap <C-F>t :CtrlSFToggle<CR>
 " inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
@@ -782,21 +782,21 @@ if has("cscope")
     set cscopeverbose
     "快捷键设置
     " 查找符号
-    nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+    nnoremap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
     " 查找定义
-    nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+    nnoremap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
     " 查找调用这个函数的函数（们）
-    nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+    nnoremap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
     " 查找这个字符串
-    nmap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+    nnoremap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>
     " 查找这个egrep 匹配模式
-    nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+    nnoremap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>
     " 查找这个文件 
-    nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+    nnoremap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
     " 查找#include 这个文件的文件 （们）
-    nmap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+    nnoremap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
     " 查找被这个函数调用的函数（们）
-    nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+    nnoremap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
 
     " 查看帮助 :cs help
 endif
@@ -824,12 +824,12 @@ endif
 "  < others >
 " -----------------------------------------------------------------------------
 " Delete DOS returns ^M
-nmap <leader>dm :%s/\r//g<CR>
+nnoremap <leader>dm :%s/\r//g<CR>
 " copy the word under the cursor to the register n
-nmap <leader>yw "nyiw
-nmap <leader>yt "nviwt
+nnoremap <leader>yw "nyiw
+nnoremap <leader>yt "nviwt
 " change the word under cursor by register n
-nmap <leader>pw viw"np
+nnoremap <leader>pw viw"np
 
 " open vim help 
-nmap <leader>wh :help <C-R><C-W><CR>
+nnoremap <leader>wh :help <C-R><C-W><CR>
