@@ -510,6 +510,16 @@ let g:DoxygenToolkit_returnTag="@Returns   "
 let g:DoxygenToolkit_authorName="WangJL <qw8880000@126.com>" 
 let g:DoxygenToolkit_versionString="v1.0"
 
+let g:DoxygenToolkit_licenseTag="\<enter>    Copyright (C) 2016-2030 WangJL <qw8880000@126.com> \<enter>\<enter>"
+let g:DoxygenToolkit_licenseTag=g:DoxygenToolkit_licenseTag . "Licensed under the Apache License, Version 2.0 (the \"License\");\<enter>"
+let g:DoxygenToolkit_licenseTag=g:DoxygenToolkit_licenseTag . "you may not use this file except in compliance with the License.\<enter>"
+let g:DoxygenToolkit_licenseTag=g:DoxygenToolkit_licenseTag . "You may obtain a copy of the License at \<enter>\<enter>"
+let g:DoxygenToolkit_licenseTag=g:DoxygenToolkit_licenseTag . "    http://www.apache.org/licenses/LICENSE-2.0 \<enter>\<enter>"
+let g:DoxygenToolkit_licenseTag=g:DoxygenToolkit_licenseTag . "Unless required by applicable law or agreed to in writing, software\<enter>"
+let g:DoxygenToolkit_licenseTag=g:DoxygenToolkit_licenseTag . "distributed under the License is distributed on an \"AS IS\" BASIS,\<enter>"
+let g:DoxygenToolkit_licenseTag=g:DoxygenToolkit_licenseTag . "WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\<enter>"
+let g:DoxygenToolkit_licenseTag=g:DoxygenToolkit_licenseTag . "See the License for the specific language governing permissions and\<enter>"
+let g:DoxygenToolkit_licenseTag=g:DoxygenToolkit_licenseTag . "limitations under the License.\<enter>"
 
 " ----------------------------------------------
 " xolox/vim-notes
