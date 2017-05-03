@@ -342,7 +342,7 @@ let g:tagbar_width=45                       "设置窗口宽度
 " 常规模式下按快捷键 <c-w>o 在最大化与还原间切换
 
 " ----------------------------------------------
-" qw8880000/ccvext
+" qw8880000/ccvext.vim
 " ----------------------------------------------
 " 用于对指定文件自动生成tags与cscope文件并连接
 " 如果是Windows系统, 则生成的文件在源文件所在盘符根目录的.symbs目录下(如: X:\.symbs\)
@@ -443,7 +443,7 @@ let g:ctrlp_show_hidden = 0
 " let c_cpp_comments = 0
 
 " ----------------------------------------------
-" qw8880000/cvim
+" qw8880000/c.vim
 " ----------------------------------------------
 "快速插入C代码
 let g:C_MapLeader  = ';'
@@ -489,7 +489,7 @@ nnoremap <Leader>to :Toc <CR>
 nnoremap <Leader>tf :TableFormat <CR>
 
 " ----------------------------------------------
-" qw8880000/DoxygenToolkit
+" qw8880000/DoxygenToolkit.vim
 " ----------------------------------------------
 " 快速注释插件
 " 插入许可
@@ -507,11 +507,8 @@ nnoremap <Leader>dx :Dox<CR>
 let g:DoxygenToolkit_briefTag_pre="@Brief  " 
 let g:DoxygenToolkit_paramTag_pre="@Param " 
 let g:DoxygenToolkit_returnTag="@Returns   " 
-let g:DoxygenToolkit_blockHeader="--------------------------------------------------------------------------" 
-let g:DoxygenToolkit_blockFooter="----------------------------------------------------------------------------" 
 let g:DoxygenToolkit_authorName="WangJL <qw8880000@126.com>" 
 let g:DoxygenToolkit_versionString="v1.0"
-
 
 
 " ----------------------------------------------
