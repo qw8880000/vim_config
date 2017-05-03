@@ -165,9 +165,9 @@ nnoremap <Leader>gt :Gstatus<CR>
 " vipga
 " gaip
 " Start interactive EasyAlign in visual mode (e.g. vipga)
-xnoremap ga <Plug>(EasyAlign)
+xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nnoremap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
 " <enter> 用来循环切换左、右、中对齐方式
 " 使用* 号的话，左对齐一次右对齐一次，依次类推
 
