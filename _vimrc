@@ -755,6 +755,8 @@ noremap <c-j> <c-w>j
 noremap <c-h> <c-w>h
 noremap <c-l> <c-w>l
 
+" 按下esc键时顺便保存文件
+noremap <ESC> <ESC>:w<CR>
 
 " -----------------------------------------------------------------------------
 "  < cscope 工具配置 >
