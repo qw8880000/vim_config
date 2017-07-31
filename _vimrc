@@ -105,6 +105,7 @@ Bundle 'mattn/emmet-vim'
 " Bundle 'joestelmach/lint.vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'maksimr/vim-jsbeautify'
+Bundle 'leshill/vim-json'
 
 " ========================
 " c / c++
