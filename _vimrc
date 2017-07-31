@@ -103,6 +103,7 @@ Bundle 'romainl/vim-qf'
 Bundle 'mattn/emmet-vim'
 " Bundle 'hallettj/jslint.vim'
 " Bundle 'joestelmach/lint.vim'
+Bundle 'pangloss/vim-javascript'
 Bundle 'maksimr/vim-jsbeautify'
 
 " ========================
@@ -389,6 +390,14 @@ let g:ctrlp_show_hidden = 0
 " joestelmach/lint.vim
 " ----------------------------------------------
 "javascript 语法检查
+
+" ----------------------------------------------
+" pangloss/vim-javascript
+" ----------------------------------------------
+" javascript 高亮与版式
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_ngdoc = 1
+let g:javascript_plugin_flow = 1
 
 " ----------------------------------------------
 " mattn/emmet-vim
