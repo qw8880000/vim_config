@@ -101,8 +101,7 @@ Bundle 'romainl/vim-qf'
 " web develop
 " ========================
 Bundle 'mattn/emmet-vim'
-Bundle 'hallettj/jslint.vim'
-" Bundle 'joestelmach/lint.vim'
+Bundle 'douglascrockford/JSLint'
 Bundle 'pangloss/vim-javascript'
 Bundle 'maksimr/vim-jsbeautify'
 Bundle 'leshill/vim-json'
@@ -384,14 +383,10 @@ let g:ctrlp_show_hidden = 0
 " 用于保存文件时查检语法
 
 " ----------------------------------------------
-" hallettj/jslint.vim
+" douglascrockford/JSLint
 " ----------------------------------------------
-" javascript 语法检查
+" javascript 代码检查
 
-" ----------------------------------------------
-" joestelmach/lint.vim
-" ----------------------------------------------
-"javascript 语法检查
 
 " ----------------------------------------------
 " pangloss/vim-javascript
