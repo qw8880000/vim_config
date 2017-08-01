@@ -101,11 +101,12 @@ Bundle 'romainl/vim-qf'
 " web develop
 " ========================
 Bundle 'mattn/emmet-vim'
-" Bundle 'hallettj/jslint.vim'
+Bundle 'hallettj/jslint.vim'
 " Bundle 'joestelmach/lint.vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'maksimr/vim-jsbeautify'
 Bundle 'leshill/vim-json'
+Bundle 'briancollins/vim-jst'
 
 " ========================
 " c / c++
