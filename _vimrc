@@ -135,6 +135,7 @@ Bundle 'sketch.vim'
 Bundle 'DrawIt'
 Bundle 'qw8880000/vim_ascii_art'
 Bundle 'qw8880000/vim-misc-xl'
+Bundle 'qw8880000/vim-tab'
 
 
 " ensure ftdetect et al work by including this after the Vundle stuff
