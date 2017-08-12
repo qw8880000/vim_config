@@ -27,3 +27,6 @@ nmap <silent> <c-F11> :if &guioptions =~# 'm' <Bar>
             \set guioptions+=L <Bar>
             \endif<CR>
 set nobackup
+
+" ´°¿Ú´óÐ¡
+set columns=120
