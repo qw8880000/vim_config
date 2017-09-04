@@ -106,6 +106,7 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'maksimr/vim-jsbeautify'
 Bundle 'leshill/vim-json'
 Bundle 'briancollins/vim-jst'
+Bundle 'heavenshell/vim-jsdoc'
 
 " ========================
 " c / c++
@@ -396,6 +397,16 @@ let g:ctrlp_show_hidden = 0
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_ngdoc = 1
 let g:javascript_plugin_flow = 1
+
+" ----------------------------------------------
+" briancollins/vim-jst
+" ----------------------------------------------
+" highlighting and indenting JST/EJS syntax
+
+" ----------------------------------------------
+" heavenshell/vim-jsdoc
+" ----------------------------------------------
+" jsdoc.vim generates JSDoc block comments based on a function signature.
 
 " ----------------------------------------------
 " mattn/emmet-vim
