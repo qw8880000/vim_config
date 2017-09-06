@@ -107,6 +107,7 @@ Bundle 'maksimr/vim-jsbeautify'
 Bundle 'leshill/vim-json'
 Bundle 'briancollins/vim-jst'
 Bundle 'heavenshell/vim-jsdoc'
+Bundle 'gko/vim-coloresque'
 
 " ========================
 " c / c++
@@ -407,6 +408,12 @@ let g:javascript_plugin_flow = 1
 " heavenshell/vim-jsdoc
 " ----------------------------------------------
 " jsdoc.vim generates JSDoc block comments based on a function signature.
+
+" ----------------------------------------------
+" gko/vim-coloresque
+" ----------------------------------------------
+" css/less/sass/html color preview for vim
+
 
 " ----------------------------------------------
 " mattn/emmet-vim
