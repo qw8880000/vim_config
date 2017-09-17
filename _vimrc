@@ -58,8 +58,15 @@ Bundle 'godlygeek/tabular'
 " Bundle 'Valloric/YouCompleteMe'
 " Bundle 'vim-javacompleteex'
 Bundle 'Shougo/neocomplcache.vim'
-Bundle 'msanders/snipmate.vim'
 Bundle 'OmniCppComplete'
+
+
+" ========================
+" 代码片段
+" ========================
+Bundle 'msanders/snipmate.vim'
+Bundle 'SirVer/ultisnips'
+" Bundle 'honza/vim-snippets'
 
 
 " ========================
@@ -254,7 +261,13 @@ let g:neocomplcache_enable_at_startup = 1     "vim 启动时启用插件
 " ----------------------------------------------
 " msanders/snipmate.vim
 " ----------------------------------------------
-" 代码补全
+" 代码片段模板插入
+
+" ----------------------------------------------
+" honza/vim-snippets
+" ----------------------------------------------
+" support snipMate and UltiSnips
+" 代码片段模板插入
 
 " ----------------------------------------------
 " OmniCppComplete
