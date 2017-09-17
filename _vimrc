@@ -65,7 +65,7 @@ Bundle 'OmniCppComplete'
 " ´úÂëÆ¬¶Î
 " ========================
 Bundle 'msanders/snipmate.vim'
-Bundle 'SirVer/ultisnips'
+Bundle 'qw8880000/ultisnips'
 " Bundle 'honza/vim-snippets'
 
 
