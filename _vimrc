@@ -65,7 +65,12 @@ Bundle 'OmniCppComplete'
 " 代码片段
 " ========================
 Bundle 'msanders/snipmate.vim'
-Bundle 'qw8880000/ultisnips'
+
+Bundle 'Shougo/neosnippet.vim'
+Bundle 'Shougo/context_filetype.vim'
+Bundle 'qw8880000/neosnippet-snippets'
+
+" Bundle 'SirVer/ultisnips'
 " Bundle 'honza/vim-snippets'
 
 
@@ -262,6 +267,31 @@ let g:neocomplcache_enable_at_startup = 1     "vim 启动时启用插件
 " msanders/snipmate.vim
 " ----------------------------------------------
 " 代码片段模板插入
+
+" ----------------------------------------------
+" 'Shougo/neosnippet.vim'
+" ----------------------------------------------
+" Plugin key-mappings.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+" imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+"imap <expr><TAB>
+" \ pumvisible() ? "\<C-n>" :
+" \ neosnippet#expandable_or_jumpable() ?
+" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+" smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+" \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
+
 
 " ----------------------------------------------
 " honza/vim-snippets
