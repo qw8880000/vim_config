@@ -539,6 +539,7 @@ let Txtbrowser_Search_Engine='https://www.baidu.com/s?wd=text&rsv_spt=1&rsv_iqid
 autocmd BufNewFile,BufRead *.md set filetype=markdown
 let g:vim_markdown_folding_disabled=1       "折叠
 let g:vim_markdown_frontmatter=1
+let g:vim_markdown_conceal = 0
 " 打开文本目录
 nnoremap <Leader>to :Toc <CR>
 " 格式化表格
