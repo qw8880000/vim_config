@@ -1,5 +1,5 @@
 
-中文[readme](./README_zh.md)
+中文[readme](http://www.wangjinle.com/posts/00e87c3d0f40340b.html)
 
 # screenshot
 
