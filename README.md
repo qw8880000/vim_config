@@ -1,3 +1,6 @@
+
+中文[readme](./README_zh.md)
+
 # screenshot
 
 ![screenshot for molokai](http://oxnimkw03.bkt.clouddn.com/20171030101917.png)
