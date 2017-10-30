@@ -40,7 +40,7 @@ then install ctags and cscope
 * switch between buffers with `,be`
 ![image](http://oxnimkw03.bkt.clouddn.com/bufexplore.gif)
 
-* switch to left window with `ctrl + l`, switch to right window with `ctrl + h`
+* switch to right window with `ctrl + l`, switch to left window with `ctrl + h`
 ![image](http://oxnimkw03.bkt.clouddn.com/winChange.gif)
 
 * find the current file in tree `,nf`
