@@ -83,7 +83,7 @@ Bundle 'wesleyche/SrcExpl'
 Bundle 'taglist.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'ZoomWin'
-Bundle 'qw8880000/ccvext.vim'
+Bundle 'vim-scripts/ccvext.vim'
 Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'Lokaltog/vim-powerline'
 "Bundle 'Yggdroot/indentLine'
@@ -378,7 +378,7 @@ let g:tagbar_width=45                       "设置窗口宽度
 " 常规模式下按快捷键 <c-w>o 在最大化与还原间切换
 
 " ----------------------------------------------
-" qw8880000/ccvext.vim
+" ccvext.vim
 " ----------------------------------------------
 " 用于对指定文件自动生成tags与cscope文件并连接
 " 如果是Windows系统, 则生成的文件在源文件所在盘符根目录的.symbs目录下(如: X:\.symbs\)

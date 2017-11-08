@@ -52,7 +52,7 @@ then install ctags and cscope
 | scrooloose/nerdtree           |
 | majutsushi/tagbar             |
 | taglist.vim                   |
-| qw8880000/ccvext.vim          |
+| vim-scripts/ccvext.vim        |
 | ctrlpvim/ctrlp.vim            |
 | Lokaltog/vim-powerline        |
 | scrooloose/syntastic          |
