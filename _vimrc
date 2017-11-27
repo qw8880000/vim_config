@@ -814,7 +814,7 @@ endif
 " 自动切换目录为当前编辑文件所在目录(与vim-fugitive Gdiff命令有冲突)
 " au BufRead,BufNewFile,BufEnter * cd %:p:h
 " 自动切换目录为当前编辑文件所在目录(与vim-fugitive Gdiff命令不冲突)
-autocm BufEnter * if expand('%:p') !~ '://' | cd %:p:h | endif
+autocmd BufEnter * if expand('%:p') !~ '://' | cd %:p:h | endif
 
 " -----------------------------------------------------------------------------
 "  < 快捷键映射 >
