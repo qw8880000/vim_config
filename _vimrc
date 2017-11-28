@@ -86,7 +86,7 @@ Bundle 'ZoomWin'
 Bundle 'qw8880000/ccvext.vim'
 Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'Lokaltog/vim-powerline'
-"Bundle 'Yggdroot/indentLine'
+Bundle 'Yggdroot/indentLine'
 Bundle 'scrooloose/syntastic'
 
 if g:islinux
@@ -411,7 +411,8 @@ let g:ctrlp_show_hidden = 0
 " 用于显示对齐线
 " 在终端上会有屏幕刷新的问题，这个问题能解决有更好了
 " 开启/关闭对齐线
-"nnoremap <leader>il :IndentLinesToggle<CR>
+let g:indentLine_enabled = 0
+nnoremap <leader>il :IndentLinesToggle<CR>
 "
 "" 设置Gvim的对齐线样式
 " let g:indentLine_char = "┊"
