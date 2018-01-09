@@ -73,7 +73,7 @@ then install ctags and cscope
 | scrooloose/nerdcommenter      |
 | TxtBrowser                    |
 | plasticboy/vim-markdown       |
-| qw8880000/vim-tab             |
+| qw8880000/vim-tab-indent      |
 
 # ShortCut
 

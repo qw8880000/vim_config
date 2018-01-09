@@ -149,7 +149,7 @@ Bundle 'sketch.vim'
 Bundle 'DrawIt'
 Bundle 'qw8880000/vim_ascii_art'
 Bundle 'qw8880000/vim-misc-xl'
-Bundle 'qw8880000/vim-tab'
+Bundle 'qw8880000/vim-tab-indent'
 
 
 " ensure ftdetect et al work by including this after the Vundle stuff
@@ -756,6 +756,12 @@ nnoremap gw :Grepper -tool grep -cword -grepprg grep -Rn $* $.<cr>
 " <Leader>ca 在/*...*/与//这两种注释方式中切换（其它语言可能不一样了）
 " <Leader>cA 行尾注释
 let NERDSpaceDelims = 1                     "在左注释符之后，右注释符之前留有空格
+
+
+" ----------------------------------------------
+" qw8880000/vim-tab-indent
+" ----------------------------------------------
+let g:vim_tab_indent_config = {'js': 2, 'html': 2, 'ejs': 2, 'css': 2}
 
 
 " -----------------------------------------------------------------------------
