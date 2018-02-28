@@ -120,6 +120,7 @@ Bundle 'leshill/vim-json'
 Bundle 'briancollins/vim-jst'
 Bundle 'heavenshell/vim-jsdoc'
 Bundle 'gko/vim-coloresque'
+Bundle 'groenewege/vim-less'
 
 " ========================
 " c / c++
@@ -458,6 +459,10 @@ let g:javascript_plugin_flow = 1
 " ----------------------------------------------
 " css/less/sass/html color preview for vim
 
+" ----------------------------------------------
+" groenewege/vim-less
+" ----------------------------------------------
+" syntax highlighting, indenting and autocompletion for the dynamic stylesheet language LESS.
 
 " ----------------------------------------------
 " mattn/emmet-vim
