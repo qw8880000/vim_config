@@ -39,3 +39,7 @@
 
 [[layers]]
   name = 'lang#sh'
+
+[[custom_plugins]]
+  name = 'tpope/vim-surround'
+
