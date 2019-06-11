@@ -1,7 +1,7 @@
 
 # 适用范围
 
-此vimrc适合如下开发：
+linux 下的vim 与 windows 下的gvim 通用。适合如下开发：
 
 - c/c++ 
 - html/css/js
