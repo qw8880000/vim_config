@@ -1,43 +1,45 @@
 
-中文[readme](http://www.wangjinle.com/posts/00e87c3d0f40340b.html)
+# 适用范围
 
-# screenshot
+此vimrc适合如下开发：
 
-![screenshot for molokai](http://oxnimkw03.bkt.clouddn.com/20171030101917.png)
+- c/c++ 
+- html/css/js
+- markdown
 
-# The vim configuration
+# 截图
 
-This vimrc is suitable for:
+![screenshot for molokai](http://qiniu.wangjinle.com/20171030101917.png)
 
--   c/c++ 
--   html/css
+主题：molokai
 
-# Installation
+# 安装 
 
-## For Linux
+注意，所有的操作之前需要先安装`git`
 
+## 对于linux
 
 1. `git clone https://github.com/qw8880000/vim_config.git ~/vim_config`
-1. make symbolic link `ln -s ~/vim_config/_vimrc ~/.vimrc`
-1. make directory `mkdir ~/.vim`
-1. Install Vundle with `git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle`
-1. open vim, enter `:BundleInstall` to install plugins.
+1. 创建符号链接 `ln -s ~/vim_config/_vimrc ~/.vimrc`
+1. 创建目录 `mkdir ~/.vim`
+1. 安装Vundle `git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle`
+1. 打开vim，输入 `:BundleInstall` 来安装其他插件 
 
-then install ctags and cscope
+然后安装 ctags 和 cscope
 
 1. `sudo apt-get install ctags`
 1. `sudo apt-get install cscope`
 
-## For windows (gvim)
+## 对于windows (gvim)
 
-1. download gvim and install
-1. copy the `_vimrc` and `_gvimrc` to the following directory:
-![image](http://oxnimkw03.bkt.clouddn.com/20171030221516.png)
-1. make directory `bundle` in `vimfiles/`
-1. cd to `vimfiles/bundle`,excute `git clone https://github.com/gmarik/vundle.git`
-1. open vim, excute `:BundleInstall` to install plugins.
+1. 下载gvim并安装
+1. 复制我的配置文件`_vimrc`与`_gvimrc` 到正确的位置，如下图
+![image](http://qiniu.wangjinle.com/20171030221516.png)
+1. 在vimfiles 文件夹下新建文件夹 bundle
+1. 切换目录到`vimfiles/bundle`，执行安装Vundle的命令 `git clone https://github.com/gmarik/vundle.git`
+1. 打开vim，输入 `:BundleInstall` 来安装其他插件 
 
-# Plugins
+# 插件列表
 
 | plugin                        |
 |-------------------------------|
@@ -51,8 +53,7 @@ then install ctags and cscope
 | bufexplorer.zip               |
 | scrooloose/nerdtree           |
 | majutsushi/tagbar             |
-| taglist.vim                   |
-| vim-scripts/ccvext.vim        |
+| qw8880000/ccvext.vim          |
 | ctrlpvim/ctrlp.vim            |
 | Lokaltog/vim-powerline        |
 | scrooloose/syntastic          |
@@ -73,40 +74,41 @@ then install ctags and cscope
 | scrooloose/nerdcommenter      |
 | TxtBrowser                    |
 | plasticboy/vim-markdown       |
-| qw8880000/vim-tab-indent      |
+| qw8880000/vim-tab             |
 
-# ShortCut
+# 快捷键
 
-* explore your filesystem with `F2` | plugin: nerdtree
-![image](http://oxnimkw03.bkt.clouddn.com/f2.gif)
+* 显示目录树 `F2`
+![image](http://qiniu.wangjinle.com/f2.gif)
 
-* browse the tags of source code with `F4` | plugin: tagbar or taglist
-![image](http://oxnimkw03.bkt.clouddn.com/f4.gif)
+* 显示本文件的代码结构 `F4`
+![image](http://qiniu.wangjinle.com/f4.gif)
 
-* switch between buffers with `,be` | plugin: bufexplore
-![image](http://oxnimkw03.bkt.clouddn.com/bufexplore.gif)
+* 在打开过的文件之间切换 `,be`
+![image](http://qiniu.wangjinle.com/bufexplore.gif)
 
-* switch to right window with `ctrl + l`, switch to left window with `ctrl + h`
-![image](http://oxnimkw03.bkt.clouddn.com/winChange.gif)
+* 切换到右边的窗口 `ctrl + l`, 切换到左边的窗口 `ctrl + h`
+![image](http://qiniu.wangjinle.com/winChange.gif)
 
-* find the current file in tree `,nf` | plugin: nerdtree
-![image](http://oxnimkw03.bkt.clouddn.com/findCurrentFile.gif)
+* 在目录树中定位当前文件 `,nf`
+![image](http://qiniu.wangjinle.com/findCurrentFile.gif)
 
-* Generates a doxygen author skeleton with `,da` | plugin: DoxygenToolkit
-![image](http://oxnimkw03.bkt.clouddn.com/DoxAuthor.gif)
+* 生成 doxygen author 注释 `,da`
+![image](http://qiniu.wangjinle.com/DoxAuthor.gif)
 
-* Generates a doxygen comment skeleton for a C, C++ or Python function or class with `,dx` | plugin: nerdcommenter
-![image](http://oxnimkw03.bkt.clouddn.com/DoxFunction.gif)
+* 生成doxygen函数注释 `,dx`
+![image](http://qiniu.wangjinle.com/DoxFunction.gif)
 
-* Toggles the comment state of the selected line(s) individually with `,ci`. Uncomments the selected line(s) with `,cu`. | plugin: nerdcommenter
-![image](http://oxnimkw03.bkt.clouddn.com/comment1.gif)
+* 生成注释(每行都生成注释) `,ci`. 取消注释 `,cu`.
+![image](http://qiniu.wangjinle.com/comment1.gif)
 
-* Comments the given lines using only one set of multipart delimiters with `,cm`. Uncomments the selected line(s) with `,cu`. | plugin: nerdcommenter
-![image](http://oxnimkw03.bkt.clouddn.com/comment2.gif)
+* 生成注释(整块注释) `,cm`. 取消注释 `,cu`.
+![image](http://qiniu.wangjinle.com/comment2.gif)
 
-* Adds comment delimiters to the end of line with `,cA` | plugin: nerdcommenter
-![image](http://oxnimkw03.bkt.clouddn.com/comment3.gif)
+* 在行尾生成注释 `,cA`
+![image](http://qiniu.wangjinle.com/comment3.gif)
 
-* Switch comment between `/**/` and `//` with `,ca` | plugin: nerdcommenter
-![image](http://oxnimkw03.bkt.clouddn.com/comment4.gif)
+* 在 `/**/` 与 `//` 之间切换 `,ca`
+![image](http://qiniu.wangjinle.com/comment4.gif)
 
+* 其他快捷键可查看`_vimrc`
