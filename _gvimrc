@@ -1,6 +1,8 @@
 source $VIMRUNTIME/vimrc_example.vim
-source $VIMRUNTIME/mswin.vim
-behave mswin
+
+" 如果想用 CTRL-X，CTRL-C 和 CTRL-V 这些标准的 MS-Windows 操作方式，可开启以下注释
+"source $VIMRUNTIME/mswin.vim
+"behave mswin
 
 
 "解决菜单乱码
