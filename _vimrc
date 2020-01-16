@@ -13,68 +13,92 @@
 " '---------------------------------------'            
 
 " -----------------------------------------------------------------------------
-" ÅĞ¶Ï²Ù×÷ÏµÍ³ÊÇ·ñÊÇ Windows »¹ÊÇ Linux
+" åˆ¤æ–­æ“ä½œç³»ç»Ÿæ˜¯å¦æ˜¯ Windows è¿˜æ˜¯ Linux
 " -----------------------------------------------------------------------------
 let g:iswindows = 0
 let g:islinux = 0
 if(has("win32") || has("win64") || has("win95") || has("win16"))
     let g:iswindows = 1
-    source $VIM/_gvimrc                             " ¼ÓÔØgvimÌØÊâµÄÅäÖÃ
+    source $VIM/_gvimrc                             " åŠ è½½gvimç‰¹æ®Šçš„é…ç½®
 else
     let g:islinux = 1
 endif
 
 " -----------------------------------------------------------------------------
-" vimÅäÖÃ
+" vim-plug æ’ä»¶ç®¡ç† ( https://github.com/junegunn/vim-plug )
 " -----------------------------------------------------------------------------
-set nocompatible                                  " ½ûÓÃ Vi ¼æÈİÄ£Ê½
-set encoding=utf-8                                " ÉèÖÃ vim ÄÚ²¿±àÂë£¬Ä¬ÈÏ²»¸ü¸Ä
-"set fileencoding=cp936
-set fileencodings=ucs-bom,utf-8,gbk,cp936,latin-1 " ÉèÖÃÖ§³Ö´ò¿ªµÄÎÄ¼şµÄ±àÂë
-                                                  " ÎÄ¼ş¸ñÊ½£¬Ä¬ÈÏ ffs=dos,unix
-"set fileformat=unix                               " ÉèÖÃĞÂ£¨µ±Ç°£©ÎÄ¼şµÄ<EOL>¸ñÊ½£¬¿ÉÒÔ¸ü¸Ä£¬Èç£ºdos£¨windowsÏµÍ³³£ÓÃ£©
-set fileformats=unix,dos,mac                      " ¸ø³öÎÄ¼şµÄ<EOL>¸ñÊ½ÀàĞÍ
-if version >= 603
-	set helplang=cn                               " Ê¹ÓÃÖĞÎÄ°ïÖú
-endif
+" Specify a directory for plugins
+" - Avoid using standard Vim directory names like 'plugin'
+"if g:islinux
+"    call plug#begin('~/.vim/plugged')
+"else
+"    call plug#begin('$VIM/vimfiles/plugged')
+"endif
+call plug#begin()
 
-filetype on                            " ÆôÓÃÎÄ¼şÀàĞÍÕì²â
-filetype plugin on                     " Õë¶Ô²»Í¬µÄÎÄ¼şÀàĞÍ¼ÓÔØ¶ÔÓ¦µÄ²å¼ş
-filetype plugin indent on              " ÆôÓÃËõ½ø
+" molokaiä¸»é¢˜
+Plug 'tomasr/molokai'
 
-if has("syntax")
-	syntax on                          " enables syntax highlighting by default
-endif
-set t_Co=256                           " ÔÚÖÕ¶ËÆôÓÃ256É«
-colorscheme molokai                    " ÉèÖÃÅäÉ«·½°¸
-set guifont=Courier_new:h12:b:cDEFAULT " ÉèÖÃ×ÖÌå
+" Initialize plugin system
+call plug#end()
 
-set hlsearch                           " ¸ßÁÁËÑË÷
-set incsearch                          " ÔÚÊäÈëÒªËÑË÷µÄÎÄ×ÖÊ±£¬ÊµÊ±Æ¥Åä
-set ignorecase                         " ËÑË÷Ä£Ê½ÀïºöÂÔ´óĞ¡Ğ´
-set smartcase                          " Èç¹ûËÑË÷Ä£Ê½°üº¬´óĞ´×Ö·û£¬²»Ê¹ÓÃ 'ignorecase' Ñ¡Ïî
-set number                             " ÏÔÊ¾ĞĞºÅ
-set laststatus=2                       " ÆôÓÃ×´Ì¬À¸ĞÅÏ¢
-set cursorline                         " Í»³öÏÔÊ¾µ±Ç°ĞĞ
-set cmdheight=2                        " ÉèÖÃÃüÁîĞĞµÄ¸ß¶ÈÎª2£¬Ä¬ÈÏÎª1
-set nowrap                             " ÉèÖÃ²»×Ô¶¯»»ĞĞ
-"set shortmess=atI                     " È¥µô»¶Ó­½çÃæ
-set tabstop=4                          " ÉèÖÃTab¼üµÄ¿í¶È£¬¿ÉÒÔ¸ü¸Ä£¬Èç£º¿í¶ÈÎª2
-"set mouse-=a                          " a ÔÚÈÎºÎÄ£Ê½ÏÂÆôÓÃÊó±ê -a:²»ÆôÓÃÊó±ê
-set backspace=2                        " backspace ¿ÉÓÃ
-set smarttab                           " Ö¸¶¨°´Ò»´Îbackspace¾ÍÉ¾³ıshiftwidth¿í¶È
-set shiftwidth=4                       " »»ĞĞÊ±×Ô¶¯Ëõ½ø¿í¶È£¬¿É¸ü¸Ä£¨¿í¶ÈÍ¬tabstop£©
-set expandtab                          " ½«Tab¼ü×ª»»Îª¿Õ¸ñ
-set smartindent                        " ÆôÓÃÖÇÄÜ¶ÔÆë·½Ê½
-set writebackup                        " ±£´æÎÄ¼şÇ°½¨Á¢±¸·İ£¬±£´æ³É¹¦ºóÉ¾³ı¸Ã±¸·İ
+" -----------------------------------------------------------------------------
+" vimé…ç½®
+" -----------------------------------------------------------------------------
+set nocompatible                                  " ç¦ç”¨ Vi å…¼å®¹æ¨¡å¼
 
-"au BufWinEnter * let w:m2=matchadd('Underlined', '\%>' . 80 . 'v.\+', -1)" ÆôÓÃÃ¿ĞĞ³¬¹ı80ÁĞµÄ×Ö·ûÌáÊ¾£¨×ÖÌå±äÀ¶²¢¼ÓÏÂ»®Ïß£©
+" fileencodings,fileencoding,encodingä¸‰è€…çš„å…³ç³»ï¼š
+" * æ–‡ä»¶è¯»å…¥æ—¶ï¼š
+"   1. å°è¯•ä½¿ç”¨'fileencodings'åˆ—è¡¨ä¸­çš„ç¼–ç è¿›è¡Œæ£€æµ‹ã€‚å¦‚æœæ‰¾åˆ°ä¸€ä¸ªèƒ½ç”¨çš„ç¼–ç ï¼Œè®¾ç½® 'fileencoding' ä¸ºè¯¥å€¼ã€‚å¦‚æœå…¨éƒ½å¤±è´¥ï¼Œ'fileencoding' è®¾ä¸ºç©ºå­—ç¬¦ä¸²ã€‚
+"   2. ä»¥'encoding'ç¼–ç æ ¼å¼è¿›è¡Œæ–‡ä»¶è½¬ç å¹¶è¯»å…¥ç¼“å†²åŒºã€‚å¦‚æœfileencodingä¸encodingä¸€è‡´å¯ä¸å¿…è½¬ç 
+" * æ–‡ä»¶å†™å…¥æ—¶ï¼š
+"   å½“'fileencoding'ä¸'encoding'ä¸åŒæ—¶ï¼Œå†™æ–‡ä»¶æ—¶éœ€è¦è¿›è¡Œè½¬æ¢ã€‚ä»encodingæ ¼å¼è½¬æˆfileencodingæ ¼å¼ç„¶åå†™å…¥æ–‡ä»¶
+" * æ–°å»ºæ–‡ä»¶æ—¶ï¼š
+"   ä½¿ç”¨é»˜è®¤çš„'fileencoding'å€¼
+set fileencodings=ucs-bom,utf-8,gbk,cp936,latin-1 
+set fileencoding=utf-8
+set encoding=utf-8                                " è®¾ç½® Vim å†…éƒ¨ä½¿ç”¨çš„å­—ç¬¦ç¼–ç ã€‚å®ƒåº”ç”¨äºç¼“å†²åŒºã€å¯„å­˜å™¨ç­‰ã€‚
+
+set fileformats=unix,dos,mac                      " ç»™å‡ºæ¢è¡Œç¬¦ (<EOL>) çš„æ ¼å¼åˆ—è¡¨ï¼Œå¼€å§‹ç¼–è¾‘æ–°ç¼“å†²åŒºæˆ–è€…è¯»å…¥æ–‡ä»¶åˆ°å·²æœ‰çš„ç¼“å†²åŒºæ—¶ï¼Œå°è¯•è¿™äº›æ ¼å¼
+set fileformat=unix                               " ç»™å‡ºå½“å‰ç¼“å†²åŒºçš„ <EOL> æ ¼å¼ï¼ˆæ¢è¡Œæ ¼å¼ï¼‰ï¼Œç”¨äºä»æ–‡ä»¶è¯»å…¥ç¼“å†²åŒºå’ŒæŠŠç¼“å†²åŒºå†™å›æ–‡ä»¶ã€‚
+
+set helplang=cn                               " ä½¿ç”¨ä¸­æ–‡å¸®åŠ©
+
+filetype on                            " å¯ç”¨æ–‡ä»¶ç±»å‹ä¾¦æµ‹
+filetype plugin on                     " é’ˆå¯¹ä¸åŒçš„æ–‡ä»¶ç±»å‹åŠ è½½å¯¹åº”çš„æ’ä»¶
+filetype plugin indent on              " å¯ç”¨ç¼©è¿›
+
+syntax on                          " å¯ç”¨è¯­æ³•é«˜äº®
+set t_Co=256                           " åœ¨ç»ˆç«¯å¯ç”¨256è‰²
+colorscheme molokai                    " è®¾ç½®é…è‰²æ–¹æ¡ˆ
+set guifont=Courier_new:h12:b:cDEFAULT " è®¾ç½®å­—ä½“
+
+set hlsearch                           " é«˜äº®æœç´¢
+set incsearch                          " åœ¨è¾“å…¥è¦æœç´¢çš„æ–‡å­—æ—¶ï¼Œå®æ—¶åŒ¹é…
+set ignorecase                         " æœç´¢æ¨¡å¼é‡Œå¿½ç•¥å¤§å°å†™
+set smartcase                          " å¦‚æœæœç´¢æ¨¡å¼åŒ…å«å¤§å†™å­—ç¬¦ï¼Œä¸ä½¿ç”¨ 'ignorecase' é€‰é¡¹
+set number                             " æ˜¾ç¤ºè¡Œå·
+set laststatus=2                       " å¯ç”¨çŠ¶æ€æ ä¿¡æ¯
+set cursorline                         " çªå‡ºæ˜¾ç¤ºå½“å‰è¡Œ
+set cmdheight=2                        " è®¾ç½®å‘½ä»¤è¡Œçš„é«˜åº¦ä¸º2ï¼Œé»˜è®¤ä¸º1
+set nowrap                             " è®¾ç½®ä¸è‡ªåŠ¨æ¢è¡Œ
+"set shortmess=atI                     " å»æ‰æ¬¢è¿ç•Œé¢
+set tabstop=4                          " è®¾ç½®Tabé”®çš„å®½åº¦ï¼Œå¯ä»¥æ›´æ”¹ï¼Œå¦‚ï¼šå®½åº¦ä¸º2
+"set mouse-=a                          " a åœ¨ä»»ä½•æ¨¡å¼ä¸‹å¯ç”¨é¼ æ ‡ -a:ä¸å¯ç”¨é¼ æ ‡
+set backspace=2                        " backspace å¯ç”¨
+set smarttab                           " æŒ‡å®šæŒ‰ä¸€æ¬¡backspaceå°±åˆ é™¤shiftwidthå®½åº¦
+set shiftwidth=4                       " æ¢è¡Œæ—¶è‡ªåŠ¨ç¼©è¿›å®½åº¦ï¼Œå¯æ›´æ”¹ï¼ˆå®½åº¦åŒtabstopï¼‰
+set expandtab                          " å°†Tabé”®è½¬æ¢ä¸ºç©ºæ ¼
+set smartindent                        " å¯ç”¨æ™ºèƒ½å¯¹é½æ–¹å¼
+set writebackup                        " ä¿å­˜æ–‡ä»¶å‰å»ºç«‹å¤‡ä»½ï¼Œä¿å­˜æˆåŠŸååˆ é™¤è¯¥å¤‡ä»½
+
+"au BufWinEnter * let w:m2=matchadd('Underlined', '\%>' . 80 . 'v.\+', -1)" å¯ç”¨æ¯è¡Œè¶…è¿‡80åˆ—çš„å­—ç¬¦æç¤ºï¼ˆå­—ä½“å˜è“å¹¶åŠ ä¸‹åˆ’çº¿ï¼‰
 if has("autocmd")
-	" ÖØĞÂ´ò¿ªÎÄ¼şÊ±»Øµ½ÉÏ´ÎÎ»ÖÃ 
+	" é‡æ–°æ‰“å¼€æ–‡ä»¶æ—¶å›åˆ°ä¸Šæ¬¡ä½ç½® 
 	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
-" ×Ô¶¯ÇĞ»»Ä¿Â¼Îªµ±Ç°±à¼­ÎÄ¼şËùÔÚÄ¿Â¼(Óëvim-fugitive GdiffÃüÁîÓĞ³åÍ»)
+" è‡ªåŠ¨åˆ‡æ¢ç›®å½•ä¸ºå½“å‰ç¼–è¾‘æ–‡ä»¶æ‰€åœ¨ç›®å½•(ä¸vim-fugitive Gdiffå‘½ä»¤æœ‰å†²çª)
 " au BufRead,BufNewFile,BufEnter * cd %:p:h
-" ×Ô¶¯ÇĞ»»Ä¿Â¼Îªµ±Ç°±à¼­ÎÄ¼şËùÔÚÄ¿Â¼(Óëvim-fugitive GdiffÃüÁî²»³åÍ»)
+" è‡ªåŠ¨åˆ‡æ¢ç›®å½•ä¸ºå½“å‰ç¼–è¾‘æ–‡ä»¶æ‰€åœ¨ç›®å½•(ä¸vim-fugitive Gdiffå‘½ä»¤ä¸å†²çª)
 autocmd BufEnter * if expand('%:p') !~ '://' | cd %:p:h | endif
