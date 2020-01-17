@@ -28,18 +28,14 @@ endif
 " vim-plug 插件管理 ( https://github.com/junegunn/vim-plug )
 " =============================================================================
 " Specify a directory for plugins
-" - Avoid using standard Vim directory names like 'plugin'
-"if g:islinux
-"    call plug#begin('~/.vim/plugged')
-"else
-"    call plug#begin('$VIM/vimfiles/plugged')
-"endif
 call plug#begin()
 
 " molokai主题
 Plug 'tomasr/molokai'
 " 文件目录导航
 Plug 'scrooloose/nerdtree'
+" 快捷键导航
+Plug 'liuchengxu/vim-which-key'
 
 " Initialize plugin system
 call plug#end()
@@ -111,17 +107,8 @@ autocmd BufEnter * if expand('%:p') !~ '://' | cd %:p:h | endif
 
 " scrooloose/nerdtree
 " ----------------------------------------------
-" 有目录村结构的文件浏览插件
-" :h NERD_tree.txt
 "close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-" let NERDTreeHighlightCursorline=1
-" Closes the tree window after opening a file.
-" let NERDTreeQuitOnOpen=1
-" display the bookmarks table on startup
-let NERDTreeShowBookmarks=1
-" display line numbers in the tree window.
-" let NERDTreeShowLineNumbers=1
 " 常规模式下输入 F2 调用插件
 nnoremap <F2> :NERDTreeToggle<CR> 		
 nnoremap <F3> :NERDTreeCWD<CR>
