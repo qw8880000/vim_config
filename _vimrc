@@ -101,6 +101,9 @@ endif
 " 自动切换目录为当前编辑文件所在目录(与vim-fugitive Gdiff命令不冲突)
 autocmd BufEnter * if expand('%:p') !~ '://' | cd %:p:h | endif
 
+" 这里把<Leader>设置为','。默认的<Leader>为'\'(反斜杠)
+let g:mapleader = ","
+
 " =============================================================================
 " 插件配置
 " =============================================================================
@@ -113,4 +116,34 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 nnoremap <F2> :NERDTreeToggle<CR> 		
 nnoremap <F3> :NERDTreeCWD<CR>
 nnoremap <Leader>nf :NERDTreeFind<CR>
+
+" liuchengxu/vim-which-key
+" ----------------------------------------------
+" nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
+" nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
+" call which_key#register('<Space>', "g:which_key_map")
+" let g:which_key_map =  {}
+" let g:which_key_map['w'] = {
+"       \ 'name' : '+windows' ,
+"       \ 'w' : ['<C-W>w'     , 'other-window']          ,
+"       \ 'd' : ['<C-W>c'     , 'delete-window']         ,
+"       \ '-' : ['<C-W>s'     , '窗口']    ,
+"       \ '|' : ['<C-W>v'     , 'split-window-right']    ,
+"       \ '2' : ['<C-W>v'     , 'layout-double-columns'] ,
+"       \ 'h' : ['<C-W>h'     , 'window-left']           ,
+"       \ 'j' : ['<C-W>j'     , 'window-below']          ,
+"       \ 'l' : ['<C-W>l'     , 'window-right']          ,
+"       \ 'k' : ['<C-W>k'     , 'window-up']             ,
+"       \ 'H' : ['<C-W>5<'    , 'expand-window-left']    ,
+"       \ 'J' : ['resize +5'  , 'expand-window-below']   ,
+"       \ 'L' : ['<C-W>5>'    , 'expand-window-right']   ,
+"       \ 'K' : ['resize -5'  , 'expand-window-up']      ,
+"       \ '=' : ['<C-W>='     , 'balance-window']        ,
+"       \ 's' : ['<C-W>s'     , 'split-window-below']    ,
+"       \ 'v' : ['<C-W>v'     , 'split-window-below']    ,
+"       \ '?' : ['Windows'    , 'fzf-window']            ,
+"       \ }
+" 
+" let g:which_key_map.f = { 'name' : '+file' }
+" let g:which_key_map.f.s = 'save-file'
 
