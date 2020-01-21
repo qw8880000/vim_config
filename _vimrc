@@ -122,11 +122,12 @@ let g:NERDTreeMapUpdir = "h"
 
 " 这里把<Leader>设置为','。默认的<Leader>为'\'(反斜杠)
 let g:mapleader = ","
-set timeoutlen=500
+set timeoutlen=1000
 
 nnoremap <silent> <leader> :WhichKey ','<CR>
 " 注册键位与对应的 dict
 call which_key#register(',', "g:which_key_map")
+
 let g:which_key_map = {}
 " file tree - 文件树
 let g:which_key_map['f'] = {
