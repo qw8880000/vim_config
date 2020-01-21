@@ -33,7 +33,7 @@ call plug#begin()
 " molokai主题
 Plug 'tomasr/molokai'
 " 文件目录导航
-Plug 'scrooloose/nerdtree'
+Plug 'preservim/nerdtree'
 " 快捷键导航
 Plug 'liuchengxu/vim-which-key'
 
@@ -106,29 +106,33 @@ autocmd BufEnter * if expand('%:p') !~ '://' | cd %:p:h | endif
 " 插件配置
 " =============================================================================
 
-" scrooloose/nerdtree
+" preservim/nerdtree
 " ----------------------------------------------
 "close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-" 常规模式下输入 F2 调用插件
+" 打开/关闭目录树
 nnoremap <F2> :NERDTreeToggle<CR> 		
-"nnoremap <F3> :NERDTreeCWD<CR>
-"nnoremap <Leader>nf :NERDTreeFind<CR>
+" 切换到当前目录
+let g:NERDTreeMapChangeRoot = "l"
+" 切换到上级目录目录
+let g:NERDTreeMapUpdir = "h"
 
 " liuchengxu/vim-which-key
 " ----------------------------------------------
 
 " 这里把<Leader>设置为','。默认的<Leader>为'\'(反斜杠)
 let g:mapleader = ","
-
-nnoremap <silent> <leader> :WhichKey 'leader'<CR>
-call which_key#register('leader', "g:which_key_map")
 set timeoutlen=500
+
+nnoremap <silent> <leader> :WhichKey ','<CR>
+" 注册键位与对应的 dict
+call which_key#register(',', "g:which_key_map")
 let g:which_key_map = {}
 " file tree - 文件树
 let g:which_key_map['f'] = {
-      \ 'name' : '+test',
-      \ 'f' : 'est',
-      \ 't' : ['NERDTreeToggle', 'split-window-below'],
+      \ 'name' : '+文件树',
+      \ 't' : ['NERDTreeToggle', '打开/关闭文件树'],
+      \ 'c' : ['NERDTreeCWD', '打开文件树并进入当前目录'],
+      \ 'f' : ['NERDTreeFind', '打开文件树并定位到当前文件'],
       \ }
 
