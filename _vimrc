@@ -32,6 +32,9 @@ call plug#begin()
 
 " molokai主题
 Plug 'tomasr/molokai'
+" 状态栏插件，提供漂亮的状态栏样式
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 " 文件目录导航
 Plug 'preservim/nerdtree'
 " 快捷键导航
@@ -106,16 +109,22 @@ autocmd BufEnter * if expand('%:p') !~ '://' | cd %:p:h | endif
 " 插件配置
 " =============================================================================
 
+" vim-airline/vim-airline
+" ----------------------------------------------
+" 不显示扩展信息
+let g:airline#extensions#disable_rtp_load = 1
+let g:airline_extensions = []
+" 状态栏主题
+let g:airline_theme='molokai'
+" 使用ascii字符。默认设置会出现显示不出来的字符，需要安装补丁字体(https://github.com/vim-airline/vim-airline#integrating-with-powerline-fonts)
+let g:airline_symbols_ascii = 1
+
 " preservim/nerdtree
 " ----------------------------------------------
 "close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " 打开/关闭目录树
 nnoremap <F2> :NERDTreeToggle<CR> 		
-" 切换到当前目录
-let g:NERDTreeMapChangeRoot = "l"
-" 切换到上级目录目录
-let g:NERDTreeMapUpdir = "h"
 
 " liuchengxu/vim-which-key
 " ----------------------------------------------
