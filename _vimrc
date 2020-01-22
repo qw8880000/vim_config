@@ -37,6 +37,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " 文件目录导航
 Plug 'preservim/nerdtree'
+" buffer快速切换
+Plug 'jlanzarotta/bufexplorer'
 " 快捷键导航
 Plug 'liuchengxu/vim-which-key'
 
@@ -125,6 +127,9 @@ let g:airline_symbols_ascii = 1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " 打开/关闭目录树
 nnoremap <F2> :NERDTreeToggle<CR> 		
+
+" Plug 'jlanzarotta/bufexplorer'
+" ----------------------------------------------
 
 " liuchengxu/vim-which-key
 " ----------------------------------------------

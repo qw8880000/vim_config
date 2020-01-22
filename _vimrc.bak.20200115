@@ -77,15 +77,15 @@ Bundle 'qw8880000/neosnippet-snippets'
 " ========================
 " IDE
 " ========================
-Bundle 'bufexplorer.zip'
-Bundle 'scrooloose/nerdtree'
+Bundle 'bufexplorer.zip' " take
+Bundle 'scrooloose/nerdtree' "take
 Bundle 'wesleyche/SrcExpl'
 Bundle 'taglist.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'ZoomWin'
 Bundle 'qw8880000/ccvext.vim'
 Bundle 'ctrlpvim/ctrlp.vim'
-Bundle 'Lokaltog/vim-powerline'
+Bundle 'Lokaltog/vim-powerline' " take
 Bundle 'Yggdroot/indentLine'
 Bundle 'scrooloose/syntastic'
 
@@ -106,7 +106,7 @@ Bundle 'repeat.vim'
 Bundle 'easymotion/vim-easymotion'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'tpope/vim-fugitive'
-Bundle 'tomasr/molokai' 
+Bundle 'tomasr/molokai' " take
 Bundle 'romainl/vim-qf'
 
 " ========================
