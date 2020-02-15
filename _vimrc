@@ -153,11 +153,16 @@ nnoremap <silent> <leader> :WhichKey ','<CR>
 call which_key#register(',', "g:which_key_map")
 
 let g:which_key_map = {}
-" file tree - 文件树
+" File Tree - 文件树
 let g:which_key_map['f'] = {
       \ 'name' : '+文件树',
       \ 't' : ['NERDTreeToggle', '打开/关闭文件树'],
       \ 'c' : ['NERDTreeCWD', '打开文件树并进入当前目录'],
       \ 'f' : ['NERDTreeFind', '打开文件树并定位到当前文件'],
+      \ }
+" Buffer list - Buffer列表
+let g:which_key_map['b'] = {
+      \ 'name' : '+Buffer列表',
+      \ 'e' : '显示Buffer列表',
       \ }
 
