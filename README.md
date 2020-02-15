@@ -41,40 +41,7 @@ linux 下的vim 与 windows 下的gvim 通用。适合如下开发：
 
 # 插件列表
 
-| plugin                        |
-|-------------------------------|
-| gmarik/vundle                 |
-| junegunn/vim-easy-align       |
-| Shougo/neocomplcache.vim      |
-| OmniCppComplete               |
-| Shougo/neosnippet.vim         |
-| Shougo/context_filetype.vim   |
-| qw8880000/neosnippet-snippets |
-| bufexplorer.zip               |
-| scrooloose/nerdtree           |
-| majutsushi/tagbar             |
-| qw8880000/ccvext.vim          |
-| ctrlpvim/ctrlp.vim            |
-| Lokaltog/vim-powerline        |
-| scrooloose/syntastic          |
-| easymotion/vim-easymotion     |
-| terryma/vim-multiple-cursors  |
-| tomasr/molokai                |
-| tpope/vim-fugitive            |
-| mattn/emmet-vim               |
-| pangloss/vim-javascript       |
-| maksimr/vim-jsbeautify        |
-| leshill/vim-json              |
-| heavenshell/vim-jsdoc         |
-| gko/vim-coloresque            |
-| qw8880000/DoxygenToolkit.vim  |
-| justinmk/vim-syntax-extra     |
-| qw8880000/c.vim               |
-| cpp.vim                       |
-| scrooloose/nerdcommenter      |
-| TxtBrowser                    |
-| plasticboy/vim-markdown       |
-| qw8880000/vim-tab             |
+// todo
 
 # 快捷键
 
@@ -112,3 +79,7 @@ linux 下的vim 与 windows 下的gvim 通用。适合如下开发：
 ![image](http://qiniu.wangjinle.com/comment4.gif)
 
 * 其他快捷键可查看`_vimrc`
+
+# todo
+
+- undofile（以un结尾的文件是否需要）

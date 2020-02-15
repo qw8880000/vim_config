@@ -41,6 +41,8 @@ Plug 'preservim/nerdtree'
 Plug 'jlanzarotta/bufexplorer'
 " 快捷键导航
 Plug 'liuchengxu/vim-which-key'
+" markdown语法高亮
+Plug 'plasticboy/vim-markdown'
 
 " Initialize plugin system
 call plug#end()
@@ -93,7 +95,11 @@ set tabstop=4                          " 设置Tab键的宽度，如果置位了
 set smartindent                        " 启用智能对齐方式
 set autoindent                         " 开启新行时，从当前行复制缩进距离
 set shiftwidth=4                       " (自动) 缩进每一步使用的空白数目
-set writebackup                        " 保存文件前建立备份，保存成功后删除该备份
+
+set noundofile
+" 保存文件前建立备份，保存成功后删除该备份
+set nobackup
+set writebackup                        
 
 "au BufWinEnter * let w:m2=matchadd('Underlined', '\%>' . 80 . 'v.\+', -1)" 启用每行超过80列的字符提示（字体变蓝并加下划线）
 if has("autocmd")
@@ -131,9 +137,19 @@ nnoremap <F2> :NERDTreeToggle<CR>
 " Plug 'jlanzarotta/bufexplorer'
 " ----------------------------------------------
 
+" Plug 'plasticboy/vim-markdown'
+" ----------------------------------------------
+autocmd BufNewFile,BufRead *.md set filetype=markdown
+let g:vim_markdown_folding_disabled=1       "折叠
+let g:vim_markdown_frontmatter=1
+let g:vim_markdown_conceal = 0
+" 打开markdown目录
+nnoremap <Leader>to :Toc <CR>
+" 格式化表格
+nnoremap <Leader>tf :TableFormat <CR>
+
 " liuchengxu/vim-which-key
 " ----------------------------------------------
-
 " 这里把<Leader>设置为','。默认的<Leader>为'\'(反斜杠)
 let g:mapleader = ","
 set timeoutlen=1000

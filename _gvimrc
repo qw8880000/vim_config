@@ -1,15 +1,15 @@
-source $VIMRUNTIME/vimrc_example.vim
+"source $VIMRUNTIME/vimrc_example.vim
 
 " 如果想用 CTRL-X，CTRL-C 和 CTRL-V 这些标准的 MS-Windows 操作方式，可开启以下注释
 "source $VIMRUNTIME/mswin.vim
 "behave mswin
 
 
-"解决菜单乱码
+" 解决菜单乱码
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
 
-"解决consle输出乱码
+" 解决consle输出乱码
 language messages zh_CN.utf-8
 
 " 显示/隐藏菜单栏、工具栏、滚动条，可用 Ctrl + F11 切换
@@ -28,7 +28,6 @@ nmap <silent> <c-F11> :if &guioptions =~# 'm' <Bar>
             \set guioptions+=r <Bar>
             \set guioptions+=L <Bar>
             \endif<CR>
-set nobackup
 
 " 窗口大小
 set columns=120
