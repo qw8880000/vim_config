@@ -30,6 +30,9 @@ endif
 " Specify a directory for plugins
 call plug#begin()
 
+" 文本对齐插件，vim-markdown插件会用到
+Plug 'godlygeek/tabular' 
+"Plug 'junegunn/vim-easy-align'
 " molokai主题
 Plug 'tomasr/molokai'
 " 状态栏插件，提供漂亮的状态栏样式
