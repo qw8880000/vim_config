@@ -12,16 +12,24 @@
 "  )       Jinle Wang@Starnet            (
 " '---------------------------------------'            
 
-" =============================================================================
 " 判断操作系统是否是 Windows 还是 Linux
-" =============================================================================
 let g:iswindows = 0
 let g:islinux = 0
 if(has("win32") || has("win64") || has("win95") || has("win16"))
     let g:iswindows = 1
-    source $VIM/_gvimrc                             " 加载gvim特殊的配置
 else
     let g:islinux = 1
+endif
+
+" 判断是终端还是 Gvim
+if has("gui_running")
+    let g:isGUI = 1
+else
+    let g:isGUI = 0
+endif
+
+if (g:iswindows && g:isGUI)
+    source $VIM/_gvimrc                             " 加载gvim特殊的配置
 endif
 
 " =============================================================================
@@ -37,6 +45,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'preservim/nerdtree'             " 文件目录导航
 Plug 'jlanzarotta/bufexplorer'        " buffer快速切换
 Plug 'liuchengxu/vim-which-key'       " 快捷键导航
+
+Plug 'vim-scripts/TxtBrowser' " 文本高亮
 Plug 'plasticboy/vim-markdown'        " markdown语法高亮
 
 call plug#end()                       " Initialize plugin system
@@ -130,6 +140,10 @@ nnoremap <F2> :NERDTreeToggle<CR>
 " Plug 'jlanzarotta/bufexplorer'
 " ----------------------------------------------
 
+" Plug 'vim-scripts/TxtBrowser'
+" ----------------------------------------------
+au BufRead,BufNewFile *.txt setlocal ft=txt
+
 " Plug 'plasticboy/vim-markdown'
 " ----------------------------------------------
 autocmd BufNewFile,BufRead *.md set filetype=markdown
@@ -138,9 +152,9 @@ let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_frontmatter=1
 let g:vim_markdown_conceal = 0
 " 打开markdown目录
-nnoremap <Leader>to :Toc <CR>
+nnoremap <Leader>to :Toc<CR>
 " 格式化表格
-nnoremap <Leader>tf :TableFormat <CR>
+nnoremap <Leader>mf :TableFormat<CR>
 
 " liuchengxu/vim-which-key
 " ----------------------------------------------
@@ -165,4 +179,9 @@ let g:which_key_map['b'] = {
       \ 'name' : '+Buffer列表',
       \ 'e' : '显示Buffer列表',
       \ }
-
+" markdown
+let g:which_key_map['m'] = {
+      \ 'name' : '+markdown',
+      \ 't' : '显示Toc目录',
+      \ 'f' : '表格格式化',
+      \ }
