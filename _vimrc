@@ -99,6 +99,7 @@ set tabstop=4                                     " 设置Tab键的宽度，如�
 set smartindent                                   " 启用智能对齐方式
 set autoindent                                    " 开启新行时，从当前行复制缩进距离
 set shiftwidth=4                                  " (自动) 缩进每一步使用的空白数目
+set smarttab                           " 指定按一次backspace就删除shiftwidth宽度
 
 set noundofile
 set writebackup                                   " 保存文件前建立备份
@@ -136,6 +137,9 @@ let g:airline_symbols_ascii = 1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " 打开/关闭目录树
 nnoremap <F2> :NERDTreeToggle<CR>
+nnoremap <Leader>nt :NERDTreeToggle<CR>
+nnoremap <Leader>nc :NERDTreeCWD<CR>
+nnoremap <Leader>nf :NERDTreeFind<CR>
 
 " Plug 'jlanzarotta/bufexplorer'
 " ----------------------------------------------
@@ -150,7 +154,9 @@ autocmd BufNewFile,BufRead *.md set filetype=markdown
 " 折叠
 let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_frontmatter=1
-let g:vim_markdown_conceal = 0
+let g:vim_markdown_conceal=0
+" Adjust new list item indent
+let g:vim_markdown_new_list_item_indent=0
 " 打开markdown目录
 nnoremap <Leader>to :Toc<CR>
 " 格式化表格
@@ -168,11 +174,11 @@ call which_key#register(',', "g:which_key_map")
 
 let g:which_key_map = {}
 " File Tree - 文件树
-let g:which_key_map['f'] = {
+let g:which_key_map['n'] = {
       \ 'name' : '+文件树',
-      \ 't' : ['NERDTreeToggle', '打开/关闭文件树'],
-      \ 'c' : ['NERDTreeCWD', '打开文件树并进入当前目录'],
-      \ 'f' : ['NERDTreeFind', '打开文件树并定位到当前文件'],
+      \ 't' : '打开/关闭文件树',
+      \ 'c' : '打开文件树并进入当前目录',
+      \ 'f' : '打开文件树并定位到当前文件',
       \ }
 " Buffer list - Buffer列表
 let g:which_key_map['b'] = {
