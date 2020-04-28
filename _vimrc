@@ -117,6 +117,14 @@ endif
 autocmd BufEnter * if expand('%:p') !~ '://' | cd %:p:h | endif
 
 
+" 快捷键映射
+" -----------------------------------------------------------------------------
+noremap <c-k> <c-w>k
+noremap <c-j> <c-w>j
+noremap <c-h> <c-w>h
+noremap <c-l> <c-w>l
+
+
 " =============================================================================
 " 插件配置
 " =============================================================================
@@ -157,8 +165,9 @@ let g:vim_markdown_frontmatter=1
 let g:vim_markdown_conceal=0
 " Adjust new list item indent
 let g:vim_markdown_new_list_item_indent=0
+let g:vim_markdown_toc_autofit = 1
 " 打开markdown目录
-nnoremap <Leader>to :Toc<CR>
+nnoremap <Leader>mt :Toc<CR>
 " 格式化表格
 nnoremap <Leader>mf :TableFormat<CR>
 
