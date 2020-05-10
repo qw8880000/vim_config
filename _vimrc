@@ -37,17 +37,17 @@ endif
 " =============================================================================
 call plug#begin()                     " Specify a directory for plugins
 
-Plug 'godlygeek/tabular'              " 文本对齐插件，vim-markdown插件会用到
-"Plug 'junegunn/vim-easy-align'
-Plug 'tomasr/molokai'                 " molokai主题
-Plug 'vim-airline/vim-airline'        " 状态栏插件，提供漂亮的状态栏样式
+Plug 'godlygeek/tabular'             " 文本对齐插件，vim-markdown插件会用到
+" Plug 'junegunn/vim-easy-align'
+Plug 'tomasr/molokai'                " molokai主题
+Plug 'vim-airline/vim-airline'       " 状态栏插件，提供漂亮的状态栏样式
 Plug 'vim-airline/vim-airline-themes'
-Plug 'preservim/nerdtree'             " 文件目录导航
-Plug 'jlanzarotta/bufexplorer'        " buffer快速切换
-Plug 'liuchengxu/vim-which-key'       " 快捷键导航
+Plug 'preservim/nerdtree'            " 文件目录导航
+Plug 'jlanzarotta/bufexplorer'       " buffer快速切换
+Plug 'liuchengxu/vim-which-key'      " 快捷键导航
 
-Plug 'vim-scripts/TxtBrowser' " 文本高亮
-Plug 'plasticboy/vim-markdown'        " markdown语法高亮
+Plug 'vim-scripts/TxtBrowser'        " 文本高亮
+Plug 'plasticboy/vim-markdown'       " markdown语法高亮
 
 call plug#end()                       " Initialize plugin system
 
@@ -129,6 +129,22 @@ noremap <c-l> <c-w>l
 " 插件配置
 " =============================================================================
 
+" 'godlygeek/tabular'             " 文本对齐插件，vim-markdown插件会用到
+" ----------------------------------------------
+" abcdef , abcdef , abcdef
+"   |    |    |   |    |  
+" field1 | field3 |  field5
+"      field2   field4
+"
+" :Tabularize /,/r1c2l0c3
+" -- filed1 右对齐后跟1个空格
+" -- filed2 居中对齐后跟2个空格
+" -- filed3 左对齐后跟0个空格
+" -- filed4 居中对齐后跟3个空格
+" -- filed5 没有对应的格式化表达式，那么循环使用表达式，右对齐后跟一个空格。但是因为field5后没有其他field，所以空格不加
+
+
+
 " vim-airline/vim-airline
 " ----------------------------------------------
 " 不显示扩展信息
@@ -177,7 +193,7 @@ nnoremap <Leader>mf :TableFormat<CR>
 let g:mapleader = "," 
 set timeoutlen=1000
 
-nnoremap <silent> <leader> :WhichKey ','<CR>
+nnoremap <silent> <leader> :<c-u>WhichKey ','<CR>
 " 注册键位与对应的 dict
 call which_key#register(',', "g:which_key_map")
 
