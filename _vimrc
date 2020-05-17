@@ -51,7 +51,7 @@ Plug 'plasticboy/vim-markdown'       " markdown语法高亮
 
 Plug 'easymotion/vim-easymotion'    " 快速移动
 " Plug 'svermeulen/vim-easyclip'    " 改变vim剪切板默认工作模式
-Plug 'vim-scripts/YankRing.vim'     " 复制、修改和删除的历史记录
+"Plug 'vim-scripts/YankRing.vim'     " 复制、修改和删除的历史记录
 
 call plug#end()                       " Initialize plugin system
 
@@ -123,6 +123,11 @@ autocmd BufEnter * if expand('%:p') !~ '://' | cd %:p:h | endif
 
 " 快捷键映射
 " -----------------------------------------------------------------------------
+" 这里把<Leader>设置为','。默认的<Leader>为'\'(反斜杠)
+let g:mapleader = "," 
+set timeoutlen=1000
+
+" 窗口切换
 noremap <c-k> <c-w>k
 noremap <c-j> <c-w>j
 noremap <c-h> <c-w>h
@@ -209,9 +214,6 @@ nnoremap <silent> <F11> :YRShow<CR>
 
 " liuchengxu/vim-which-key
 " ----------------------------------------------
-" 这里把<Leader>设置为','。默认的<Leader>为'\'(反斜杠)
-let g:mapleader = "," 
-set timeoutlen=1000
 
 nnoremap <silent> <leader> :<c-u>WhichKey ','<CR>
 " 注册键位与对应的 dict
