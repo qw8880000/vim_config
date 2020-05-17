@@ -134,7 +134,8 @@ noremap <c-h> <c-w>h
 noremap <c-l> <c-w>l
 
 " 复制与粘贴
-vnoremap <Leader>y "*y
+vnoremap y "*y
+vnoremap p "*p
 noremap <Leader>p "*p
 
 
