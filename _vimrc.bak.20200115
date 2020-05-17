@@ -50,7 +50,7 @@ Bundle 'gmarik/vundle'
 " ========================
 Bundle 'junegunn/vim-easy-align'
 " Bundle 'Align'
-Bundle 'godlygeek/tabular'
+Bundle 'godlygeek/tabular' " take
 
 " ========================
 " ²¹È«²å¼þ

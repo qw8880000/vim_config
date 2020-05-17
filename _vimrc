@@ -46,8 +46,10 @@ Plug 'preservim/nerdtree'            " 文件目录导航
 Plug 'jlanzarotta/bufexplorer'       " buffer快速切换
 Plug 'liuchengxu/vim-which-key'      " 快捷键导航
 
-Plug 'vim-scripts/TxtBrowser'        " 文本高亮
+" Plug 'vim-scripts/TxtBrowser'        " 文本高亮
 Plug 'plasticboy/vim-markdown'       " markdown语法高亮
+
+Plug 'easymotion/vim-easymotion'
 
 call plug#end()                       " Initialize plugin system
 
@@ -170,7 +172,7 @@ nnoremap <Leader>nf :NERDTreeFind<CR>
 
 " Plug 'vim-scripts/TxtBrowser'
 " ----------------------------------------------
-au BufRead,BufNewFile *.txt setlocal ft=txt
+" au BufRead,BufNewFile *.txt setlocal ft=txt
 
 " Plug 'plasticboy/vim-markdown'
 " ----------------------------------------------
@@ -186,6 +188,19 @@ let g:vim_markdown_toc_autofit = 1
 nnoremap <Leader>mt :Toc<CR>
 " 格式化表格
 nnoremap <Leader>mf :TableFormat<CR>
+
+" Plug 'easymotion/vim-easymotion'
+" ----------------------------------------------
+" 搜索时忽略大小写
+let g:EasyMotion_smartcase = 0
+
+" move to word
+map  <Leader>w <Plug>(easymotion-bd-w)
+nmap <Leader>w <Plug>(easymotion-overwin-w)
+
+" search(use <Tab> and <S-Tab> to scroll down/up a page)
+map  <Leader>s <Plug>(easymotion-sn)
+omap <Leader>s <Plug>(easymotion-sn)
 
 " liuchengxu/vim-which-key
 " ----------------------------------------------
