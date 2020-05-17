@@ -49,7 +49,9 @@ Plug 'liuchengxu/vim-which-key'      " 快捷键导航
 " Plug 'vim-scripts/TxtBrowser'        " 文本高亮
 Plug 'plasticboy/vim-markdown'       " markdown语法高亮
 
-Plug 'easymotion/vim-easymotion'
+Plug 'easymotion/vim-easymotion'    " 快速移动
+" Plug 'svermeulen/vim-easyclip'    " 改变vim剪切板默认工作模式
+Plug 'vim-scripts/YankRing.vim'     " 复制、修改和删除的历史记录
 
 call plug#end()                       " Initialize plugin system
 
@@ -126,7 +128,6 @@ noremap <c-j> <c-w>j
 noremap <c-h> <c-w>h
 noremap <c-l> <c-w>l
 
-
 " =============================================================================
 " 插件配置
 " =============================================================================
@@ -201,6 +202,10 @@ nmap <Leader>w <Plug>(easymotion-overwin-w)
 " search(use <Tab> and <S-Tab> to scroll down/up a page)
 map  <Leader>s <Plug>(easymotion-sn)
 omap <Leader>s <Plug>(easymotion-sn)
+
+" Plug 'vim-scripts/YankRing.vim'
+" ----------------------------------------------
+nnoremap <silent> <F11> :YRShow<CR>
 
 " liuchengxu/vim-which-key
 " ----------------------------------------------
