@@ -50,8 +50,10 @@ Plug 'liuchengxu/vim-which-key'      " 快捷键导航
 Plug 'plasticboy/vim-markdown'       " markdown语法高亮
 
 Plug 'easymotion/vim-easymotion'    " 快速移动
+" Plug 'terryma/vim-multiple-cursors' " 多重选择
 " Plug 'svermeulen/vim-easyclip'    " 改变vim剪切板默认工作模式
-"Plug 'vim-scripts/YankRing.vim'     " 复制、修改和删除的历史记录
+" Plug 'vim-scripts/YankRing.vim'     " 复制、修改和删除的历史记录
+Plug 'romainl/vim-qf' " 
 
 call plug#end()                       " Initialize plugin system
 
@@ -134,8 +136,7 @@ noremap <c-h> <c-w>h
 noremap <c-l> <c-w>l
 
 " 复制与粘贴
-vnoremap y "*y
-vnoremap p "*p
+noremap <Leader>y "*y
 noremap <Leader>p "*p
 
 

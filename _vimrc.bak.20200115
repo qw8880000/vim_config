@@ -104,7 +104,7 @@ Bundle 'repeat.vim'
 " Bundle 'jlanzarotta/colorSchemeExplorer'
 
 Bundle 'easymotion/vim-easymotion' " done
-Bundle 'terryma/vim-multiple-cursors'
+Bundle 'terryma/vim-multiple-cursors' " done
 Bundle 'tpope/vim-fugitive'
 Bundle 'tomasr/molokai' " done
 Bundle 'romainl/vim-qf'
@@ -137,8 +137,8 @@ Bundle 'scrooloose/nerdcommenter'
 " ========================
 " txt / markdown / wiki
 " ========================
-Bundle 'TxtBrowser'
-Bundle 'plasticboy/vim-markdown'
+Bundle 'TxtBrowser' " done
+Bundle 'plasticboy/vim-markdown' "done
 " Bundle 'xolox/vim-notes'
 " Bundle 'xolox/vim-misc'
 " Bundle 'vimwiki/vimwiki'
