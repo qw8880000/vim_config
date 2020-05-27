@@ -50,7 +50,7 @@ Bundle 'gmarik/vundle'
 " ========================
 Bundle 'junegunn/vim-easy-align'
 " Bundle 'Align'
-Bundle 'godlygeek/tabular' " take
+Bundle 'godlygeek/tabular' " done
 
 " ========================
 " ²¹È«²å¼þ
@@ -77,15 +77,15 @@ Bundle 'qw8880000/neosnippet-snippets'
 " ========================
 " IDE
 " ========================
-Bundle 'bufexplorer.zip' " take
-Bundle 'scrooloose/nerdtree' "take
+Bundle 'bufexplorer.zip' " done
+Bundle 'scrooloose/nerdtree' "done
 Bundle 'wesleyche/SrcExpl'
 Bundle 'taglist.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'ZoomWin'
 Bundle 'qw8880000/ccvext.vim'
 Bundle 'ctrlpvim/ctrlp.vim'
-Bundle 'Lokaltog/vim-powerline' " take
+Bundle 'Lokaltog/vim-powerline' " done
 Bundle 'Yggdroot/indentLine'
 Bundle 'scrooloose/syntastic'
 
@@ -103,10 +103,10 @@ Bundle 'kshenoy/vim-signature'
 Bundle 'repeat.vim'
 " Bundle 'jlanzarotta/colorSchemeExplorer'
 
-Bundle 'easymotion/vim-easymotion'
+Bundle 'easymotion/vim-easymotion' " done
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'tpope/vim-fugitive'
-Bundle 'tomasr/molokai' " take
+Bundle 'tomasr/molokai' " done
 Bundle 'romainl/vim-qf'
 
 " ========================
