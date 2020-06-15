@@ -44,7 +44,6 @@ Plug 'vim-airline/vim-airline'       " 状态栏插件，提供漂亮的状态�
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Yilin-Yang/vim-markbar'
 Plug 'preservim/nerdtree'            " 文件目录导航
-Plug 'jlanzarotta/bufexplorer'       " buffer快速切换
 Plug 'liuchengxu/vim-which-key'      " 快捷键导航
 
 " Plug 'vim-scripts/TxtBrowser'        " 文本高亮
@@ -55,6 +54,8 @@ Plug 'easymotion/vim-easymotion'    " 快速移动
 " Plug 'svermeulen/vim-easyclip'    " 改变vim剪切板默认工作模式
 " Plug 'vim-scripts/YankRing.vim'     " 复制、修改和删除的历史记录
 " Plug 'romainl/vim-qf' " 
+
+Plug 'ctrlpvim/ctrlp.vim'
 
 call plug#end()                       " Initialize plugin system
 
@@ -145,7 +146,8 @@ noremap <Leader>p "*p
 " 插件配置
 " =============================================================================
 
-" 'godlygeek/tabular'             " 文本对齐插件，vim-markdown插件会用到
+" 'godlygeek/tabular'
+"   文本对齐插件，vim-markdown插件会用到
 " ----------------------------------------------
 " abcdef , abcdef , abcdef
 "   |    |    |   |    |  
@@ -180,9 +182,6 @@ nnoremap <F2> :NERDTreeToggle<CR>
 nnoremap <Leader>nt :NERDTreeToggle<CR>
 nnoremap <Leader>nc :NERDTreeCWD<CR>
 nnoremap <Leader>nf :NERDTreeFind<CR>
-
-" Plug 'jlanzarotta/bufexplorer'
-" ----------------------------------------------
 
 " Plug 'vim-scripts/TxtBrowser'
 " ----------------------------------------------
@@ -223,7 +222,7 @@ nnoremap <silent> <F11> :YRShow<CR>
 " Plug 'Yilin-Yang/vim-markbar'
 " ----------------------------------------------
 " 按下 ' 会显示 The "peekaboo" markbar
-let g:markbar_enable_peekaboo = 0
+let g:markbar_enable_peekaboo = v:false
 " only display alphabetic marks a-i and A-I
 let g:markbar_marks_to_display = 'abcdefghiABCDEFGHI'
 let g:markbar_peekaboo_marks_to_display = 'abcdefghiABCDEFGHI'
@@ -231,6 +230,15 @@ let g:markbar_peekaboo_marks_to_display = 'abcdefghiABCDEFGHI'
 nmap <Leader>m  <Plug>ToggleMarkbar
 nmap <Leader>mo <Plug>OpenMarkbar
 nmap <Leader>mc <Plug>CloseMarkbar
+
+" Plug 'ctrlpvim/ctrlp.vim'
+" ----------------------------------------------
+let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'dir', 'rtscript',
+                          \ 'undo', 'line', 'changes', 'mixed', 'bookmarkdir']
+" 打开Buffer列表：list buffers
+map <Leader>lb :CtrlPBuffer<CR>
+" 打开最近使用的文件列表：list most recently used files
+map <Leader>lf :CtrlPMRU<CR>
 
 " liuchengxu/vim-which-key
 " ----------------------------------------------
