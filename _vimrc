@@ -165,13 +165,32 @@ noremap <Leader>p "*p
 
 " vim-airline/vim-airline
 " ----------------------------------------------
-" 不显示扩展信息
+" airline启动时会自动加载所有扩展，使用以下配置进行启用/禁用
 let g:airline#extensions#disable_rtp_load = 1
-let g:airline_extensions = []
+let g:airline_extensions = ['tabline']
 " 状态栏主题
 let g:airline_theme='molokai'
 " 使用ascii字符。默认设置会出现显示不出来的字符，需要安装补丁字体(https://github.com/vim-airline/vim-airline#integrating-with-powerline-fonts)
 let g:airline_symbols_ascii = 1
+
+"
+" extension: airline-tabline
+let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#alt_sep = 1
+"let g:airline#extensions#tabline#buf_label_first = 1
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+nmap <leader>1 <Plug>AirlineSelectTab1
+nmap <leader>2 <Plug>AirlineSelectTab2
+nmap <leader>3 <Plug>AirlineSelectTab3
+nmap <leader>4 <Plug>AirlineSelectTab4
+nmap <leader>5 <Plug>AirlineSelectTab5
+nmap <leader>6 <Plug>AirlineSelectTab6
+nmap <leader>7 <Plug>AirlineSelectTab7
+nmap <leader>8 <Plug>AirlineSelectTab8
+nmap <leader>9 <Plug>AirlineSelectTab9
+nmap <leader>bp <Plug>AirlineSelectPrevTab
+nmap <leader>bn <Plug>AirlineSelectNextTab
+
 
 " preservim/nerdtree
 " ----------------------------------------------
@@ -261,9 +280,9 @@ nmap <Leader>mt  <Plug>ToggleMarkbar
 "     <C-Up> : scroll up in the popup preview window.
 "     <C-Down> : scroll down in the popup preview window.
 
-" buffers explore
+" Buffers explore
 noremap <leader>be :<C-U><C-R>=printf("Leaderf buffer %s", "")<CR><CR>
-" files most recently used
+" Files Most recently used
 noremap <leader>fm :<C-U><C-R>=printf("Leaderf mru %s", "")<CR><CR>
 noremap <leader>ll :<C-U><C-R>=printf("Leaderf line %s", "")<CR><CR>
 
