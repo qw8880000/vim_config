@@ -24,6 +24,13 @@ mklink C:\Users\Administrator\vimfiles\_gvimrc D:\code\NiceVim\_gvimrc
 	Amiga		    s:.gvimrc、home:.gvimrc、home:vimfiles:gvimrc 或
 			    $VIM/.gvimrc
 
+3. python安装
+gvim和python需要相互匹配，比如gvim是32位，那么python也应该安装32位的
 
 
+# 备忘
+`noremap <leader>fb :<C-U><C-R>=printf("Leaderf buffer %s", "")<CR><CR>`
+    - : 表示进行命令行模式
+    - <C-U> 表示删除光标所在位置与行首之间的所有字符
+    - <C-R>= 插入表达式寄存器: 会提示你输入一个表达式
 

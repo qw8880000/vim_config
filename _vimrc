@@ -55,7 +55,7 @@ Plug 'easymotion/vim-easymotion'    " 快速移动
 " Plug 'vim-scripts/YankRing.vim'     " 复制、修改和删除的历史记录
 " Plug 'romainl/vim-qf' " 
 
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'Yggdroot/LeaderF', { 'do': '.\install.bat' }
 
 call plug#end()                       " Initialize plugin system
 
@@ -208,12 +208,12 @@ nnoremap <Leader>mf :TableFormat<CR>
 let g:EasyMotion_smartcase = 0
 
 " move to word
-map  <Leader>w <Plug>(easymotion-bd-w)
-nmap <Leader>w <Plug>(easymotion-overwin-w)
+map  <Leader><Leader>w <Plug>(easymotion-bd-w)
+nmap <Leader><Leader>w <Plug>(easymotion-overwin-w)
 
 " search(use <Tab> and <S-Tab> to scroll down/up a page)
-map  <Leader>s <Plug>(easymotion-sn)
-omap <Leader>s <Plug>(easymotion-sn)
+map  <Leader><Leader>s <Plug>(easymotion-sn)
+omap <Leader><Leader>s <Plug>(easymotion-sn)
 
 " Plug 'vim-scripts/YankRing.vim'
 " ----------------------------------------------
@@ -222,23 +222,50 @@ nnoremap <silent> <F11> :YRShow<CR>
 " Plug 'Yilin-Yang/vim-markbar'
 " ----------------------------------------------
 " 按下 ' 会显示 The "peekaboo" markbar
-let g:markbar_enable_peekaboo = v:false
+let g:markbar_enable_peekaboo = v:true
 " only display alphabetic marks a-i and A-I
 let g:markbar_marks_to_display = 'abcdefghiABCDEFGHI'
 let g:markbar_peekaboo_marks_to_display = 'abcdefghiABCDEFGHI'
 
-nmap <Leader>m  <Plug>ToggleMarkbar
-nmap <Leader>mo <Plug>OpenMarkbar
-nmap <Leader>mc <Plug>CloseMarkbar
+nmap <Leader>mt  <Plug>ToggleMarkbar
 
-" Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'Yggdroot/LeaderF'
 " ----------------------------------------------
-let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'dir', 'rtscript',
-                          \ 'undo', 'line', 'changes', 'mixed', 'bookmarkdir']
-" 打开Buffer列表：list buffers
-map <Leader>lb :CtrlPBuffer<CR>
-" 打开最近使用的文件列表：list most recently used files
-map <Leader>lf :CtrlPMRU<CR>
+" 当打开Leaderf时，有以下快捷键：
+"     <C-C>, <ESC> : quit from LeaderF.
+"     <C-R> : switch between fuzzy search mode and regex mode.
+"     <C-F> : switch between full path search mode and name only search mode.
+"     <Tab> : switch to normal mode.
+"     <C-V>, <S-Insert> : paste from clipboard.
+"     <C-U> : clear the prompt.
+"     <C-W> : delete the word before the cursor in the prompt.
+"     <C-J>, <C-K> : navigate the result list.
+"     <Up>, <Down> : recall last/next input pattern from history.
+"     <2-LeftMouse> or <CR> : open the file under cursor or selected(when
+"                             multiple files are selected).
+"     <C-X> : open in horizontal split window.
+"     <C-]> : open in vertical split window.
+"     <C-T> : open in new tabpage.
+"     <F5>  : refresh the cache.
+"     <C-LeftMouse> or <C-S> : select multiple files.
+"     <S-LeftMouse> : select consecutive multiple files.
+"     <C-A> : select all files.
+"     <C-L> : clear all selections.
+"     <BS>  : delete the preceding character in the prompt.
+"     <Del> : delete the current character in the prompt.
+"     <Home>: move the cursor to the begin of the prompt.
+"     <End> : move the cursor to the end of the prompt.
+"     <Left>: move the cursor one character to the left.
+"     <Right> : move the cursor one character to the right.
+"     <C-P> : preview the result.
+"     <C-Up> : scroll up in the popup preview window.
+"     <C-Down> : scroll down in the popup preview window.
+
+" buffers explore
+noremap <leader>be :<C-U><C-R>=printf("Leaderf buffer %s", "")<CR><CR>
+" files most recently used
+noremap <leader>fm :<C-U><C-R>=printf("Leaderf mru %s", "")<CR><CR>
+noremap <leader>ll :<C-U><C-R>=printf("Leaderf line %s", "")<CR><CR>
 
 " liuchengxu/vim-which-key
 " ----------------------------------------------
