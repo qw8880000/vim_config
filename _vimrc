@@ -37,10 +37,10 @@ endif
 " =============================================================================
 call plug#begin()                     " Specify a directory for plugins
 
-Plug 'godlygeek/tabular'             " 文本对齐插件，vim-markdown插件会用到
+Plug 'godlygeek/tabular'             " 文本对齐插件(vim-markdown插件会用到)
 " Plug 'junegunn/vim-easy-align'
 Plug 'tomasr/molokai'                " molokai主题
-Plug 'vim-airline/vim-airline'       " 状态栏插件，提供漂亮的状态栏样式
+Plug 'vim-airline/vim-airline'       " 状态栏/tab栏(statusline/tabline)插件
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Yilin-Yang/vim-markbar'
 Plug 'preservim/nerdtree'            " 文件目录导航
@@ -174,11 +174,26 @@ let g:airline_theme='molokai'
 let g:airline_symbols_ascii = 1
 
 "
-" extension: airline-tabline
+" tabline 配置
+"
 let g:airline#extensions#tabline#enabled = 1
-"let g:airline#extensions#tabline#alt_sep = 1
-"let g:airline#extensions#tabline#buf_label_first = 1
 let g:airline#extensions#tabline#buffer_idx_mode = 1
+" 文件路径显示方式
+let g:airline#extensions#tabline#formatter = 'unique_tail'
+" buffer名称前的数字标识
+let g:airline#extensions#tabline#buffer_idx_format = {
+       \ '0': '0 ',
+       \ '1': '1 ',
+       \ '2': '2 ',
+       \ '3': '3 ',
+       \ '4': '4 ',
+       \ '5': '5 ',
+       \ '6': '6 ',
+       \ '7': '7 ',
+       \ '8': '8 ',
+       \ '9': '9 '
+       \}
+" buffer切换
 nmap <leader>1 <Plug>AirlineSelectTab1
 nmap <leader>2 <Plug>AirlineSelectTab2
 nmap <leader>3 <Plug>AirlineSelectTab3
@@ -246,7 +261,8 @@ let g:markbar_enable_peekaboo = v:true
 let g:markbar_marks_to_display = 'abcdefghiABCDEFGHI'
 let g:markbar_peekaboo_marks_to_display = 'abcdefghiABCDEFGHI'
 
-nmap <Leader>mt  <Plug>ToggleMarkbar
+" Marks show
+nmap <Leader><Leader>m  <Plug>ToggleMarkbar
 
 " Plug 'Yggdroot/LeaderF'
 " ----------------------------------------------
@@ -280,10 +296,11 @@ nmap <Leader>mt  <Plug>ToggleMarkbar
 "     <C-Up> : scroll up in the popup preview window.
 "     <C-Down> : scroll down in the popup preview window.
 
-" Buffers explore
-noremap <leader>be :<C-U><C-R>=printf("Leaderf buffer %s", "")<CR><CR>
+" Buffers list
+noremap <leader>bl :<C-U><C-R>=printf("Leaderf buffer %s", "")<CR><CR>
 " Files Most recently used
 noremap <leader>fm :<C-U><C-R>=printf("Leaderf mru %s", "")<CR><CR>
+" Line List
 noremap <leader>ll :<C-U><C-R>=printf("Leaderf line %s", "")<CR><CR>
 
 " liuchengxu/vim-which-key
