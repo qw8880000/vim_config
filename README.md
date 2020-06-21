@@ -34,3 +34,13 @@ gvim和python需要相互匹配，比如gvim是32位，那么python也应该安�
     - <C-U> 表示删除光标所在位置与行首之间的所有字符
     - <C-R>= 插入表达式寄存器: 会提示你输入一个表达式
 
+
+## 安装rg
+
+https://github.com/BurntSushi/ripgrep
+LeaderF 插件可搭配 rg 进行快速搜索
+1. 下载安装rg
+  - 下载ripgrep-12.1.1-x86_64-pc-windows-msvc.zip
+  - 解压，设置环境变量
+
+rg中文文档 https://github.com/chinanf-boy/ripgrep-zh#%E6%9B%B4%E6%96%B0-

@@ -113,6 +113,8 @@ set noundofile
 set writebackup                                   " 保存文件前建立备份
 set nobackup                                      " 保存成功后删除该备份
 
+set nofoldenable " 关闭折叠
+
 "au BufWinEnter * let w:m2=matchadd('Underlined', '\%>' . 80 . 'v.\+', -1)" 启用每行超过80列的字符提示（字体变蓝并加下划线）
 if has("autocmd")
 	" 重新打开文件时回到上次位置 
@@ -211,6 +213,8 @@ nmap <leader>bn <Plug>AirlineSelectNextTab
 " ----------------------------------------------
 "close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" 默认显示Bookmarks
+let NERDTreeShowBookmarks = 1
 " 打开/关闭目录树
 nnoremap <F2> :NERDTreeToggle<CR>
 nnoremap <Leader>nt :NERDTreeToggle<CR>
@@ -296,12 +300,17 @@ nmap <Leader><Leader>m  <Plug>ToggleMarkbar
 "     <C-Up> : scroll up in the popup preview window.
 "     <C-Down> : scroll down in the popup preview window.
 
+let g:Lf_DefaultMode = 'Regex'
+
 " Buffers list
 noremap <leader>bl :<C-U><C-R>=printf("Leaderf buffer %s", "")<CR><CR>
 " Files Most recently used
 noremap <leader>fm :<C-U><C-R>=printf("Leaderf mru %s", "")<CR><CR>
 " Line List
 noremap <leader>ll :<C-U><C-R>=printf("Leaderf line %s", "")<CR><CR>
+" rg
+noremap <leader>fw :<C-U><C-R>=printf("Leaderf! rg -e %s ", expand("<cword>"))<CR>
+nmap <leader>rg <Plug>LeaderfRgPrompt
 
 " liuchengxu/vim-which-key
 " ----------------------------------------------
