@@ -242,6 +242,8 @@ nnoremap <Leader>mf :TableFormat<CR>
 
 " Plug 'easymotion/vim-easymotion'
 " ----------------------------------------------
+" 把默认快捷键映射成3个Leader，防止和其他快捷键冲突
+map <Leader><Leader><Leader> <Plug>(easymotion-prefix)
 " 搜索时忽略大小写
 let g:EasyMotion_smartcase = 0
 
@@ -300,17 +302,27 @@ nmap <Leader><Leader>m  <Plug>ToggleMarkbar
 "     <C-Up> : scroll up in the popup preview window.
 "     <C-Down> : scroll down in the popup preview window.
 
+" 使用正则表达式搜索
 let g:Lf_DefaultMode = 'Regex'
 
 " Buffers list
 noremap <leader>bl :<C-U><C-R>=printf("Leaderf buffer %s", "")<CR><CR>
 " Files Most recently used
 noremap <leader>fm :<C-U><C-R>=printf("Leaderf mru %s", "")<CR><CR>
+
 " Line List
 noremap <leader>ll :<C-U><C-R>=printf("Leaderf line %s", "")<CR><CR>
-" rg
-noremap <leader>fw :<C-U><C-R>=printf("Leaderf! rg -e %s ", expand("<cword>"))<CR>
-nmap <leader>rg <Plug>LeaderfRgPrompt
+noremap <leader>lr :<C-U><C-R>=printf("Leaderf line %s", "--recall")<CR><CR>
+
+" help list
+noremap <leader>hl :<C-U><C-R>=printf("Leaderf help %s", "")<CR><CR>
+" help list recall
+noremap <leader>hr :<C-U><C-R>=printf("Leaderf help %s", "--recall")<CR><CR>
+
+" find
+noremap <leader><leader>f :<C-U><C-R>=printf("Leaderf! rg -e %s ", expand("<cword>"))<CR>
+" find again
+noremap <leader>fr :<C-U><C-R>=printf("Leaderf! rg --recall %s", "")<CR>
 
 " liuchengxu/vim-which-key
 " ----------------------------------------------
