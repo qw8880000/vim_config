@@ -50,7 +50,7 @@ Plug 'liuchengxu/vim-which-key'      " 快捷键导航
 Plug 'plasticboy/vim-markdown'       " markdown语法高亮
 
 Plug 'easymotion/vim-easymotion'    " 快速移动
-" Plug 'terryma/vim-multiple-cursors' " 多重选择
+Plug 'terryma/vim-multiple-cursors' " 多重选择
 " Plug 'svermeulen/vim-easyclip'    " 改变vim剪切板默认工作模式
 " Plug 'vim-scripts/YankRing.vim'     " 复制、修改和删除的历史记录
 " Plug 'romainl/vim-qf' " 
@@ -255,6 +255,16 @@ nmap <Leader><Leader>w <Plug>(easymotion-overwin-w)
 map  <Leader><Leader>s <Plug>(easymotion-sn)
 omap <Leader><Leader>s <Plug>(easymotion-sn)
 
+
+" Plug 'terryma/vim-multiple-cursors' " 多重选择
+" ----------------------------------------------
+" start: <C-n> start multicursor and add a virtual cursor + selection on the match
+"     next: <C-n> add a new virtual cursor + selection on the next match
+"     skip: <C-x> skip the next match
+"     prev: <C-p> remove current virtual cursor + selection and go back on previous match
+" select all: <A-n> start multicursor and directly select all matches
+
+
 " Plug 'vim-scripts/YankRing.vim'
 " ----------------------------------------------
 nnoremap <silent> <F11> :YRShow<CR>
@@ -305,24 +315,28 @@ nmap <Leader><Leader>m  <Plug>ToggleMarkbar
 " 使用正则表达式搜索
 let g:Lf_DefaultMode = 'Regex'
 
-" Buffers list
-noremap <leader>bl :<C-U><C-R>=printf("Leaderf buffer %s", "")<CR><CR>
+
+" Launch LeaderF to search files.
+noremap <leader><leader>f :LeaderfFile<CR>
+
+" Buffers Explorer
+noremap <leader>be :<C-U><C-R>=printf("Leaderf buffer %s", "")<CR><CR>
 " Files Most recently used
 noremap <leader>fm :<C-U><C-R>=printf("Leaderf mru %s", "")<CR><CR>
 
 " Line List
 noremap <leader>ll :<C-U><C-R>=printf("Leaderf line %s", "")<CR><CR>
-noremap <leader>lr :<C-U><C-R>=printf("Leaderf line %s", "--recall")<CR><CR>
+noremap <leader>lr :<C-U><C-R>=printf("Leaderf line --recall %s", "")<CR><CR>
 
-" help list
-noremap <leader>hl :<C-U><C-R>=printf("Leaderf help %s", "")<CR><CR>
-" help list recall
-noremap <leader>hr :<C-U><C-R>=printf("Leaderf help %s", "--recall")<CR><CR>
+" Help Explorer
+noremap <leader>he :<C-U><C-R>=printf("Leaderf help %s", "")<CR><CR>
+" Help explorer Recall
+noremap <leader>hr :<C-U><C-R>=printf("Leaderf help --recall %s", "")<CR><CR>
 
-" find
-noremap <leader><leader>f :<C-U><C-R>=printf("Leaderf! rg -e %s ", expand("<cword>"))<CR>
-" find again
-noremap <leader>fr :<C-U><C-R>=printf("Leaderf! rg --recall %s", "")<CR>
+" grep
+noremap <leader><leader>g :<C-U><C-R>=printf("Leaderf! rg -e %s", "")<CR>
+" grep recall
+noremap <leader>gr :<C-U><C-R>=printf("Leaderf! rg --recall %s", "")<CR><CR>
 
 " liuchengxu/vim-which-key
 " ----------------------------------------------
@@ -350,3 +364,5 @@ let g:which_key_map['m'] = {
       \ 't' : '显示Toc目录',
       \ 'f' : '表格格式化',
       \ }
+
+

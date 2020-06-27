@@ -84,7 +84,7 @@ Bundle 'taglist.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'ZoomWin'
 Bundle 'qw8880000/ccvext.vim'
-Bundle 'ctrlpvim/ctrlp.vim'
+Bundle 'ctrlpvim/ctrlp.vim' " done
 Bundle 'Lokaltog/vim-powerline' " done
 Bundle 'Yggdroot/indentLine'
 Bundle 'scrooloose/syntastic'

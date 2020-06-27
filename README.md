@@ -29,6 +29,8 @@ gvim和python需要相互匹配，比如gvim是32位，那么python也应该安�
 
 
 # 备忘
+
+## 快捷键映射时使用:<C-U><C-R>的目的
 `noremap <leader>fb :<C-U><C-R>=printf("Leaderf buffer %s", "")<CR><CR>`
     - : 表示进行命令行模式
     - <C-U> 表示删除光标所在位置与行首之间的所有字符
@@ -44,3 +46,20 @@ LeaderF 插件可搭配 rg 进行快速搜索
   - 解压，设置环境变量
 
 rg中文文档 https://github.com/chinanf-boy/ripgrep-zh#%E6%9B%B4%E6%96%B0-
+
+## LeaderF 搜索结果重复打开
+
+使用 --recall 参数
+
+## nerdtree
+
+* 在选中的条目上进行grep 
+https://github.com/MarSoft/nerdtree-grep-plugin
+https://github.com/vim-scripts/nerdtree-ack
+https://github.com/mortonfox/nerdtree-ag
+
+* 在选中的条目上获取完整路径
+https://github.com/mortonfox/nerdtree-clip
+
+* 调用系统命令来执行当前文件
+https://github.com/ivalkeen/nerdtree-execute
