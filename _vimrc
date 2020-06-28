@@ -39,23 +39,29 @@ call plug#begin()                     " Specify a directory for plugins
 
 Plug 'godlygeek/tabular'             " 文本对齐插件(vim-markdown插件会用到)
 " Plug 'junegunn/vim-easy-align'
+"
 Plug 'tomasr/molokai'                " molokai主题
 Plug 'vim-airline/vim-airline'       " 状态栏/tab栏(statusline/tabline)插件
 Plug 'vim-airline/vim-airline-themes'
+
 Plug 'Yilin-Yang/vim-markbar'
+
 Plug 'preservim/nerdtree'            " 文件目录导航
+Plug 'majutsushi/tagbar'            " tag列表
+
 Plug 'liuchengxu/vim-which-key'      " 快捷键导航
 
 " Plug 'vim-scripts/TxtBrowser'        " 文本高亮
 Plug 'plasticboy/vim-markdown'       " markdown语法高亮
 
+Plug 'lfv89/vim-interestingwords'   " 对感兴趣的单词进行高亮
 Plug 'easymotion/vim-easymotion'    " 快速移动
 Plug 'terryma/vim-multiple-cursors' " 多重选择
-" Plug 'svermeulen/vim-easyclip'    " 改变vim剪切板默认工作模式
 " Plug 'vim-scripts/YankRing.vim'     " 复制、修改和删除的历史记录
 " Plug 'romainl/vim-qf' " 
 
 Plug 'Yggdroot/LeaderF', { 'do': '.\install.bat' }
+
 
 call plug#end()                       " Initialize plugin system
 
@@ -208,7 +214,6 @@ nmap <leader>9 <Plug>AirlineSelectTab9
 nmap <leader>bp <Plug>AirlineSelectPrevTab
 nmap <leader>bn <Plug>AirlineSelectNextTab
 
-
 " preservim/nerdtree
 " ----------------------------------------------
 "close vim if the only window left open is a NERDTree
@@ -221,9 +226,29 @@ nnoremap <Leader>nt :NERDTreeToggle<CR>
 nnoremap <Leader>nc :NERDTreeCWD<CR>
 nnoremap <Leader>nf :NERDTreeFind<CR>
 
+
+" Plug 'majutsushi/tagbar'
+" ----------------------------------------------
+nnoremap <F3> :TagbarToggle<CR>
+" 打开tagbar时自动聚焦到tagbar窗口
+let g:tagbar_autofocus = 1
+
 " Plug 'vim-scripts/TxtBrowser'
 " ----------------------------------------------
 " au BufRead,BufNewFile *.txt setlocal ft=txt
+
+
+" Plug 'lfv89/vim-interestingwords'
+" ----------------------------------------------
+" 随机颜色
+let g:interestingWordsRandomiseColors = 1
+
+" mark word
+nnoremap <leader>mw :call InterestingWords('n')<cr>
+" mark visual
+vnoremap <leader>mv :call InterestingWords('v')<cr>
+" marks clear
+nnoremap <leader>mc :call UncolorAllWords()<cr>
 
 " Plug 'plasticboy/vim-markdown'
 " ----------------------------------------------
@@ -267,7 +292,7 @@ omap <Leader><Leader>s <Plug>(easymotion-sn)
 
 " Plug 'vim-scripts/YankRing.vim'
 " ----------------------------------------------
-nnoremap <silent> <F11> :YRShow<CR>
+nnoremap <F11> :YRShow<CR>
 
 " Plug 'Yilin-Yang/vim-markbar'
 " ----------------------------------------------
@@ -333,6 +358,9 @@ noremap <leader>he :<C-U><C-R>=printf("Leaderf help %s", "")<CR><CR>
 " Help explorer Recall
 noremap <leader>hr :<C-U><C-R>=printf("Leaderf help --recall %s", "")<CR><CR>
 
+" Functions Explorer
+noremap <leader>fe :<C-U><C-R>=printf("Leaderf function %s", "")<CR><CR>
+
 " grep
 noremap <leader><leader>g :<C-U><C-R>=printf("Leaderf! rg -e %s", "")<CR>
 " grep recall
@@ -341,7 +369,7 @@ noremap <leader>gr :<C-U><C-R>=printf("Leaderf! rg --recall %s", "")<CR><CR>
 " liuchengxu/vim-which-key
 " ----------------------------------------------
 
-nnoremap <silent> <leader> :<c-u>WhichKey ','<CR>
+nnoremap <leader> :<c-u>WhichKey ','<CR>
 " 注册键位与对应的 dict
 call which_key#register(',', "g:which_key_map")
 

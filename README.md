@@ -27,6 +27,23 @@ mklink C:\Users\Administrator\vimfiles\_gvimrc D:\code\NiceVim\_gvimrc
 3. python安装
 gvim和python需要相互匹配，比如gvim是32位，那么python也应该安装32位的
 
+4. 安装rg
+
+LeaderF rg命令使用了ripgrep插件
+
+https://github.com/BurntSushi/ripgrep
+LeaderF 插件可搭配 rg 进行快速搜索
+1. 下载安装rg
+  - 下载ripgrep-12.1.1-x86_64-pc-windows-msvc.zip
+  - 解压，设置环境变量
+
+rg中文文档 https://github.com/chinanf-boy/ripgrep-zh#%E6%9B%B4%E6%96%B0-
+
+5. 安装ctags
+
+LeaderF function与tagbar使用到ctags插件
+下载：http://ctags.sourceforge.net/
+解压，然后设置为环境变量
 
 # 备忘
 
@@ -37,15 +54,6 @@ gvim和python需要相互匹配，比如gvim是32位，那么python也应该安�
     - <C-R>= 插入表达式寄存器: 会提示你输入一个表达式
 
 
-## 安装rg
-
-https://github.com/BurntSushi/ripgrep
-LeaderF 插件可搭配 rg 进行快速搜索
-1. 下载安装rg
-  - 下载ripgrep-12.1.1-x86_64-pc-windows-msvc.zip
-  - 解压，设置环境变量
-
-rg中文文档 https://github.com/chinanf-boy/ripgrep-zh#%E6%9B%B4%E6%96%B0-
 
 ## LeaderF 搜索结果重复打开
 
@@ -63,3 +71,14 @@ https://github.com/mortonfox/nerdtree-clip
 
 * 调用系统命令来执行当前文件
 https://github.com/ivalkeen/nerdtree-execute
+
+# 一些插件
+
+* 'svermeulen/vim-easyclip'    " 改变vim剪切板默认工作模式
+
+* https://github.com/lfv89/vim-interestingwords  vim-interestingwords 对感兴趣的单词进行高亮
+* https://github.com/vim-scripts/Mark--Karkat 可高亮单词、选择区域、正则表达式
+
+*  https://github.com/mhinz/vim-grepper mhinz/vim-grepper 使用你喜欢的搜索工具，搜索结果放入quickfix  
+
+* https://github.com/dyng/ctrlsf.vim ctrlsf 使用你喜欢的搜索工具，不同于其他工具，它会显示上下文

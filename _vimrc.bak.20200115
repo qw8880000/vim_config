@@ -80,8 +80,8 @@ Bundle 'qw8880000/neosnippet-snippets'
 Bundle 'bufexplorer.zip' " done
 Bundle 'scrooloose/nerdtree' "done
 Bundle 'wesleyche/SrcExpl'
-Bundle 'taglist.vim'
-Bundle 'majutsushi/tagbar'
+Bundle 'taglist.vim' " done
+Bundle 'majutsushi/tagbar' "done
 Bundle 'ZoomWin'
 Bundle 'qw8880000/ccvext.vim'
 Bundle 'ctrlpvim/ctrlp.vim' " done
@@ -91,14 +91,14 @@ Bundle 'scrooloose/syntastic'
 
 if g:islinux
     " Bundle 'EasyGrep'
-    Bundle 'mhinz/vim-grepper'
-    Bundle 'mileszs/ack.vim'
-    Bundle 'rking/ag.vim'
-    Bundle 'dyng/ctrlsf.vim'
+    Bundle 'mhinz/vim-grepper' " done
+    Bundle 'mileszs/ack.vim'    " done
+    Bundle 'rking/ag.vim' " done
+    Bundle 'dyng/ctrlsf.vim' " done
 endif
 "Bundle 'jiangmiao/auto-pairs'
 Bundle 'tpope/vim-surround'
-Bundle 'Mark--Karkat'
+Bundle 'Mark--Karkat' " done
 Bundle 'kshenoy/vim-signature'
 Bundle 'repeat.vim'
 " Bundle 'jlanzarotta/colorSchemeExplorer'
