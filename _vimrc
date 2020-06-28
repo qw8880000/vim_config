@@ -215,6 +215,38 @@ nmap <leader>9 <Plug>AirlineSelectTab9
 nmap <leader>bp <Plug>AirlineSelectPrevTab
 nmap <leader>bn <Plug>AirlineSelectNextTab
 
+
+" Plug 'mhinz/vim-startify'
+" ----------------------------------------------
+" Read NERDTreeBookmarks
+function! s:my_nerdtreeBookmarks()
+    let bookmarks = []
+
+    for i in g:NERDTreeBookmark.Bookmarks()
+        let bookmark = {'line': '', 'cmd': '', 'path': ''}
+        let bookmark.line = i.path.str()
+        " let bookmark.path = i.path.str()
+        let bookmark.cmd = 'NERDTreeFromBookmark ' . i.name
+        call add(bookmarks, bookmark)
+    endfor
+
+    return bookmarks
+endfunction
+
+let g:startify_lists = [
+      \ { 'type': function('s:my_nerdtreeBookmarks'), 'header': ['   NERDTree Bookmarks']},
+      \ { 'type': 'files',     'header': ['   MRU']            },
+      \ { 'type': 'commands',  'header': ['   Commands']       },
+      \ ]
+
+let g:startify_commands = [
+        \ ':help reference',
+        \ ['Leaderf MRU', 'h ref'],
+        \ {'h': 'h ref'},
+        \ {'m': ['My magical function', 'call Magic()']},
+        \ ]
+
+
 " preservim/nerdtree
 " ----------------------------------------------
 "close vim if the only window left open is a NERDTree
