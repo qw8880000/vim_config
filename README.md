@@ -82,3 +82,13 @@ https://github.com/ivalkeen/nerdtree-execute
 *  https://github.com/mhinz/vim-grepper mhinz/vim-grepper 使用你喜欢的搜索工具，搜索结果放入quickfix  
 
 * https://github.com/dyng/ctrlsf.vim ctrlsf 使用你喜欢的搜索工具，不同于其他工具，它会显示上下文
+
+* vim 开屏显示内容
+【GitHub - hardcoreplayers/dashboard-nvim: vim dashboard】https://github.com/hardcoreplayers/dashboard-nvim
+【GitHub - mhinz/vim-startify: The fancy start screen for Vim.】https://github.com/mhinz/vim-startify
+
+dashboard-nvim是比较新的插件，值得关注
+
+* 查找器
+vim-clap是与ctrlp、leaderf类型的插件
+https://github.com/liuchengxu/vim-clap

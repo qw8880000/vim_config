@@ -46,6 +46,7 @@ Plug 'vim-airline/vim-airline-themes'
 
 Plug 'Yilin-Yang/vim-markbar'
 
+Plug 'mhinz/vim-startify'           " vim start screen
 Plug 'preservim/nerdtree'            " 文件目录导航
 Plug 'majutsushi/tagbar'            " tag列表
 
