@@ -89,17 +89,66 @@ https://github.com/ivalkeen/nerdtree-execute
 * https://github.com/vim-scripts/Mark--Karkat 可高亮单词、高亮选择区域、高亮正则表达式
 * https://github.com/mhinz/vim-grepper mhinz/vim-grepper 使用你喜欢的搜索工具，搜索结果放入quickfix  
 * https://github.com/dyng/ctrlsf.vim ctrlsf 使用你喜欢的搜索工具，不同于其他工具，它会显示上下文
-
 * vim 开屏显示内容
 【GitHub - hardcoreplayers/dashboard-nvim: vim dashboard】https://github.com/hardcoreplayers/dashboard-nvim
 【GitHub - mhinz/vim-startify: The fancy start screen for Vim.】https://github.com/mhinz/vim-startify
-
 dashboard-nvim是比较新的插件，值得关注
-
 * 查找器
 vim-clap是与ctrlp、leaderf类型的插件
 https://github.com/liuchengxu/vim-clap
-
 * Yggdroot/indentLine 显示缩进线
-
 * 'junegunn/vim-easy-align' 排序插件
+* 'tpope/vim-fugitive' git命令插件
+*  kshenoy / vim-signature marks的显示，定位与浏览
+* 'jiangmiao/auto-pairs' 自动插入或删除成对的 "" ' (
+* 'tpope/vim-surround'
+* https://github.com/svermeulen/vim-easyclip Simplified clipboard functionality for Vim.
+ 
+
+# 还未迁移过来的
+
+" ========================
+" web develop
+" ========================
+Bundle 'mattn/emmet-vim'
+Bundle 'douglascrockford/JSLint'
+Bundle 'pangloss/vim-javascript'
+Bundle 'maksimr/vim-jsbeautify'
+Bundle 'leshill/vim-json'
+Bundle 'briancollins/vim-jst'
+Bundle 'heavenshell/vim-jsdoc'
+Bundle 'gko/vim-coloresque'
+Bundle 'hail2u/vim-css3-syntax'
+
+" ========================
+" c / c++
+" ========================
+Bundle 'qw8880000/ccvext.vim'
+Bundle 'qw8880000/DoxygenToolkit.vim'
+" Bundle 'cSyntaxAfter'
+Bundle 'justinmk/vim-syntax-extra'
+" Bundle 'octol/vim-cpp-enhanced-highlight'
+" Bundle 'std_c.zip'
+Bundle 'qw8880000/c.vim'
+Bundle 'cpp.vim'
+Bundle 'scrooloose/nerdcommenter'
+
+" ========================
+" 补全插件
+" ========================
+" Bundle 'Valloric/YouCompleteMe'
+" Bundle 'vim-javacompleteex'
+Bundle 'Shougo/neocomplcache.vim'
+Bundle 'OmniCppComplete'
+
+
+" ========================
+" 代码片段
+" ========================
+Bundle 'msanders/snipmate.vim'
+Bundle 'Shougo/neosnippet.vim'
+Bundle 'Shougo/context_filetype.vim'
+Bundle 'qw8880000/neosnippet-snippets'
+" Bundle 'SirVer/ultisnips'
+" Bundle 'honza/vim-snippets'
+

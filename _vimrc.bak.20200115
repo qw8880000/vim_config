@@ -81,7 +81,6 @@ Bundle 'wesleyche/SrcExpl'                  " done
 Bundle 'taglist.vim'                        " done
 Bundle 'majutsushi/tagbar'                  " done
 Bundle 'ZoomWin'                            " no
-Bundle 'qw8880000/ccvext.vim'
 Bundle 'ctrlpvim/ctrlp.vim'                 " no
 Bundle 'Lokaltog/vim-powerline'             " no
 Bundle 'Yggdroot/indentLine'                " no
@@ -94,18 +93,18 @@ if g:islinux
     Bundle 'rking/ag.vim'                   " no
     Bundle 'dyng/ctrlsf.vim'                " no
 endif
-"Bundle 'jiangmiao/auto-pairs'
-Bundle 'tpope/vim-surround'
-Bundle 'Mark--Karkat'                       " done
-Bundle 'kshenoy/vim-signature'
-Bundle 'repeat.vim'
+"Bundle 'jiangmiao/auto-pairs'              " no
+Bundle 'tpope/vim-surround'                 " no
+Bundle 'Mark--Karkat'                       " no
+Bundle 'kshenoy/vim-signature'              " no
+Bundle 'repeat.vim'                         " no
 " Bundle 'jlanzarotta/colorSchemeExplorer'  " no
 
 Bundle 'easymotion/vim-easymotion'          " done
 Bundle 'terryma/vim-multiple-cursors'       " done
-Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-fugitive'                 " no
 Bundle 'tomasr/molokai'                     " done
-Bundle 'romainl/vim-qf'
+Bundle 'romainl/vim-qf'                     " no
 
 " ========================
 " web develop
@@ -123,6 +122,7 @@ Bundle 'hail2u/vim-css3-syntax'
 " ========================
 " c / c++
 " ========================
+Bundle 'qw8880000/ccvext.vim'
 Bundle 'qw8880000/DoxygenToolkit.vim'
 " Bundle 'cSyntaxAfter'
 Bundle 'justinmk/vim-syntax-extra'
