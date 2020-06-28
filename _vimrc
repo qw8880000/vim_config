@@ -235,15 +235,12 @@ endfunction
 
 let g:startify_lists = [
       \ { 'type': function('s:my_nerdtreeBookmarks'), 'header': ['   NERDTree Bookmarks']},
-      \ { 'type': 'files',     'header': ['   MRU']            },
-      \ { 'type': 'commands',  'header': ['   Commands']       },
+      \ { 'type': 'commands',  'header': ['   (Commands)常用命令']       },
+      \ { 'type': 'files',     'header': ['   (MRU)最近打开的文件']            },
       \ ]
 
 let g:startify_commands = [
-        \ ':help reference',
-        \ ['Leaderf MRU', 'h ref'],
-        \ {'h': 'h ref'},
-        \ {'m': ['My magical function', 'call Magic()']},
+        \ ['Leaderf MRU', 'LeaderfMru'],
         \ ]
 
 
