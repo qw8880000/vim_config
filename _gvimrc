@@ -1,18 +1,18 @@
 "source $VIMRUNTIME/vimrc_example.vim
 
-" Èç¹ûÏëÓÃ CTRL-X£¬CTRL-C ºÍ CTRL-V ÕâĞ©±ê×¼µÄ MS-Windows ²Ù×÷·½Ê½£¬¿É¿ªÆôÒÔÏÂ×¢ÊÍ
+" å¦‚æœæƒ³ç”¨ CTRL-Xï¼ŒCTRL-C å’Œ CTRL-V è¿™äº›æ ‡å‡†çš„ MS-Windows æ“ä½œæ–¹å¼ï¼Œå¯å¼€å¯ä»¥ä¸‹æ³¨é‡Š
 "source $VIMRUNTIME/mswin.vim
 "behave mswin
 
 
-" ½â¾ö²Ëµ¥ÂÒÂë
+" è§£å†³èœå•ä¹±ç 
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
 
-" ½â¾öconsleÊä³öÂÒÂë
+" è§£å†³consleè¾“å‡ºä¹±ç 
 language messages zh_CN.utf-8
 
-" ÏÔÊ¾/Òş²Ø²Ëµ¥À¸¡¢¹¤¾ßÀ¸¡¢¹ö¶¯Ìõ£¬¿ÉÓÃ Ctrl + F11 ÇĞ»»
+" æ˜¾ç¤º/éšè—èœå•æ ã€å·¥å…·æ ã€æ»šåŠ¨æ¡ï¼Œå¯ç”¨ Ctrl + F11 åˆ‡æ¢
 set guioptions-=m
 set guioptions-=T
 set guioptions-=r
@@ -29,5 +29,5 @@ nmap <silent> <c-F11> :if &guioptions =~# 'm' <Bar>
             \set guioptions+=L <Bar>
             \endif<CR>
 
-" ´°¿Ú´óĞ¡
+" çª—å£å¤§å°
 set columns=120

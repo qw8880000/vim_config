@@ -59,6 +59,15 @@ LeaderF function与tagbar使用到ctags插件
 
 使用 --recall 参数
 
+## LeaderF 页面保持常开
+
+--stayOpen 参数
+
+## LeaderF 中如何关闭buffer
+
+2. :LeaderfBuffer->Tab->d
+<Tab> : switch to normal mode.
+
 ## nerdtree
 
 * 在选中的条目上进行grep 
@@ -77,10 +86,8 @@ https://github.com/ivalkeen/nerdtree-execute
 * 'svermeulen/vim-easyclip'    " 改变vim剪切板默认工作模式
 
 * https://github.com/lfv89/vim-interestingwords  vim-interestingwords 对感兴趣的单词进行高亮
-* https://github.com/vim-scripts/Mark--Karkat 可高亮单词、选择区域、正则表达式
-
-*  https://github.com/mhinz/vim-grepper mhinz/vim-grepper 使用你喜欢的搜索工具，搜索结果放入quickfix  
-
+* https://github.com/vim-scripts/Mark--Karkat 可高亮单词、高亮选择区域、高亮正则表达式
+* https://github.com/mhinz/vim-grepper mhinz/vim-grepper 使用你喜欢的搜索工具，搜索结果放入quickfix  
 * https://github.com/dyng/ctrlsf.vim ctrlsf 使用你喜欢的搜索工具，不同于其他工具，它会显示上下文
 
 * vim 开屏显示内容
@@ -92,3 +99,7 @@ dashboard-nvim是比较新的插件，值得关注
 * 查找器
 vim-clap是与ctrlp、leaderf类型的插件
 https://github.com/liuchengxu/vim-clap
+
+* Yggdroot/indentLine 显示缩进线
+
+* 'junegunn/vim-easy-align' 排序插件

@@ -48,9 +48,9 @@ Bundle 'gmarik/vundle'
 " ========================
 " 对齐插件
 " ========================
-Bundle 'junegunn/vim-easy-align'
-" Bundle 'Align'
-Bundle 'godlygeek/tabular' " done
+Bundle 'junegunn/vim-easy-align'            " no
+" Bundle 'Align'                            " no
+Bundle 'godlygeek/tabular'                  " done
 
 " ========================
 " 补全插件
@@ -65,11 +65,9 @@ Bundle 'OmniCppComplete'
 " 代码片段
 " ========================
 Bundle 'msanders/snipmate.vim'
-
 Bundle 'Shougo/neosnippet.vim'
 Bundle 'Shougo/context_filetype.vim'
 Bundle 'qw8880000/neosnippet-snippets'
-
 " Bundle 'SirVer/ultisnips'
 " Bundle 'honza/vim-snippets'
 
@@ -77,36 +75,36 @@ Bundle 'qw8880000/neosnippet-snippets'
 " ========================
 " IDE
 " ========================
-Bundle 'bufexplorer.zip' " done
-Bundle 'scrooloose/nerdtree' "done
-Bundle 'wesleyche/SrcExpl'
-Bundle 'taglist.vim' " done
-Bundle 'majutsushi/tagbar' "done
-Bundle 'ZoomWin'
+Bundle 'bufexplorer.zip'                    " done
+Bundle 'scrooloose/nerdtree'                " done
+Bundle 'wesleyche/SrcExpl'                  " done
+Bundle 'taglist.vim'                        " done
+Bundle 'majutsushi/tagbar'                  " done
+Bundle 'ZoomWin'                            " no
 Bundle 'qw8880000/ccvext.vim'
-Bundle 'ctrlpvim/ctrlp.vim' " done
-Bundle 'Lokaltog/vim-powerline' " done
-Bundle 'Yggdroot/indentLine'
-Bundle 'scrooloose/syntastic'
+Bundle 'ctrlpvim/ctrlp.vim'                 " no
+Bundle 'Lokaltog/vim-powerline'             " no
+Bundle 'Yggdroot/indentLine'                " no
+Bundle 'scrooloose/syntastic'               " done
 
 if g:islinux
-    " Bundle 'EasyGrep'
-    Bundle 'mhinz/vim-grepper' " done
-    Bundle 'mileszs/ack.vim'    " done
-    Bundle 'rking/ag.vim' " done
-    Bundle 'dyng/ctrlsf.vim' " done
+    " Bundle 'EasyGrep'                     " no
+    Bundle 'mhinz/vim-grepper'              " no
+    Bundle 'mileszs/ack.vim'                " no
+    Bundle 'rking/ag.vim'                   " no
+    Bundle 'dyng/ctrlsf.vim'                " no
 endif
 "Bundle 'jiangmiao/auto-pairs'
 Bundle 'tpope/vim-surround'
-Bundle 'Mark--Karkat' " done
+Bundle 'Mark--Karkat'                       " done
 Bundle 'kshenoy/vim-signature'
 Bundle 'repeat.vim'
-" Bundle 'jlanzarotta/colorSchemeExplorer'
+" Bundle 'jlanzarotta/colorSchemeExplorer'  " no
 
-Bundle 'easymotion/vim-easymotion' " done
-Bundle 'terryma/vim-multiple-cursors' " done
+Bundle 'easymotion/vim-easymotion'          " done
+Bundle 'terryma/vim-multiple-cursors'       " done
 Bundle 'tpope/vim-fugitive'
-Bundle 'tomasr/molokai' " done
+Bundle 'tomasr/molokai'                     " done
 Bundle 'romainl/vim-qf'
 
 " ========================
@@ -137,20 +135,20 @@ Bundle 'scrooloose/nerdcommenter'
 " ========================
 " txt / markdown / wiki
 " ========================
-Bundle 'TxtBrowser' " done
-Bundle 'plasticboy/vim-markdown' "done
-" Bundle 'xolox/vim-notes'
-" Bundle 'xolox/vim-misc'
-" Bundle 'vimwiki/vimwiki'
+Bundle 'TxtBrowser'                     " done
+Bundle 'plasticboy/vim-markdown'        " done
+" Bundle 'xolox/vim-notes'              " no
+" Bundle 'xolox/vim-misc'               " no
+" Bundle 'vimwiki/vimwiki'              " no
 "
 " ========================
 " draw ascii map
 " ========================
-Bundle 'sketch.vim'
-Bundle 'DrawIt'
-Bundle 'qw8880000/vim_ascii_art'
-Bundle 'qw8880000/vim-misc-xl'
-Bundle 'qw8880000/vim-tab-indent'
+Bundle 'sketch.vim'                     " no
+Bundle 'DrawIt'                         " no
+Bundle 'qw8880000/vim_ascii_art'        " no
+Bundle 'qw8880000/vim-misc-xl'          " no
+Bundle 'qw8880000/vim-tab-indent'       " no
 
 
 " ensure ftdetect et al work by including this after the Vundle stuff
